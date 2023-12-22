@@ -1,0 +1,305 @@
+:root {
+    --background-color: #1D1E2C;
+    --font-color: #F1EBFD;
+    --primary-bg-color: #1D1E2C;
+    --second-bg-color: #1D1E2C;
+    --accent-color: #D7482F;
+    --scroll-color: #DEEFB7;
+
+    --primary-font: 'Red Rose', serif;
+    --heading-font: 'Major Mono Display', monospace;
+}
+
+/* This section is for the global style */
+
+::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-color);
+    border-radius: 10px;
+}
+
+html,
+body {
+    margin: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-family: var(--primary-font);
+}
+
+#main-container {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+}
+
+/* This section is for the hero style intro paragraph */
+
+#hero-container {
+    width: 100vw;
+    min-height: 500px;
+    height: 100vh;
+}
+
+#intro {
+    position: absolute;
+    text-align: center;
+    top: 30vh;
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--heading-font);
+    font-size: 3em;
+    margin: 0;
+    color: var(--font-color);
+}
+
+#intro p {
+    font-family: var(--primary-font);
+    font-size: 0.5em;
+}
+
+/* Increase font size of the details text for larger screens */
+@media screen and (min-height: 1000px) {
+    #intro {
+        font-size: 5em;
+    }
+}
+
+/* This is for the solar eclipse graphic on the home page */
+
+.moon-container {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.noise {
+    margin-top: -15%;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 10%,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0)),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    filter: contrast(145%) brightness(650%) invert(100%);
+    mix-blend-mode: screen;
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    .noise {
+        filter: contrast(125%) brightness(650%) invert(100%);
+        mix-blend-mode: color-dodge;
+    }
+}
+
+.center {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+}
+
+/* This section is for the top menu style */
+
+.menu-container {
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    width: 100vw;
+    transform: translate(0, 0);
+    z-index: 10000;
+    mix-blend-mode: difference;
+}
+
+.top-navbar {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px 40px 0px 30px;
+    gap: 40px;
+    font-family: var(--heading-font);
+    font-size: 1.25em;
+    width: 100%;
+    
+}
+
+.top-navbar a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.top-navbar a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.2s;
+}
+
+.top-navbar a:hover::after {
+    width: 100%;
+}
+
+.top-navbar a::before {
+    content: "\\";
+}
+
+.top-navbar a:hover::before {
+    content: ">";
+}
+
+/* This section is */
+
+#content-container {
+    min-height: 500px;
+    width: 100vw;
+    flex-direction: column;
+    display: flex;
+}
+
+/* This section is for the section header style */
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-backward {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.section-header-common {
+    background-color: var(--second-bg-color);
+    font-family: var(--heading-font);
+    color: var(--font-color);
+    white-space: nowrap;
+    width: 100vw;
+    font-size: 10em;
+    display: flex;
+}
+
+.section-header {
+    opacity: 0.2;
+}
+
+.section-header>div {
+    animation: scroll 5s linear infinite;
+}
+
+.section-header-backward {
+    margin-top: -0.7em;
+    padding: 0 0 1em 0;
+}
+
+/* Screen selector for larger screens, different padding + offset */
+@media screen and (min-height: 1000px) {
+    .section-header-backward {
+        margin-top: -0.5em;
+        padding: 0;
+    }
+}
+
+.section-header-backward>div {
+    animation: scroll-backward 5s linear infinite;
+}
+
+/* This is for the per-project item style */
+
+#content-container .project:nth-child(odd) {
+    background-color: var(--second-bg-color);
+}
+
+#content-container .project:nth-child(even) {
+    background-color: var(--primary-bg-color);
+}
+
+.project {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.project-info {
+    width: 50vw;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.info {
+    padding: 50px;
+    max-width: 750px;
+    
+}
+
+.info :is(h1, h2) {
+    font-family: var(--heading-font);
+    text-align: right;
+}
+
+.info :is(h1) {
+    font-size: 4em;
+}
+
+.info :is(h2) {
+    font-size: 2em;
+}
+
+.info :is(p) {
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.project-image {
+    width: 50vw;
+}
+
+/**/
+
+.divider {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: var(--heading-font);
+}

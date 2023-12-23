@@ -10,9 +10,12 @@
     --color-grey: #494949;
     --sticky-top-pos: 30vh;
     --buffer: 5rem;
+    --paragraph-font-size: 1.7em;
 
-    --primary-font: 'Red Rose', serif;
-    --heading-font: 'Major Mono Display', monospace;
+    --primary-font:
+    'Red Rose', sans-serif;
+    --heading-font:
+    'Major Mono Display', monospace;
 }
 
 /* This section is for the global style */
@@ -147,7 +150,7 @@ body {
     font-family: var(--heading-font);
     font-size: 1.25em;
     width: 100%;
-    
+
 }
 
 .top-navbar a {
@@ -275,7 +278,7 @@ body {
     padding: 50px;
     width: 40vw;
     max-width: 750px;
-    
+
 }
 
 .info :is(h1, h2) {
@@ -292,7 +295,7 @@ body {
 }
 
 .info p {
-    font-size: 1em;
+    font-size: var(--paragraph-font-size);
     text-align: justify;
 }
 
@@ -310,39 +313,41 @@ body {
     font-family: var(--heading-font);
 }
 
+/* Ref: https://codepen.io/annetawamono/pen/NWzYBKZ */
+
 .timeline {
     max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .timeline__section {
+    margin: 0 5vw;
+}
+
+.timeline__section {
     display: grid;
     grid-template-columns: auto 5px 50px auto;
     align-items: start;
     position: relative;
-  }
-  
-  .timeline__left {
+}
+
+.timeline__left {
+    /*font-family: var(--heading-font);*/
     font-size: 2.5rem;
     text-align: right;
-    text-transform: uppercase;
-    width: 30vw;
-  }
-  
-  .timeline__left,
-  .timeline__middle,
-  .timeline__tracker {
+    width: 37.5vw;
+}
+
+.timeline__left,
+.timeline__middle,
+.timeline__tracker {
     position: sticky;
     top: var(--sticky-top-pos);
     /*   margin-bottom: var(--buffer); */
-  }
-  
-  .timeline__left,
-  .timeline__middle {
+}
+
+.timeline__left,
+.timeline__middle {
     margin-bottom: var(--buffer);
-  }
-  
-  .timeline__right {
+}
+
+.timeline__right {
     /* background: rgb(255, 255, 255); */
     /* background: linear-gradient(
       180deg,
@@ -351,25 +356,26 @@ body {
       rgba(128, 128, 128, 1) 0%,
       rgba(128, 128, 128, 1) 100%
     ); */
-    width: 30vw;
-  }
-  
-  .timeline__right > div {
+    width: 37.5vw;
+}
+
+.timeline__right>div {
     background-color: var(--background-color);
     padding-bottom: var(--buffer);
     padding-left: 45px;
     margin-left: 4px;
-  }
-  
-  .timeline__date > div:first-child {
-    font-size: 1.3rem;
-  }
+    min-height: 200px;
+}
 
-  .timeline__date > div:nth-child(3) {
+.timeline__date>div:first-child {
+    font-size: 1.3rem;
+}
+
+.timeline__date>div:nth-child(3) {
     font-size: 1.75rem;
-  }
-  
-  .timeline__bullet {
+}
+
+.timeline__bullet {
     --bullet-dims: 20px;
     background-color: var(--color-white);
     width: var(--bullet-dims);
@@ -377,15 +383,20 @@ body {
     border-radius: 99999%;
     transform: translateX(calc(var(--bullet-dims) / 2 + 2px));
     float: right;
-  }
-  
-  .timeline__content {
-    font-size: 1.5rem;
+}
+
+.timeline__content {
+    font-size: var(--paragraph-font-size);
     color: var(--color-grey);
     transition: color 1s cubic-bezier(0, 0.39, 0.58, 1);
-  }
-  
-  .animate-on-scroll {
+}
+
+.animate-on-scroll {
     color: var(--color-white);
-  }
-  
+}
+
+
+.timeline__content a {
+    text-decoration: underline;
+    color: var(--font-color);
+}

@@ -1,3 +1,4 @@
+// Timeline animation and progress
 const timelines = document.querySelectorAll(".timeline__right");
 
 const trackers = document.querySelectorAll(".timeline__tracker");

@@ -1,13 +1,10 @@
 :root {
-    --background-color: #1D1E2C;
+    --background-color: #161623;
     --font-color: #F1EBFD;
     --primary-bg-color: #1D1E2C;
-    --second-bg-color: #1D1E2C;
+    /*--second-bg-color: #1D1E2C;*/
     --accent-color: #D7482F;
     --scroll-color: #DEEFB7;
-    --color-black: black;
-    --color-white: white;
-    --color-grey: #494949;
     --sticky-top-pos: 30vh;
     --buffer: 5rem;
     --paragraph-font-size: 1.2em;
@@ -279,16 +276,6 @@ body {
     animation: scroll-backward 5s linear infinite;
 }
 
-/* This is for the per-project item style */
-
-#content-container .project:nth-child(odd) {
-    background-color: var(--second-bg-color);
-}
-
-#content-container .project:nth-child(even) {
-    background-color: var(--primary-bg-color);
-}
-
 .project {
     height: 100vh;
     width: 100vw;
@@ -333,11 +320,17 @@ body {
     text-align: justify;
 }
 
-.project-image-container {
-    width: 50vw;
+.location-time {
+    margin-top: 100px;
+    margin-left: 50px;
+    font-size: 1em;
+    font-family: var(--code-font);
+    justify-content: space-between;
+    align-self: flex-start;
+    color: var(--font-color);
 }
 
-/**/
+/* Divider */
 
 .divider {
     overflow: hidden;
@@ -345,6 +338,12 @@ body {
     font-size: 1.5em;
     text-align: center;
     font-family: var(--heading-font);
+}
+
+/* Project Styling */
+
+.project-image-container {
+    width: 50vw;
 }
 
 .project-image-inner {
@@ -491,8 +490,8 @@ textarea {
     height: 30vh;
 }
 
-input:hover,
-textarea:hover {
+input:hover, input:focus,
+textarea:hover, textarea:focus {
     background: blue;
     color: var(--font-color);
 }

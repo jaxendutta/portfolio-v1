@@ -56,11 +56,15 @@
             <br>&emsp;&emsp;&emsp;&emsp;"university": "University of Waterloo",
             <br>&emsp;&emsp;&emsp;&emsp;"major": "Computer Science",
             <br>&emsp;&emsp;&emsp;&emsp;"specialization": "Software Engineering",
-            <br>&emsp;&emsp;&emsp;&emsp;"minors": ["Computaional Mathematics",
+            <br>&emsp;&emsp;&emsp;&emsp;"minors": ["Computational Mathematics",
             <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Combinatorics & Optimization"]
             <br>&emsp;&emsp;}
             <br>}
           </p>
+        </div>
+        <div class="location-time">
+          <p id="time-para">WATERLOO, CA<br>
+          <span id="est"></span></p>
         </div>
       </section>
       <section class="moon-container">
@@ -522,12 +526,13 @@
       <div style="height: 10vh"></div>
 
       <div class="contact-form">
-        <form>
-          <input id="name" type="text" placeholder="01. NAME">
-          <input id="email" type="text" placeholder="02. E-MAIL">
+        <form onsubmit="return validateForm()" action="#" <!--mailto:anirbandutta0@gmail.com-- method="post"
+          role="form">
+          <input id="name" name="name" type="text" required placeholder="01. NAME">
+          <input id="email" name="email" type="text" required placeholder="02. E-MAIL">
           <input id="linkedin" type="text" placeholder="03. LINKEDIN">
-          <textarea id="message" type="text" placeholder="04. MESSAGE"></textarea>
-          <input id="submit" type="submit" value="SUBMIT">
+          <textarea id="message" name="message" type="text" required placeholder="04. MESSAGE"></textarea>
+          <input id="submit" type="submit" value="SEND">
         </form>
       </div>
 

@@ -10,12 +10,14 @@
     --color-grey: #494949;
     --sticky-top-pos: 30vh;
     --buffer: 5rem;
-    --paragraph-font-size: 1.35em;
+    --paragraph-font-size: 1.2em;
 
     --primary-font:
-    'Red Rose', sans-serif;
+        'Red Rose', sans-serif;
     --heading-font:
-    'Major Mono Display', monospace;
+        'Major Mono Display', monospace;
+    --code-font:
+        'Fira Code', monospace;
 }
 
 /* This section is for the global style */
@@ -43,7 +45,7 @@ body {
     background-color: var(--background-color);
     color: var(--font-color);
     font-family: var(--primary-font);
-    
+
 }
 
 /* This section is for the main container style */
@@ -64,18 +66,24 @@ body {
 #intro {
     position: absolute;
     text-align: center;
-    top: 30vh;
+    top: 10vh;
     width: 100vw;
     height: 100vh;
     font-family: var(--heading-font);
     font-size: 3em;
     margin: 0;
     color: var(--font-color);
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
 
 #intro p {
-    font-family: var(--primary-font);
-    font-size: 0.5em;
+    font-family: var(--code-font);
+    font-size: 0.25em;
+    text-align: left;
+    margin: -30px;
 }
 
 /* Increase font size of the details text for larger screens */
@@ -104,6 +112,7 @@ body {
         url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     filter: contrast(145%) brightness(650%) invert(100%);
     mix-blend-mode: screen;
+    /*animation: hoverAnimation 3s infinite ease-in-out;*/
 }
 
 @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
@@ -130,6 +139,29 @@ body {
     border-radius: 50%;
     position: absolute;
     top: -50px;
+    animation: hoverAnimation 3s infinite ease-in-out;
+}
+
+/* Container for the scroll animation */
+.scroll-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Adjust the height as needed */
+    overflow-y: visible;
+    animation: move auto linear; /* Add animation property to the scroll-container */
+    animation-timeline: scroll(root); /* Add animation-timeline property to the scroll-container */
+}
+
+@keyframes hoverAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* This section is for the top menu style */
@@ -281,7 +313,6 @@ body {
     padding: 50px;
     width: 40vw;
     max-width: 750px;
-
 }
 
 .info :is(h1, h2) {
@@ -302,7 +333,7 @@ body {
     text-align: justify;
 }
 
-.project-image {
+.project-image-container {
     width: 50vw;
 }
 
@@ -316,90 +347,171 @@ body {
     font-family: var(--heading-font);
 }
 
-/* Ref: https://codepen.io/annetawamono/pen/NWzYBKZ */
-
-.timeline {
-    max-width: 1000px;
-    margin: 0 5vw;
-}
-
-.timeline__section {
-    display: grid;
-    grid-template-columns: auto 5px 50px auto;
-    align-items: start;
+.project-image-inner {
     position: relative;
+    overflow: hidden;
 }
 
-.timeline__left {
-    /*font-family: var(--heading-font);*/
-    font-size: 2.5rem;
-    text-align: right;
-    width: 37.5vw;
+.project-image-inner>img {
+    transition: opacity 0.3s ease;
 }
 
-.timeline__left,
-.timeline__middle,
-.timeline__tracker {
-    position: sticky;
-    top: var(--sticky-top-pos);
-    /*   margin-bottom: var(--buffer); */
+.project-image-inner:hover>img {
+    opacity: 0.5;
 }
 
-.timeline__left,
-.timeline__middle {
-    margin-bottom: var(--buffer);
+.project-image-inner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.timeline__right {
-    /* background: rgb(255, 255, 255); */
-    /* background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(128, 128, 128, 1) 0%,
-      rgba(128, 128, 128, 1) 100%
-    ); */
-    width: 37.5vw;
+.project-image-inner:hover .overlay {
+    opacity: 1;
 }
 
-.timeline__right>div {
-    background-color: var(--background-color);
-    padding-bottom: var(--buffer);
-    padding-left: 45px;
-    margin-left: 4px;
-    min-height: 200px;
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
 }
 
-.timeline__date>div:first-child {
-    font-size: 1.3rem;
+/* Ref: https://codepen.io/natalia-reshetnikova/pen/oRRjPP/ */
+
+.btn {
+	line-height: 50px;
+	height: 50px;
+	text-align: center;
+	width: 250px;
+	cursor: pointer;
 }
 
-.timeline__date>div:nth-child(3) {
-    font-size: 1.75rem;
+.btn-cross {
+	color: #FFF;
+	transition: all 0.5s;
+	position: relative;	
 }
 
-.timeline__bullet {
-    --bullet-dims: 20px;
-    background-color: var(--color-white);
-    width: var(--bullet-dims);
-    height: var(--bullet-dims);
-    border-radius: 99999%;
-    transform: translateX(calc(var(--bullet-dims) / 2 + 2px));
-    float: right;
+.btn-cross span {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-.timeline__content {
-    font-size: var(--paragraph-font-size);
-    color: var(--color-grey);
-    transition: color 1s cubic-bezier(0, 0.39, 0.58, 1);
+.btn-cross span a {
+    color: #FFF;
+    text-decoration: none;
 }
 
-.animate-on-scroll {
-    color: var(--color-white);
+.btn-cross span :is(svg, img) {
+    display: block;
+    margin: auto;
+}
+.btn-cross::before {
+	color: v;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.8);
+	background-color: var(--background-color);
 }
 
+.btn-cross::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.8);
+	background-color: var(--background-color);
+}
 
-.timeline__content a {
-    text-decoration: underline;
+.btn-cross:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+.btn-cross:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+/* CONTACT FORM DESIGN */
+
+.contact-form {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    align-self: center;
+}
+
+input,
+textarea {
+    width: 100%;
+    outline: none;
+    font-family: var(--code-font);
+    font-size: 2em;
     color: var(--font-color);
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--font-color);
+    border-bottom: none;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+}
+
+input {
+    height: 2em;
+}
+
+textarea {
+    height: 30vh;
+}
+
+input:hover,
+textarea:hover {
+    background: blue;
+    color: var(--font-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--font-color);
+}
+
+#submit {
+    cursor: pointer;
+    border-top: solid 1px var(--font-color);
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 1px var(--font-color);
+    background: transparent;
+    width: 100%;
+}
+
+#submit:hover {
+    color: var(--accent-color);
 }

@@ -1,10 +1,11 @@
 :root {
-    --background-color: #161623;
+    --background-color: #1D1E2C;
     --font-color: #F1EBFD;
     --primary-bg-color: #1D1E2C;
     /*--second-bg-color: #1D1E2C;*/
     --accent-color: #D7482F;
     --scroll-color: #DEEFB7;
+    --color-grey: #494949;
     --sticky-top-pos: 30vh;
     --buffer: 5rem;
     --paragraph-font-size: 1.2em;
@@ -348,11 +349,12 @@ body {
 
 .project-image-inner {
     position: relative;
-    overflow: hidden;
 }
 
 .project-image-inner>img {
     transition: opacity 0.3s ease;
+    border-radius: 15px;
+    border: 1px solid var(--font-color);
 }
 
 .project-image-inner:hover>img {
@@ -455,7 +457,64 @@ body {
   background-color: rgba(255,255,255,0);
 }
 
-/* CONTACT FORM DESIGN */
+/* Social Media Links */
+
+.socials {
+    margin-top: 3em;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.social-media>a {
+    align-self: center;
+    width: 88vw;
+    outline: none;
+    font-family: var(--code-font);
+    height: 1.2em;
+    font-size: 2em;
+    color: var(--font-color);
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--font-color);
+    border-bottom: none;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+    padding: 0.5em;
+}
+
+.social-media:hover {
+    background: blue;
+    transition: all 0.3s ease-in-out;
+    a {
+        color: palegreen;
+    }
+    img {
+        filter: invert(21%) sepia(93%) saturate(7270%) hue-rotate(358deg) brightness(95%) contrast(117%);
+    }
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: var(--accent-color);
+    font-size: 2em;
+    font-family: var(--heading-font);
+    margin-top: 3em;
+}
+
+/* Contact Form */
 
 .contact-form {
     margin-top: 3em;
@@ -514,3 +573,4 @@ textarea::placeholder {
 #submit:hover {
     color: var(--accent-color);
 }
+

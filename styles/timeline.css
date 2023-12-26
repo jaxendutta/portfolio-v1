@@ -62,7 +62,7 @@
 
 .timeline__bullet {
     --bullet-dims: 20px;
-    background-color: var(--color-white);
+    background-color: white;
     width: var(--bullet-dims);
     height: var(--bullet-dims);
     border-radius: 99999%;
@@ -77,7 +77,7 @@
 }
 
 .animate-on-scroll {
-    color: var(--color-white);
+    color: white;
 }
 
 

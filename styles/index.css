@@ -622,6 +622,15 @@ body {
     }
 }
 
+.social-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+    font-size: 0.75em;
+}
+
 .option {
     display: flex;
     flex-direction: row;
@@ -699,7 +708,7 @@ textarea::placeholder {
 .footnote {
     font-family: var(--primary-font);
     width: 100vw;
-    height: 3em;
+    height: 2.5em;
     text-align: center;
     color: var(--font-color);
     text-transform: uppercase;

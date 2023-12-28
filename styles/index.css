@@ -631,17 +631,16 @@ body {
     font-size: 0.75em;
 }
 
-.option {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: var(--accent-color);
-    font-size: 2em;
+.contact-or {
+    outline: none;
     font-family: var(--heading-font);
-    margin-top: 3em;
-}
+    font-size: 3em;
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 40px;
+    animation: caseglitch 6s infinite steps(50);
+    display: inline-block;
+  }
 
 /* Contact Form */
 

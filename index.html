@@ -613,7 +613,7 @@
       <div class="contact-or">Or ping me right here.</div>
 
       <div class="contact-form">
-        <form method="POST" data-netlify="true"><!--onsubmit="return validateForm()" action="mailto:anirbandutta0@gmail.com" role="form">-->
+        <form name="contact-form" method="POST" data-netlify="true" onsubmit="return validateForm()">
           <input id="name" name="name" type="text" required placeholder="01. NAME" />
           <input id="email" name="email" type="text" required placeholder="02. E-MAIL" />
           <input id="linkedin" type="text" placeholder="03. LINKEDIN" />

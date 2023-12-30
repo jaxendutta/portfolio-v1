@@ -615,16 +615,11 @@
       <div class="contact-form">
         <form name="contact-form" method="POST" data-netlify="true" onsubmit="return validateForm()">
           <input id="name" name="name" type="text" required placeholder="01. NAME" />
-          <input id="email" name="email" type="text" required placeholder="02. E-MAIL" />
-          <input id="linkedin" type="text" placeholder="03. LINKEDIN" />
+          <input id="email" name="email" type="email" required placeholder="02. E-MAIL" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" />
+          <input id="linkedin" name="linkedin" type="url" placeholder="03. LINKEDIN" />
           <textarea id="message" name="message" type="text" required placeholder="04. MESSAGE"></textarea>
           <input id="submit" type="submit" value="SEND" />
         </form>
-      </div>
-
-
-      <div style="width:100vw; height: 50vh; text-align: center;">
-        ⚠️ WORK-IN-PROGRESS SECTION ⚠️
       </div>
 
       <div class="footnote">

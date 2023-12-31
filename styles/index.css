@@ -708,6 +708,7 @@ textarea::placeholder {
     font-family: var(--primary-font);
     width: 100vw;
     height: 2.5em;
+    margin-top: 10%;
     text-align: center;
     color: var(--font-color);
     text-transform: uppercase;

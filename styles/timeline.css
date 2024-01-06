@@ -1,4 +1,5 @@
 /* Ref: https://codepen.io/annetawamono/pen/NWzYBKZ */
+/* Now Responsive */
 
 .timeline {
     max-width: 1000px;
@@ -17,6 +18,12 @@
     font-size: 2.5rem;
     text-align: right;
     width: 37.5vw;
+}
+
+.right-header {
+    display: none;
+    font-size: 2.5rem;
+    text-align: left;
 }
 
 .timeline__left,
@@ -62,7 +69,7 @@
 
 .timeline__bullet {
     --bullet-dims: 20px;
-    background-color: white;
+    background-color: snow;
     width: var(--bullet-dims);
     height: var(--bullet-dims);
     border-radius: 99999%;
@@ -77,11 +84,30 @@
 }
 
 .animate-on-scroll {
-    color: white;
+    color: snow;
 }
 
 
 .timeline__content a {
     text-decoration: underline;
     color: var(--font-color);
+}
+
+@media screen and (max-width: 640px) {
+    .timeline__section {
+        grid-template-columns: 0 5px 50px auto;
+    }
+
+    .timeline__left {
+        display: none;
+    }
+
+
+    .timeline__right {
+        width: 87.5vw;
+    }
+
+    .right-header {
+        display: block;
+    }
 }

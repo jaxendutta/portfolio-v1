@@ -635,7 +635,7 @@ body {
 
 input,
 textarea {
-    width: 100%;
+    width: 90vw !important;
     outline: none;
     font-family: var(--code-font);
     font-size: 2em;
@@ -671,14 +671,14 @@ textarea::placeholder {
 }
 
 #submit {
+    width: 100%;
     cursor: pointer;
     border-top: solid 1px var(--font-color);
     border-left: none;
     border-right: none;
     border-bottom: solid 1px var(--font-color);
     border-radius: 0 !important;
-    background: transparent;
-    width: 100%;
+    background: transparent;  
 }
 
 #submit:hover {

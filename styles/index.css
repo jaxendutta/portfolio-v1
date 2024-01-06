@@ -627,10 +627,11 @@ body {
     padding: 0 !important;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 90vw;
+    align-items: center;
     align-self: center;
+    align-content: center;
+    width: 90vw;
 }
 
 input,

@@ -671,7 +671,7 @@ textarea::placeholder {
 }
 
 #submit {
-    width: 100%;
+    width: 90vw !important;
     cursor: pointer;
     border-top: solid 1px var(--font-color);
     border-left: none;

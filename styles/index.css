@@ -678,7 +678,8 @@ textarea::placeholder {
     border-right: none;
     border-bottom: solid 1px var(--font-color);
     border-radius: 0 !important;
-    background: transparent;  
+    background: transparent;
+    align-self: center;
 }
 
 #submit:hover {

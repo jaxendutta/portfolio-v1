@@ -643,6 +643,7 @@ textarea {
     border-right: none;
     border-top: 1px solid var(--font-color);
     border-bottom: none;
+    border-radius: 0 !important;
     transition: all 0.3s ease-in-out;
     background: transparent;
 }
@@ -674,6 +675,7 @@ textarea::placeholder {
     border-left: none;
     border-right: none;
     border-bottom: solid 1px var(--font-color);
+    border-radius: 0 !important;
     background: transparent;
     width: 100%;
 }
@@ -796,6 +798,8 @@ textarea::placeholder {
     .social-line>span {
         display: none;
     }
+
+
 
     .footnote {
         width: 80vw;

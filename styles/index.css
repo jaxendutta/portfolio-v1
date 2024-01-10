@@ -26,7 +26,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--background-color);
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -65,7 +65,7 @@ body {
 #intro {
     position: absolute;
     text-align: center;
-    top: 10vh;
+    top: 2.5vh;
     width: 100vw;
     height: 100vh;
     font-family: var(--heading-font);
@@ -76,6 +76,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5vh;
 }
 
 #intro p {
@@ -423,7 +424,10 @@ body {
     text-align: justify;
 }
 
-/* Project Styling */
+.in-pic {
+    display: none;
+    width: inherit !important;
+}
 
 .project-image-container {
     width: 50vw;
@@ -552,6 +556,17 @@ body {
     font-size: 1.5em;
     text-align: center;
     font-family: var(--heading-font);
+    margin: 0;
+    margin-bottom: 5px;
+    opacity: 0.4;
+}
+
+.dividers:nth-child(4n+2) {
+    transform: rotate(2deg);
+}
+
+.dividers:nth-child(4n) {
+    transform: rotate(-2deg);
 }
 
 .post-header-space {
@@ -678,7 +693,7 @@ textarea:focus {
 
 input::placeholder,
 textarea::placeholder {
-    color: var(--font-color);
+    color: lightslategray;
 }
 
 #submit {
@@ -744,9 +759,11 @@ textarea::placeholder {
     }
 
     .projects {
+        display: flex;
         flex-direction: column;
         align-self: center;
         margin: 0 0 5vh 0;
+        gap: 3em;
     }
 
     .project {
@@ -754,7 +771,7 @@ textarea::placeholder {
         height: auto;
         margin-top: 2.5vh;
         margin-bottom: 2.5vh;
-        border: 0.5px solid var(--font-color);
+        /* border: 0.5px solid var(--font-color); */
         border-radius: 20px;
         align-self: center;
     }
@@ -801,11 +818,16 @@ textarea::placeholder {
         margin-bottom: 10px;
     }
 
+    .out-pic {
+        display: none !important;
+    }
+
     .project-image-container {
         width: 87.5vw;
         display: flex;
         flex-direction: inherit;
         align-items: center;
+        justify-content: center;
         margin-bottom: 2vw;
     }
 
@@ -815,7 +837,11 @@ textarea::placeholder {
         position: relative;
     }
 
-    .divider {
+    .dividers {
+        padding: 5vh 0 5vh 0;
+    }
+
+    .divider:nth-child(3) {
         display: none;
     }
 

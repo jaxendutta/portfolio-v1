@@ -551,14 +551,26 @@ body {
 /* Divider */
 
 .divider {
-    overflow: hidden;
+    overflow-x: unset;
     white-space: nowrap;
     font-size: 1.5em;
     text-align: center;
+    align-self: center;
     font-family: var(--heading-font);
     margin: 0;
     margin-bottom: 5px;
     opacity: 0.4;
+    transform: translateX(0);
+    border-top: 1px solid var(--font-color);
+    border-bottom: 1px solid var(--font-color);
+    padding: 5px 0 5px 0;
+}
+
+.dividers {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .dividers:nth-child(4n+2) {

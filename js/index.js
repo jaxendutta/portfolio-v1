@@ -46,9 +46,17 @@ window.addEventListener(
     const allDividers = document.querySelectorAll(".divider");
     allDividers.forEach(function(divider, index) {
       if (index % 2 === 0) {
-        divider.style.transform = `translateX(${scrollPosition}em)`;
+        if (direction === 1) {
+          divider.style.transform = `translateX(${scrollPosition}em) skewX(10deg)`;
+        } else {
+          divider.style.transform = `translateX(${scrollPosition}em) skewX(-10deg)`;
+        }
       } else {
-        divider.style.transform = `translateX(${-scrollPosition}em)`;
+        if (direction === 1) {
+          divider.style.transform = `translateX(${-scrollPosition}em) skewX(-10deg)`;
+        } else {
+          divider.style.transform = `translateX(${-scrollPosition}em) skewX(10deg)`;
+        }
       }
     })
   },

@@ -559,15 +559,16 @@ body {
     font-family: var(--heading-font);
     margin: 0;
     margin-bottom: 5px;
-    opacity: 0.4;
-    transform: translateX(0);
+    opacity: 0.5;
+    transform: translateX(0) skewX(0deg);
     border-top: 1px solid var(--font-color);
     border-bottom: 1px solid var(--font-color);
     padding: 5px 0 5px 0;
 }
 
 .dividers {
-    overflow: visible;
+    width: 100vw;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -849,8 +850,21 @@ textarea::placeholder {
         position: relative;
     }
 
+    .project-image-inner:hover{
+        pointer-events: none;
+    }
+    
+    .overlay {
+        display: none;
+    }
+
+    .btn-cross {
+        display: none;
+    }
+
     .dividers {
         padding: 5vh 0 5vh 0;
+        overflow-x: hidden !important;
     }
 
     .divider:nth-child(3) {

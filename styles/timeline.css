@@ -111,3 +111,9 @@
         display: block;
     }
 }
+
+_:-webkit-full-screen-ancestor, :root .selector { 
+    .timeline__content {
+        color: snow;
+    }
+}

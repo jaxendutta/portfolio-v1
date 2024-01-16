@@ -1,18 +1,28 @@
 // Clock
-function updateClock() {
-  const estTime = new Date().toLocaleString('nl-NL', {timeZone: 'America/New_York'});
+setInterval(() => {
+  const estTime = new Date().toLocaleString('nl-NL', {timeZone: 'America/Toronto'});
   document.getElementById('est').innerHTML = estTime;
-}
-
-setInterval(updateClock, 1000);
+}, 1000);
 
 // Timeline animation and progress
 const timelines = document.querySelectorAll(".timeline__right");
 const trackers = document.querySelectorAll(".timeline__tracker");
 
 // This is for keeping track of the scroll
-let scrollPosition = 0;
+let scrollPosition = [];
 let lastScrollTop = 0;
+
+// For each divider, add a position to the scrollPosition
+// NOTE: Assume querySelectorAll is in document order!
+const allDividers = document.querySelectorAll(".divider");
+allDividers.forEach(() => scrollPosition.push(0));
+
+// Check if divider element is visible by comparing client rect with screen height
+function is_divider_visible(elem) {
+  const rect = elem.getBoundingClientRect()
+  if(!rect) return false;
+  return !((rect.y > window.outerHeight + 200) && (rect.y < -200));
+}
 
 window.addEventListener(
   "scroll",
@@ -38,26 +48,24 @@ window.addEventListener(
     // Detect scroll direction here
     const curScrollTop = window.scrollY || document.documentElement.scrollTop;
     const direction = curScrollTop < lastScrollTop ? 1 : -1;
+    const speed = 0.015 * (lastScrollTop - curScrollTop);
     lastScrollTop = curScrollTop;
 
     // Divider animation
-    const speed = 0.2;
-    scrollPosition += direction * speed;
-    const allDividers = document.querySelectorAll(".divider");
     allDividers.forEach(function(divider, index) {
-      if (index % 2 === 0) {
-        if (direction === 1) {
-          divider.style.transform = `translateX(${scrollPosition}em) skewX(10deg)`;
-        } else {
-          divider.style.transform = `translateX(${scrollPosition}em) skewX(-10deg)`;
-        }
-      } else {
-        if (direction === 1) {
-          divider.style.transform = `translateX(${-scrollPosition}em) skewX(-10deg)`;
-        } else {
-          divider.style.transform = `translateX(${-scrollPosition}em) skewX(10deg)`;
-        }
-      }
+      // If this divider is not visible, just bail out.
+      if(!is_divider_visible(divider))
+        return;
+
+      // Update the position for that divider and clamp to [-10, 10]
+      scrollPosition[index] = Math.max(-80, Math.min(80, scrollPosition[index] + speed));
+      
+      // Compute the transform now
+      const pos = index % 2 === 0 ? scrollPosition[index] : -scrollPosition[index];
+      const skew = (direction === 1) ^ (index % 2 === 0) ? -10 : 10;
+
+      // Set the transform property
+      divider.style.transform = `translateX(${pos}em) skewX(${skew}deg)`;
     })
   },
   { passive: true }

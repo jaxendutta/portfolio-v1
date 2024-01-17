@@ -422,6 +422,9 @@ body {
 .info p {
     font-size: var(--paragraph-font-size);
     text-align: justify;
+    a {
+        color: var(--font-color);
+    }
 }
 
 .in-pic {
@@ -662,11 +665,13 @@ body {
     justify-content: center;
     align-self: center;
     width: 90vw;
+    overflow-x: hidden !important;
 }
 
 .contact-form>form {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden !important;
 }
 
 input, textarea, #submit {

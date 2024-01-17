@@ -48,7 +48,12 @@ window.addEventListener(
     // Detect scroll direction here
     const curScrollTop = window.scrollY || document.documentElement.scrollTop;
     const direction = curScrollTop < lastScrollTop ? 1 : -1;
+
+    // Divider animation parameters here
     const speed = 0.015 * (lastScrollTop - curScrollTop);
+    const scaleRange = 0.2;
+
+    // !! important, set this after speed and scaleRange !!
     lastScrollTop = curScrollTop;
 
     // Divider animation
@@ -63,9 +68,12 @@ window.addEventListener(
       // Compute the transform now
       const pos = index % 2 === 0 ? scrollPosition[index] : -scrollPosition[index];
       const skew = (direction === 1) ^ (index % 2 === 0) ? -10 : 10;
+      // Explanation of scale: sin(pos) ∈ [-1, 1], so we re-scale it to [0, 1]
+      // and then multiply by scaleRange and offset so the final scale <= 1 always.
+      const scale = scaleRange*(Math.sin(pos)+1)/2 + (1-scaleRange);
 
       // Set the transform property
-      divider.style.transform = `translateX(${pos}em) skewX(${skew}deg)`;
+      divider.style.transform = `scale(${scale}) translateX(${pos}em) skewX(${skew}deg)`;
     })
   },
   { passive: true }

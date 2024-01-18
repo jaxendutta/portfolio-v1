@@ -422,9 +422,15 @@ body {
 .info p {
     font-size: var(--paragraph-font-size);
     text-align: justify;
-    a {
-        color: var(--font-color);
-    }
+}
+
+.info p a,
+.info p a:visited {
+    color: var(--font-color) !important;
+}
+
+.info p a:hover {
+    color: var(--accent-color) !important;
 }
 
 .in-pic {
@@ -674,7 +680,9 @@ body {
     overflow-x: hidden;
 }
 
-input, textarea, #submit {
+input,
+textarea,
+#submit {
     width: 100%;
     border-radius: 0;
     border-top: solid 1px var(--font-color);
@@ -859,10 +867,10 @@ textarea::placeholder {
         position: relative;
     }
 
-    .project-image-inner:hover{
+    .project-image-inner:hover {
         pointer-events: none;
     }
-    
+
     .overlay {
         display: none;
     }

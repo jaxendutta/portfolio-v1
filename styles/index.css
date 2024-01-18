@@ -875,10 +875,6 @@ textarea::placeholder {
         display: none;
     }
 
-    .btn-cross {
-        display: none;
-    }
-
     .dividers {
         padding: 5vh 0 5vh 0;
         overflow-x: hidden !important;

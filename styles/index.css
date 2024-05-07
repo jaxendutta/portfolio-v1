@@ -634,6 +634,10 @@ body {
     height: 10vh;
 }
 
+.pre-header-space {
+    height: 25vh;
+}
+
 /* Social Media Links */
 
 .socials {

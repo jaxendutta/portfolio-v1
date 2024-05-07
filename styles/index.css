@@ -1,7 +1,6 @@
 :root {
-    --background-color: #1D1E2C;
+    --background-color: #17181C;
     --font-color: #F1EBFD;
-    --primary-bg-color: #1D1E2C;
     --accent-color: #D7482F;
     --scroll-color: #DEEFB7;
     --color-grey: #494949;
@@ -84,6 +83,10 @@ body {
     font-size: 0.25em;
     text-align: left;
     margin: -30px;
+}
+
+.bio-code {
+    display: none;
 }
 
 /* Increase font size of the details text for larger screens */
@@ -216,6 +219,7 @@ body {
 }
 
 .resume-btn {
+    display: none;
     margin-right: 20px;
     margin-bottom: 5px;
     align-self: flex-end;

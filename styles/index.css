@@ -1,14 +1,22 @@
 :root {
     --background-color: #17181C;
-    --font-color: #F1EBFD;
+    --font-color: #F4F1EA; /*#F1EBFD;*/
+    --nav-font-color: #F4F1EA;
     --accent-color: #D7482F;
     --scroll-color: #DEEFB7;
-    --color-grey: #494949;
+    --color-grey: lightgrey;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
     --sticky-top-pos: 30vh;
     --buffer: 5rem;
     --paragraph-font-size: 1.2em;
+    --section-header-font-size: 10em;
     --portrait-width: 300px;
     --landscape-width: 500px;
+    --invert-rate: 100%;
+    --noise-filter: contrast(145%) brightness(650%) invert(var(--invert-rate));
+    --noise-filter-md: contrast(125%) brightness(650%) invert(var(--invert-rate));
+    --svg-theme-filter: invert(0%); 
 
     --primary-font:
         'Red Rose', sans-serif;
@@ -16,6 +24,18 @@
         'Major Mono Display', monospace;
     --code-font:
         'Fira Code', monospace;
+}
+
+[data-theme='light'] {
+    --background-color: #F4F1EA; /*#F1EBFD;*/
+    --font-color: #001ECB;
+    --nav-font-color: #FFE134;
+    --accent-color: #28B7D0;
+    --scroll-color: #DEEFB7;
+    --color-grey: #001ECB;
+    --color-black: #FFFFFF;
+    --color-white: #000000;
+    --svg-theme-filter: brightness(0) saturate(100%) invert(11%) sepia(92%) saturate(4990%) hue-rotate(235deg) brightness(93%) contrast(119%);
 }
 
 /* This section is for the global style */
@@ -113,14 +133,13 @@ body {
             rgba(0, 0, 0, 1),
             rgba(0, 0, 0, 0)),
         url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    filter: contrast(145%) brightness(650%) invert(100%);
+    filter: var(--noise-filter);
     mix-blend-mode: screen;
-    /*animation: hoverAnimation 3s infinite ease-in-out;*/
 }
 
 @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
     .noise {
-        filter: contrast(125%) brightness(650%) invert(100%);
+        filter: var(--noise-filter-md);
         mix-blend-mode: color-dodge;
     }
 }
@@ -138,7 +157,7 @@ body {
 .circle {
     width: 200px;
     height: 200px;
-    background-color: #000;
+    background-color: var(--color-black);
     border-radius: 50%;
     position: absolute;
     top: -50px;
@@ -216,6 +235,25 @@ body {
         text-align: left;
         margin: 0;
     }
+}
+
+.theme-btn {
+    display: flex;
+    align-self: center;
+    margin-right: 1em;
+    cursor: pointer;
+    font-family: var(--code-font);
+    font-size: 1.5em;
+    color: var(--font-color);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.theme-btn:hover {
+    color: var(--accent-color);
+    animation: rotate 5s infinite linear;
 }
 
 .resume-btn {
@@ -296,7 +334,7 @@ body {
 
 .top-navbar a {
     text-decoration: none;
-    color: var(--font-color);
+    color: var(--nav-font-color);
 }
 
 .top-navbar a::after {
@@ -357,7 +395,7 @@ body {
     color: var(--font-color);
     white-space: nowrap;
     width: 100vw;
-    font-size: 10em;
+    font-size: var(--section-header-font-size);
     display: flex;
 }
 
@@ -370,7 +408,11 @@ body {
 }
 
 .section-header-backward {
-    margin-top: -0.7em;
+    margin-top: -1.25em;
+}
+
+.header-symbol {
+    font-size: 1.35em;
 }
 
 /* Screen selector for larger screens, different padding + offset */
@@ -502,7 +544,7 @@ body {
 }
 
 .btn-cross {
-    color: #FFF;
+    color: var(--color-white);
     transition: all 0.5s;
     position: relative;
 }
@@ -518,7 +560,7 @@ body {
 }
 
 .btn-cross span a {
-    color: #FFF;
+    color: var(--color-white);
     text-decoration: none;
 }
 
@@ -537,7 +579,7 @@ body {
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--color-white);
     background-color: var(--background-color);
 }
 
@@ -550,18 +592,16 @@ body {
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--color-white);
     background-color: var(--background-color);
 }
 
 .btn-cross:hover::before {
     transform: rotate(-45deg);
-    background-color: rgba(255, 255, 255, 0);
 }
 
 .btn-cross:hover::after {
     transform: rotate(45deg);
-    background-color: rgba(255, 255, 255, 0);
 }
 
 .rotating-btn {
@@ -607,11 +647,11 @@ body {
     font-family: var(--heading-font);
     margin: 0;
     margin-bottom: 5px;
-    opacity: 0.5;
     transform: translateX(0) skewX(0deg);
     border-top: 1px solid var(--font-color);
     border-bottom: 1px solid var(--font-color);
     padding: 5px 0 5px 0;
+    color: var(--color-grey);
 }
 
 .dividers {
@@ -620,6 +660,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
+    
 }
 
 .dividers:nth-child(4n+2) {
@@ -672,6 +713,10 @@ body {
     padding: 0.5em;
 }
 
+.svg-theme-filter {
+    filter: var(--svg-theme-filter);
+}
+
 .social-media:hover {
     background: blue;
     transition: all 0.3s ease-in-out;
@@ -680,8 +725,8 @@ body {
         color: palegreen;
     }
 
-    img {
-        filter: invert(21%) sepia(93%) saturate(7270%) hue-rotate(358deg) brightness(95%) contrast(117%);
+    .svg-theme-filter {
+        filter: brightness(0) saturate(100%) invert(79%) sepia(5%) saturate(3513%) hue-rotate(71deg) brightness(115%) contrast(97%);
     }
 }
 
@@ -776,7 +821,7 @@ textarea::placeholder {
 }
 
 .footnote {
-    font-family: var(--primary-font);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100vw;
     height: 2.5em;
     margin-top: 10%;
@@ -829,6 +874,10 @@ textarea::placeholder {
     .section-header-common {
         font-size: 4em;
         overflow-x: hidden;
+    }
+
+    .header-symbol {
+        font-size: 1.5em;
     }
 
     .projects {
@@ -937,10 +986,6 @@ textarea::placeholder {
 
     .footnote {
         width: 80vw;
-        margin-bottom: 20px;
-    }
-
-    .bottom-navbar {
-        display: none;
+        margin-bottom: 10px;
     }
 }

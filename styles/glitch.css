@@ -4,7 +4,7 @@
     font-size: clamp(40px, 10vw, 100px);
     line-height: 1;
     display: inline-block;
-    color: #fff;
+    color: var(--font-color);
     z-index: 2;
     letter-spacing: 10px;
 
@@ -14,7 +14,7 @@
 
 .demo {
     height: 100px;
-    background: #fff;
+    background: var(--color-white);
 }
 
 .layers {
@@ -421,7 +421,7 @@
 
     20% {
         font-weight: 500;
-        color: #fff;
+        color: var(--color-white);
         filter: blur(0);
     }
 
@@ -433,7 +433,7 @@
 
     60% {
         font-weight: 700;
-        color: #fff;
+        color: var(--color-white);
         filter: blur(0);
     }
 

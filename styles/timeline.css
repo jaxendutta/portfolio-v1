@@ -70,6 +70,7 @@
 .timeline__bullet {
     --bullet-dims: 20px;
     background-color: snow;
+    outline: var(--font-color) solid 1px;
     width: var(--bullet-dims);
     height: var(--bullet-dims);
     border-radius: 99999%;

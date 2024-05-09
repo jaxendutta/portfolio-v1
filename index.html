@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" data-theme="dark">
 
 <head>
   <meta charset="utf-8">
@@ -42,7 +42,7 @@
         </menu>
       </div>
       <div class="bottom-navbar">
-        <img src="assets/globe.svg">
+        <img src="assets/globe.svg" class="svg-theme-filter">
         <div class="location-time">
           <p id="time-para">WATERLOO, CA<br>
             <span id="est"></span>
@@ -53,6 +53,10 @@
           href="https://docs.google.com/document/d/11mhUfmYKXO7jPN1rP6znr2B5zCl0hlrE0pKqAU2lKtU/view">
           <button class="glow">Résumé</button>
         </a>
+        <button class="theme-btn" data-theme-toggle aria-label="Toggle dark mode" onClick="toggleDarkMode()">
+          <i class="fa-solid fa-sun" id="light-icon"></i>
+          <i class="fa-solid fa-moon" id="dark-icon"></i>
+        </button>
       </div>
       <section id="intro">
         <div class="hero-container">
@@ -82,7 +86,7 @@
         </div>
       </section>
       <section class="moon-container">
-        <div class="noise"></div>
+        <div class="noise" id="noiseId"></div>
         <div class="center">
           <div class="circle">
           </div>
@@ -91,16 +95,16 @@
     </div>
     <div id="content-container">
       <div class="section-header-common section-header" id="projects">
-        <div>PROJECTS&nbsp;</div>
-        <div>PROJECTS&nbsp;</div>
-        <div>PROJECTS&nbsp;</div>
-        <div>PROJECTS&nbsp;</div>
+        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
       </div>
       <div class="section-header-common section-header-backward">
-        <div>PROJECTS&nbsp;</div>
-        <div>PROJECTS&nbsp;</div>
-        <div>PROJECTS&nbsp;</div>
-        <div>PROJECTS&nbsp;</div>
+        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
       </div>
 
       <div class="post-header-space"></div>
@@ -473,20 +477,20 @@
         </div>
       </div>
       <div class="section-header-common section-header" id="work">
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
       </div>
       <div class="section-header-common section-header-backward">
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
-        <div>WORK&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
       </div>
 
       <div class="post-header-space"></div>
@@ -656,20 +660,20 @@
       <div style="height: 10vh"></div>
 
       <div class="section-header-common section-header" id="contact">
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
       </div>
       <div class="section-header-common section-header-backward">
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
-        <div>CONTACT&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
       </div>
 
       <div class="post-header-space"></div>
@@ -681,7 +685,7 @@
             <div><span>01. E-MAIL</span></div>
             <div class="social-line">
               <span>jaxendutta[at]gmail.com</span>
-              <img src="assets/arrow-out.svg">
+              <img src="assets/arrow-out.svg" class="svg-theme-filter">
             </div>
           </a>
         </div>
@@ -690,7 +694,7 @@
             <div><span>02. GITHUB</span></div>
             <div class="social-line">
               <span>/jaxendutta</span>
-              <img src="assets/arrow-out.svg">
+              <img src="assets/arrow-out.svg" class="svg-theme-filter">
             </div>
           </a>
         </div>
@@ -700,7 +704,7 @@
             <div><span>03. LINKEDIN</span></div>
             <div class="social-line">
               <span>/jaxen</span>
-              <img src="assets/arrow-out.svg">
+              <img src="assets/arrow-out.svg" class="svg-theme-filter">
             </div>
           </a>
         </div>
@@ -710,7 +714,7 @@
             <div><span>04. RÉSUMÉ</span></div>
             <div class="social-line">
               <span></span>
-              <img src="assets/arrow-out.svg">
+              <img src="assets/arrow-out.svg" class="svg-theme-filter">
             </div>
           </a>
         </div>
@@ -733,7 +737,7 @@
       </div>
 
       <div class="footnote">
-        Made with ❤️ by Jaxen Anirban Dutta © 2024 👾
+        Jaxen Anirban Dutta © 2019-2024
       </div>
     </div>
   </div>

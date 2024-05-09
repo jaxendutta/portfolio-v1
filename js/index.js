@@ -4,6 +4,68 @@ setInterval(() => {
   document.getElementById('est').innerHTML = estTime;
 }, 1000);
 
+// Theme switcher
+function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+  if (localStorageTheme !== null) {
+    return localStorageTheme;
+  }
+  return (systemSettingDark.matches) ? "dark" : "light";
+}
+
+/**
+* Utility function to update the button text and aria-label.
+*/
+function updateButton({ button, isDark }) {
+  button.setAttribute(
+    "aria-label", 
+    isDark ? "Switch to Light Mode" : "Switch to Dark Mode"
+  );
+  document.getElementById("light-icon").style.display = isDark ? "block" : "none";
+  document.getElementById("dark-icon").style.display = isDark ? "none" : "block";
+}
+
+/**
+* Utility function to update the theme setting on the html tag
+*/
+function updateThemeOnHtml({ theme }) {
+  document.querySelector("html").setAttribute("data-theme", theme);
+  document.getElementsByClassName("menu-container")[0].setAttribute("mix-blend-mode", "normal");
+}
+
+
+/**
+* On page load:
+*/
+
+/**
+* 1. Grab what we need from the DOM and system settings on page load
+*/
+const button = document.querySelector("[data-theme-toggle]");
+const localStorageTheme = localStorage.getItem("theme");
+const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+/**
+* 2. Work out the current site settings
+*/
+let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+
+/**
+* 3. Update the theme setting and button text accoridng to current settings
+*/
+updateButton({ button: button, isDark: currentThemeSetting === "dark" });
+updateThemeOnHtml({ theme: currentThemeSetting });
+
+/**
+* 4. Add an event listener to toggle the theme
+*/
+button.addEventListener("click", (event) => {
+  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", newTheme);
+  updateButton({ button: button, isDark: newTheme === "dark" });
+  updateThemeOnHtml({ theme: newTheme });
+  currentThemeSetting = newTheme;
+});
+
 // Timeline animation and progress
 const timelines = document.querySelectorAll(".timeline__right");
 const trackers = document.querySelectorAll(".timeline__tracker");

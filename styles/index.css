@@ -3,6 +3,7 @@
     --font-color: #F4F1EA; /*#F1EBFD;*/
     --nav-font-color: #F4F1EA;
     --accent-color: #D7482F;
+    --accent-color-constant: #D7482F;
     --scroll-color: #DEEFB7;
     --color-grey: lightgrey;
     --color-black: #000000;
@@ -13,10 +14,11 @@
     --section-header-font-size: 10em;
     --portrait-width: 300px;
     --landscape-width: 500px;
-    --invert-rate: 100%;
-    --noise-filter: contrast(145%) brightness(650%) invert(var(--invert-rate));
-    --noise-filter-md: contrast(125%) brightness(650%) invert(var(--invert-rate));
-    --svg-theme-filter: invert(0%); 
+    --noise-filter: contrast(145%) brightness(650%) invert(100%);
+    --noise-filter-md: contrast(125%) brightness(400%) invert(100%);
+    --accent-color-filter: brightness(0) saturate(100%) invert(42%) sepia(22%) saturate(3345%) hue-rotate(334deg) brightness(84%) contrast(100%);
+    --svg-theme-filter: invert(0%);
+    --title-shadow: drop-shadow(0 1px 3px);
 
     --primary-font:
         'Red Rose', sans-serif;
@@ -24,18 +26,29 @@
         'Major Mono Display', monospace;
     --code-font:
         'Fira Code', monospace;
+    --cursive-font:
+        'Xanh Mono', sans-serif;
+    --font-priority: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 [data-theme='light'] {
     --background-color: #F4F1EA; /*#F1EBFD;*/
     --font-color: #001ECB;
-    --nav-font-color: #FFE134;
-    --accent-color: #28B7D0;
+    --nav-font-color: #FFE134; /* inverse of desrired color #001ECB */
+    --accent-color: #28B7D0; /* inverse of desrired color #001ECB */
     --scroll-color: #DEEFB7;
     --color-grey: #001ECB;
     --color-black: #FFFFFF;
     --color-white: #000000;
     --svg-theme-filter: brightness(0) saturate(100%) invert(11%) sepia(92%) saturate(4990%) hue-rotate(235deg) brightness(93%) contrast(119%);
+    --title-shadow: drop-shadow(0);
+    .noise {
+        background: radial-gradient(circle at 50% 10%,
+                rgb(0, 20, 90),
+                rgba(255, 255, 0, 0)),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 700 700' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        mix-blend-mode: difference;
+    }
 }
 
 /* This section is for the global style */
@@ -63,7 +76,6 @@ body {
     background-color: var(--background-color);
     color: var(--font-color);
     font-family: var(--primary-font);
-
 }
 
 /* This section is for the main container style */
@@ -103,10 +115,6 @@ body {
     font-size: 0.25em;
     text-align: left;
     margin: -30px;
-}
-
-.bio-code {
-    display: none;
 }
 
 /* Increase font size of the details text for larger screens */
@@ -162,6 +170,41 @@ body {
     position: absolute;
     top: -50px;
     animation: hoverAnimation 3s infinite ease-in-out;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.go-down-btn {
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    margin-top: 75vh;
+    
+    svg {
+      position: relative;
+      z-index: -1;
+      display: block;
+      overflow: visible;
+    }
+  
+    text {
+      font-size: 0.75rem;
+      transform-origin: center;
+      font-family: "Fire Code", sans-serif;
+      animation: rotate-btn 10s linear infinite;
+    }
+
+    :hover {
+        animation-play-state: paused;
+        filter: var(--accent-color-filter)
+    }
+}
+  
+@keyframes rotate-btn{
+    to{ transform: rotate(360deg); }
 }
 
 /* Container for the scroll animation */
@@ -240,7 +283,7 @@ body {
 .theme-btn {
     display: flex;
     align-self: center;
-    margin-right: 1em;
+    margin-right: 20px;
     cursor: pointer;
     font-family: var(--code-font);
     font-size: 1.5em;
@@ -254,70 +297,6 @@ body {
 .theme-btn:hover {
     color: var(--accent-color);
     animation: rotate 5s infinite linear;
-}
-
-.resume-btn {
-    display: none;
-    margin-right: 20px;
-    margin-bottom: 5px;
-    align-self: flex-end;
-}
-
-.glow {
-    font-size: 0.8em;
-    padding: 10px;
-    font-family: var(--code-font);
-    justify-content: space-between;
-    align-self: flex-end;
-    background: hsl(122, 39%, 49%);
-    border: none;
-    border-radius: 35px;
-    color: black;
-    cursor: pointer;
-    letter-spacing: .1em;
-    outline: none;
-    position: relative;
-    text-transform: uppercase;
-    z-index: 1;
-
-    &:hover {
-        animation: glow 1s ease-in infinite;
-    }
-
-    &::before {
-        animation: glow 1s ease-in infinite;
-        background: #4CAF50;
-        border-radius: inherit;
-        content: '';
-        filter: blur(10px);
-        opacity: .75;
-        position: absolute;
-        transition: all .3s ease-in-out;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        right: 0;
-        z-index: -1;
-    }
-
-    &:hover::before {
-        filter: blur(20px);
-        opacity: 1;
-    }
-}
-
-@keyframes glow {
-    0% {
-        background: #4CAF50;
-    }
-
-    25% {
-        background: #66BB6A;
-    }
-
-    100% {
-        background: #4CAF50;
-    }
 }
 
 .top-navbar {
@@ -365,6 +344,17 @@ body {
     width: 100vw;
     flex-direction: column;
     display: flex;
+}
+
+.iam {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.iam li {
+    font-size: 1.5rem;
 }
 
 /* This section is for the section header style */
@@ -443,6 +433,33 @@ body {
     align-items: center;
 }
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.project-tag {
+    font-family: var(--font-priority);
+    font-size: 1em;
+    color: var(--font-color);
+    text-align: center;
+    align-self: center;
+    vertical-align: middle;
+    margin: 0;
+    padding: 5px 7.5px;
+    border: var(--font-color) solid 1px;
+    border-radius: 30px;
+}
+
+.project-tag:hover {
+    background-color: var(--font-color);
+    color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .project-info {
     width: 50vw;
     display: flex;
@@ -479,7 +496,7 @@ body {
 }
 
 .info p a:hover {
-    color: var(--accent-color) !important;
+    color: var(--accent-color-constant) !important;
 }
 
 .in-pic {
@@ -743,7 +760,7 @@ body {
     outline: none;
     font-family: var(--heading-font);
     font-size: 3em;
-    color: var(--accent-color);
+    color: var(--accent-color-constant);
     text-align: center;
     margin-top: 40px;
     animation: caseglitch 6s infinite steps(50);
@@ -817,11 +834,11 @@ textarea::placeholder {
 }
 
 #submit:hover {
-    color: var(--accent-color);
+    color: var(--accent-color-constant);
 }
 
 .footnote {
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-priority);
     width: 100vw;
     height: 2.5em;
     margin-top: 10%;
@@ -850,6 +867,10 @@ textarea::placeholder {
     .top-navbar>:nth-child(3) {
         display: none;
     }
+
+    .globe-location-time {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -865,10 +886,6 @@ textarea::placeholder {
 
     #intro {
         gap: 5vh;
-    }
-
-    .bio-code>p {
-        max-width: 95vw;
     }
 
     .section-header-common {
@@ -925,6 +942,10 @@ textarea::placeholder {
 
     .info h2 {
         font-size: 1.5em;
+    }
+
+    .project-tags {
+        justify-content: center;
     }
 
     .info p {

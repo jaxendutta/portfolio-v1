@@ -7,9 +7,7 @@
     color: var(--font-color);
     z-index: 2;
     letter-spacing: 10px;
-
-    /* Bright things in dark environments usually cast that light, giving off a glow */
-    filter: drop-shadow(0 1px 3px);
+    filter: var(--title-shadow)
 }
 
 .demo {
@@ -433,7 +431,7 @@
 
     60% {
         font-weight: 700;
-        color: var(--color-white);
+        color: #fff;
         filter: blur(0);
     }
 

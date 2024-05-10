@@ -1,0 +1,62 @@
+.content__container {
+    overflow: hidden;
+    height: 2.5rem;
+    border: var(--font-color) solid 1px;
+    border-radius: 30px;
+}
+
+.content__container__list {
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    animation-name: change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.content__container__list__item {
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    color: var(--font-color);
+    font-family: "Orbitron", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    opacity: 0.75;
+}
+
+@keyframes change {
+
+    0%,
+    12.66%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    16.66%,
+    29.32% {
+        transform: translate3d(0, -25%, 0);
+    }
+
+    33.32%,
+    45.98% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    49.98%,
+    62.64% {
+        transform: translate3d(0, -75%, 0);
+    }
+
+    66.64%,
+    79.3% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    83.3%,
+    95.96% {
+        transform: translate3d(0, -25%, 0);
+    }
+}

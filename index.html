@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles/glitch.css">
   <link rel="stylesheet" href="styles/timeline.css">
   <link rel="stylesheet" href="styles/caseglitch.css">
+  <link rel="stylesheet" href="styles/switch.css">
 
   <!-- TODO: og = open graph = preview for embed -->
   <meta property="og:title" content="">
@@ -19,8 +20,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Red+Rose&family=Fira+Code&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Red+Rose&family=Fira+Code&family=Xanh+Mono:ital@0;1&family=Ojuju:wght@200..800&family=Kalnia:wght@100..700&family=Codystar:wght@300;400&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.png" type="image/png">
@@ -42,49 +42,18 @@
         </menu>
       </div>
       <div class="bottom-navbar">
-        <img src="assets/globe.svg" class="svg-theme-filter">
-        <div class="location-time">
+        <img src="assets/globe.svg" class="svg-theme-filter globe-location-time">
+        <div class="location-time globe-location-time">
           <p id="time-para">WATERLOO, CA<br>
             <span id="est"></span>
           </p>
         </div>
         <div style="flex: 1;"></div>
-        <a class="resume-btn" target="_blank"
-          href="https://docs.google.com/document/d/11mhUfmYKXO7jPN1rP6znr2B5zCl0hlrE0pKqAU2lKtU/view">
-          <button class="glow">Résumé</button>
-        </a>
         <button class="theme-btn" data-theme-toggle aria-label="Toggle dark mode" onClick="toggleDarkMode()">
           <i class="fa-solid fa-sun" id="light-icon"></i>
           <i class="fa-solid fa-moon" id="dark-icon"></i>
         </button>
       </div>
-      <section id="intro">
-        <div class="hero-container">
-          <h2 class="hero glitch layers"><span>¿ JAXEN DUTTA ?</span></h2>
-        </div>
-        <div class="bio-code">
-          <p>{
-            <br>&emsp;&emsp;"work": {
-            <br>&emsp;&emsp;&emsp;&emsp;"current": {
-            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"position": "UX/UI HCI Research Assistant",
-            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"company": "Augmented Intelligence Lab"
-            <br>&emsp;&emsp;&emsp;&emsp;}
-            <br>&emsp;&emsp;&emsp;&emsp;"previous": {
-            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"position": "Technical Writer Intern",
-            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"company": "Google"
-            <br>&emsp;&emsp;&emsp;&emsp;}
-            <br>&emsp;&emsp;}
-            <br>&emsp;&emsp;"education": {
-            <br>&emsp;&emsp;&emsp;&emsp;"university": "University of Waterloo",
-            <br>&emsp;&emsp;&emsp;&emsp;"major": "Computer Science",
-            <br>&emsp;&emsp;&emsp;&emsp;"specialization": "Software Engineering",
-            <br>&emsp;&emsp;&emsp;&emsp;"minors": ["Computational Mathematics",
-            <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Combinatorics & Optimization"]
-            <br>&emsp;&emsp;}
-            <br>}
-          </p>
-        </div>
-      </section>
       <section class="moon-container">
         <div class="noise" id="noiseId"></div>
         <div class="center">
@@ -92,7 +61,41 @@
           </div>
         </div>
       </section>
+      <section id="intro">
+        <div class="hero-container">
+          <h2 class="hero glitch layers"><span style="color: var(--font-color)">¿ JAXEN DUTTA ?</span></h2>
+        </div>
+        <div class="iam">
+          <span class="iam-star">✦</span>
+          <div class="content__container">
+        <ul class="content__container__list">
+          <li class="content__container__list__item">UX/UI Engineer</li>
+          <li class="content__container__list__item">HCI Researcher</li>
+          <li class="content__container__list__item">Web Designer</li>
+          <li class="content__container__list__item">App Developer</li>
+        </ul>
+          </div>
+          <span class="iam-star">✦</span>
+        </div>
+        <a href="#projects" class="go-down-btn" title="Scroll Down">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+            <path id="textPath" fill="none" d="M89.322,50.197c0,22.09-17.91,40-40,40c-22.089,0-40-17.91-40-40 c0-22.089,17.911-40,40-40C71.412,10.197,89.322,28.108,89.322,50.197z"/>
+            <polygon fill="var(--font-color)" points="55.334,46 49.333,58 43.333,46 "/>
+            <text>
+              <textPath xlink:href="#textPath">
+                <tspan x="0" style="fill: var(--font-color)">PROJECTS</tspan>
+                <tspan x="75" style="fill: var(--font-color)">✦</tspan>
+                <tspan x="65" dx="30" style="fill: var(--font-color)">WORK</tspan>
+                <tspan x="145" style="fill: var(--font-color)">✦</tspan>
+                <tspan x="105" dx="60" style="fill: var(--font-color)">CONTACT</tspan>
+                <tspan x="230" style="fill: var(--font-color)">✦</tspan>
+                </textPath>
+            </text>
+          </svg>
+        </a>
+      </section>
     </div>
+    
     <div id="content-container">
       <div class="section-header-common section-header" id="projects">
         <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
@@ -115,7 +118,18 @@
             <div class="project-info">
               <div class="info">
                 <h1>FABLER</h1>
-                <h2>Android App (Kotlin + Jetpack Compose)</h2>
+                <h2>Native Android App</h2>
+                <div class="project-tags">
+                  <span class="project-tag">Kotlin</span>
+                  <span class="project-tag">Jetpack Compose</span>
+                  <span class="project-tag">Android SDK 34</span>
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">Ren'Py</span>
+                  <span class="project-tag">OpenAI</span>
+                  <span class="project-tag">Stable Diffusion</span>
+                  <span class="project-tag">Figma</span>
+                  <span class="project-tag">UX/UI Research</span>
+                </div>
                 <div class="project-image-container in-pic">
                   <div class="project-image-inner" style="max-width:360px;">
                     <img src="assets/fabler.png" style="max-width:360px; border:none;">
@@ -178,6 +192,11 @@
               <div class="info">
                 <h1>HIVEMIND</h1>
                 <h2>UX/UI Research & Design</h2>
+                <div class="project-tags">
+                  <span class="project-tag">Figma</span>
+                  <span class="project-tag">UX/UI Design</span>
+                  <span class="project-tag">HCI Research</span>
+                </div>
                 <div class="project-image-container in-pic">
                   <div class="project-image-inner" style="max-width:360px;">
                     <img src="assets/hivemind.png" style="max-width:360px; border:none;">
@@ -240,7 +259,13 @@
             <div class="project-info">
               <div class="info">
                 <h1>SPACE INVADERS</h1>
-                <h2>Kotlin with JavaFX GUI</h2>
+                <h2>Fixed Shooter Game</h2>
+                <div class="project-tags">
+                  <span class="project-tag">Kotlin</span>
+                  <span class="project-tag">JavaFX</span>
+                  <span class="project-tag">UX/UI Design</span>
+                  <span class="project-tag">Game Development</span>
+                </div>
                 <div class="project-image-container in-pic">
                   <div class="project-image-inner">
                     <img src="assets/space-invaders.png">
@@ -306,7 +331,12 @@
             <div class="project-info">
               <div class="info">
                 <h1>FILE EXPLORER</h1>
-                <h2>Kotlin with JavaFX GUI</h2>
+                <h2>File Management Tool</h2>
+                <div class="project-tags">
+                  <span class="project-tag">Kotlin</span>
+                  <span class="project-tag">JavaFX</span>
+                  <span class="project-tag">UX/UI Design</span>
+                </div>
                 <div class="project-image-container in-pic">
                   <div class="project-image-inner">
                     <img src="assets/file_explorer.png">
@@ -373,7 +403,12 @@
             <div class="project-info">
               <div class="info">
                 <h1>LIGHTBOX</h1>
-                <h2>Kotlin with JavaFX GUI</h2>
+                <h2>Image Manipulation Tool</h2>
+                <div class="project-tags">
+                  <span class="project-tag">Kotlin</span>
+                  <span class="project-tag">JavaFX</span>
+                  <span class="project-tag">UX/UI Design</span>
+                </div>
                 <div class="project-image-container in-pic">
                   <div class="project-image-inner">
                     <img src="assets/lightbox.png">
@@ -436,7 +471,16 @@
             <div class="project-info">
               <div class="info">
                 <h1>STRAIGHTS</h1>
-                <h2>C++ in WEB ASSEMBYLY</h2>
+                <h2>CLI Card Game</h2>
+                <div class="project-tags">
+                  <span class="project-tag">C++</span>
+                  <span class="project-tag">WebAssembly</span>
+                  <span class="project-tag">Emscripten</span>
+                  <span class="project-tag">HTML</span>
+                  <span class="project-tag">CSS</span>
+                  <span class="project-tag">JS</span>
+                  <span class="project-tag">Game Development</span>
+                </div>
                 <div class="project-image-container in-pic">
                   <div class="project-image-inner">
                     <img src="assets/straights.png">

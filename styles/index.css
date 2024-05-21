@@ -560,7 +560,7 @@ body {
 }
 
 .btn-cross {
-    color: var(--color-white);
+    color: var(--font-color);
     transition: all 0.5s;
     position: relative;
 }
@@ -576,7 +576,7 @@ body {
 }
 
 .btn-cross span a {
-    color: var(--color-white);
+    color: var(--font-color);
     text-decoration: none;
 }
 
@@ -595,8 +595,8 @@ body {
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    border: 1px solid var(--color-white);
-    background-color: var(--background-color);
+    border: 1px solid var(--font-color);
+    background-color: transparent;
 }
 
 .btn-cross::after {
@@ -608,8 +608,8 @@ body {
     height: 100%;
     z-index: 1;
     transition: all 0.5s;
-    border: 1px solid var(--color-white);
-    background-color: var(--background-color);
+    border: 1px solid var(--font-color);
+    background-color: transparent;
 }
 
 .btn-cross:hover::before {

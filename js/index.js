@@ -50,7 +50,7 @@ const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
 
 /**
-* 3. Update the theme setting and button text accoridng to current settings
+* 3. Update the theme setting and button text according to current settings
 */
 updateButton({ button: button, isDark: currentThemeSetting === "dark" });
 updateThemeOnHtml({ theme: currentThemeSetting });
@@ -140,3 +140,60 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+// Work Experience Items
+document.addEventListener('DOMContentLoaded', () => {
+  const options = document.querySelectorAll('.drop-down-item');
+  let activeOption = null;
+  let isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  options.forEach(option => {
+    const icon = option.querySelector('.drop-down-icon');
+
+    option.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      if (activeOption && activeOption !== option) {
+        activeOption.classList.remove('active', 'hover-highlight');
+      }
+
+      if (option !== activeOption || e.target.closest('.drop-down-icon')) {
+        option.classList.toggle('active');
+        
+        if (isTouchDevice) {
+          if (option.classList.contains('active')) {
+            option.classList.add('hover-highlight');
+          } else {
+            option.classList.remove('hover-highlight');
+          }
+        }
+        
+        activeOption = option.classList.contains('active') ? option : null;
+      }
+    });
+
+    if (isTouchDevice) {
+      icon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (option.classList.contains('active')) {
+          option.classList.remove('active', 'hover-highlight');
+          activeOption = null;
+        } else {
+          if (activeOption) {
+            activeOption.classList.remove('active', 'hover-highlight');
+          }
+          option.classList.add('active', 'hover-highlight');
+          activeOption = option;
+        }
+      });
+    }
+  });
+
+  // Close expanded tile when clicking outside
+  document.addEventListener('click', (e) => {
+    if (activeOption && !activeOption.contains(e.target)) {
+      activeOption.classList.remove('active', 'hover-highlight');
+      activeOption = null;
+    }
+  });
+});

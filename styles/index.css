@@ -695,6 +695,311 @@ body {
     height: 25vh;
 }
 
+/* Work Experience */
+.drop-down-list {
+    width: 90vw;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-self: center;
+    justify-content: center;
+    counter-reset: option-counter;
+    margin-bottom: 3em;
+}
+
+.drop-down-item {
+    position: relative;
+    overflow: hidden;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--code-font);
+    height: 6rem;
+    width: 87.5vw;
+    cursor: pointer;
+    counter-increment: option-counter;
+    transition: height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+}
+
+.drop-down-item:not(:last-child) {
+    border-bottom: 1px solid var(--font-color);
+}
+
+.drop-down-item.hover-highlight {
+    background-color: blue;
+    color: palegreen;
+}
+
+.drop-down-item.hover-highlight .drop-down-icon::before,
+.drop-down-item.hover-highlight .drop-down-icon::after,
+.drop-down-item.hover-highlight .vertical-date .date-line {
+    background-color: palegreen;
+    transition: all 0.3s ease-in-out;
+}
+
+.drop-down-item.hover-highlight .drop-down-content {
+    color: palegreen;
+    a {
+        color: palegreen;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .drop-down-item:hover {
+        background-color: blue;
+        color: palegreen;
+    }
+
+    .drop-down-item:hover .drop-down-icon::before,
+    .drop-down-item:hover .drop-down-icon::after,
+    .drop-down-item:hover .vertical-date .date-line {
+        background-color: palegreen;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .drop-down-item:hover .drop-down-content {
+        color: palegreen;
+        a {
+            color: palegreen;
+        }
+    }
+}
+
+.drop-down-item.active {
+    height: auto;
+    min-height: 300px;
+    cursor: default;
+    transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.drop-down-label {
+    width: 100%;
+    height: 6rem;
+    box-sizing: border-box;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.drop-down-label::before {
+    content: counter(option-counter, decimal-leading-zero) ".";
+    font-size: 2.5rem;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.drop-down-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.drop-down-main {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.drop-down-sub {
+    font-size: 1.2rem;
+}
+
+.drop-down-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.drop-down-icon::before,
+.drop-down-icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--font-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.drop-down-icon::before {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    transform: translateY(-50%);
+}
+
+.drop-down-icon::after {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    transform: translateX(-50%);
+}
+
+.drop-down-item.active .drop-down-icon {
+    transform: rotate(45deg);
+}
+
+.drop-down-content {
+    width: 75%;
+    padding: 20px 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--font-color);
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    a {
+        color: var(--font-color);
+    }
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        pointer-events: none;
+    }
+}
+
+.drop-down-item.active .drop-down-content {
+    opacity: 1;
+}
+
+.vertical-date {
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    bottom: 20px;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.drop-down-item.active .vertical-date {
+    opacity: 1;
+    height: calc(100% - 6rem);
+}
+
+.vertical-date .start-date,
+.vertical-date .end-date {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.9rem;
+    transition: none;
+}
+
+.vertical-date .date-line {
+    flex-grow: 1;
+    width: 2px;
+    background-color: var(--font-color);
+    margin: 10px 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.75s ease-in-out;
+}
+
+.drop-down-item.active .vertical-date .date-line {
+    transform: scaleY(1);
+}
+
+@keyframes drawLine {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .drop-down-list {
+        width: 92.5vw;
+    }
+
+    .drop-down-item {
+        height: 6rem;
+        width: 100%;
+    }
+
+    .drop-down-label {
+        height: 6rem;
+        padding: 0 15px;
+    }
+
+    .drop-down-label::before {
+        display: none;
+    }
+
+    .drop-down-main {
+        font-size: clamp(1.15rem, 4vw, 1.35rem);
+    }
+    
+    .drop-down-sub {
+        font-size: clamp(1rem, 3vw, 1.35rem);
+    }
+
+    .drop-down-content {
+        width: 75%;
+        font-size: clamp(0.8rem, 2.75vw, 1rem);
+    }
+
+    .vertical-date {
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .drop-down-item {
+        height: 5.5rem;
+    }
+
+    .drop-down-label {
+        height: 5.5rem;
+        padding: 0 10px;
+    }
+
+    .drop-down-label::before {
+        margin-right: 5px;
+    }
+
+    .drop-down-content {
+        width: 75%;
+        padding: 20px;
+    }
+
+    .vertical-date {
+        right: 10px;
+    }
+
+    .vertical-date .start-date,
+    .vertical-date .end-date {
+        font-size: 0.8rem;
+    }
+}
+
+.timeline {
+    display: none;
+}
+
 /* Social Media Links */
 
 .socials {

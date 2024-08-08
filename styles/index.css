@@ -8,6 +8,7 @@
     --color-grey: lightgrey;
     --color-black: #000000;
     --color-white: #FFFFFF;
+    --highlight-color: darkblue;
     --sticky-top-pos: 30vh;
     --buffer: 5rem;
     --paragraph-font-size: 1.2em;
@@ -728,7 +729,7 @@ body {
 }
 
 .drop-down-item.hover-highlight {
-    background-color: blue;
+    background-color: var(--highlight-color);
     color: palegreen;
 }
 
@@ -747,19 +748,28 @@ body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .drop-down-item:hover {
-        background-color: blue;
+    .drop-down-item:hover,
+    .drop-down-item.active:hover {
+        background-color: var(--highlight-color);
         color: palegreen;
+        .project-tag {
+            color: palegreen;
+            border: palegreen solid 1px;
+        }
     }
 
     .drop-down-item:hover .drop-down-icon::before,
     .drop-down-item:hover .drop-down-icon::after,
-    .drop-down-item:hover .vertical-date .date-line {
+    .drop-down-item:hover .vertical-date .date-line,
+    .drop-down-item.active:hover .drop-down-icon::before,
+    .drop-down-item.active:hover .drop-down-icon::after,
+    .drop-down-item.active:hover .vertical-date .date-line {
         background-color: palegreen;
         transition: all 0.3s ease-in-out;
     }
 
-    .drop-down-item:hover .drop-down-content {
+    .drop-down-item:hover .drop-down-content,
+    .drop-down-item.active:hover .drop-down-content {
         color: palegreen;
         a {
             color: palegreen;
@@ -1039,7 +1049,7 @@ body {
 }
 
 .social-media:hover {
-    background: blue;
+    background: var(--highlight-color);
     transition: all 0.3s ease-in-out;
 
     a {
@@ -1122,7 +1132,7 @@ input:hover,
 input:focus,
 textarea:hover,
 textarea:focus {
-    background: blue;
+    background: var(--highlight-color);
     color: var(--font-color);
 }
 

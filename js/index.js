@@ -154,20 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       
       if (activeOption && activeOption !== option) {
-        activeOption.classList.remove('active', 'hover-highlight');
+        activeOption.classList.remove('active');
       }
 
       if (option !== activeOption || e.target.closest('.drop-down-icon')) {
         option.classList.toggle('active');
-        
-        if (isTouchDevice) {
-          if (option.classList.contains('active')) {
-            option.classList.add('hover-highlight');
-          } else {
-            option.classList.remove('hover-highlight');
-          }
-        }
-        
         activeOption = option.classList.contains('active') ? option : null;
       }
     });
@@ -176,13 +167,13 @@ document.addEventListener('DOMContentLoaded', () => {
       icon.addEventListener('click', (e) => {
         e.stopPropagation();
         if (option.classList.contains('active')) {
-          option.classList.remove('active', 'hover-highlight');
+          option.classList.remove('active');
           activeOption = null;
         } else {
           if (activeOption) {
-            activeOption.classList.remove('active', 'hover-highlight');
+            activeOption.classList.remove('active');
           }
-          option.classList.add('active', 'hover-highlight');
+          option.classList.add('active');
           activeOption = option;
         }
       });
@@ -192,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close expanded tile when clicking outside
   document.addEventListener('click', (e) => {
     if (activeOption && !activeOption.contains(e.target)) {
-      activeOption.classList.remove('active', 'hover-highlight');
+      activeOption.classList.remove('active');
       activeOption = null;
     }
   });

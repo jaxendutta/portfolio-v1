@@ -10,6 +10,7 @@
     --color-black: #000000;
     --color-white: #FFFFFF;
     --highlight-color: darkblue;
+    --highlight-font-color: palegreen;
 
     /* Sizes and Positions */
     --sticky-top-pos: 30vh;
@@ -206,13 +207,14 @@ html, body {
 .bottom-navbar {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     display: flex;
     flex-direction: row;
-    text-align: center;
-    text-decoration: none;
-    z-index: 10000;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
+    z-index: 10000;
 }
 
 .bottom-navbar img {
@@ -241,11 +243,11 @@ html, body {
 
 .theme-btn {
     display: flex;
-    align-self: center;
-    margin-right: 1.5vw;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     font-family: var(--code-font);
-    font-size: 1.5em;
+    font-size: 2rem;
     color: var(--font-color);
     text-decoration: none;
     background-color: transparent;
@@ -272,6 +274,7 @@ html, body {
 .top-navbar a {
     text-decoration: none;
     color: var(--nav-font-color);
+    mix-blend-mode: difference;
 }
 
 .top-navbar a::after {
@@ -643,7 +646,7 @@ html, body {
     .drop-down-item.hover,
     .drop-down-item.active.hover {
         background-color: var(--highlight-color);
-        color: palegreen;
+        color: var(--highlight-font-color);
     }
 
     .drop-down-item.hover .drop-down-icon::before,
@@ -652,18 +655,18 @@ html, body {
     .drop-down-item.active.hover .drop-down-icon::before,
     .drop-down-item.active.hover .drop-down-icon::after,
     .drop-down-item.active.hover .vertical-date .date-line {
-        background-color: palegreen;
+        background-color: var(--highlight-font-color);
         transition: all 0.3s ease-in-out;
     }
 
     .drop-down-item.hover .drop-down-content,
     .drop-down-item.active.hover .drop-down-content {
-        color: palegreen;
+        color: var(--highlight-font-color);
     }
 
     .drop-down-item.hover .drop-down-content a,
     .drop-down-item.active.hover .drop-down-content a {
-        color: palegreen;
+        color: var(--highlight-font-color);
     }
 }
 
@@ -837,6 +840,7 @@ html, body {
     align-items: center;
     justify-content: center;
     align-self: center;
+    counter-reset: social-counter;
 }
 
 .social-media > a {
@@ -854,12 +858,26 @@ html, body {
     align-items: center;
     border-left: none;
     border-right: none;
-    border-top: 1px solid var(--font-color);
     border-bottom: none;
     transition: all 0.3s ease-in-out;
     background: transparent;
     padding: 0.5em;
 }
+
+.social-media:not(:last-child) > a {
+    border-bottom: 1px solid var(--font-color);
+}
+
+.social-content {
+    display: flex;
+    align-items: center;
+}
+
+  .social-number::before {
+    counter-increment: social-counter;
+    content: counter(social-counter, decimal-leading-zero) ".";
+    margin-right: 0.5em;
+}  
 
 .svg-theme-filter {
     filter: var(--svg-theme-filter);
@@ -871,7 +889,7 @@ html, body {
 }
 
 .social-media:hover a {
-    color: palegreen;
+    color: var(--highlight-font-color);
 }
 
 .social-media:hover .svg-theme-filter {
@@ -890,7 +908,7 @@ html, body {
 .contact-or {
     outline: none;
     font-family: var(--heading-font);
-    font-size: 3em;
+    font-size: 3rem;
     color: var(--accent-color-constant);
     text-align: center;
     margin-top: 40px;
@@ -948,7 +966,7 @@ input:focus,
 textarea:hover,
 textarea:focus {
     background: var(--highlight-color);
-    color: var(--font-color);
+    color: var(--highlight-font-color);
 }
 
 input::placeholder,
@@ -1112,8 +1130,8 @@ textarea::placeholder {
         height: 7.5vh;
     }
 
-    .social-line > span {
-        display: none;
+    .contact-or {
+        font-size: 2.5em;
     }
 
     .footnote {
@@ -1123,6 +1141,10 @@ textarea::placeholder {
 }
 
 @media screen and (max-width: 768px) {
+    .theme-btn {
+        font-size: 2rem;
+    }
+
     .drop-down-list {
         width: 92.5vw;
     }
@@ -1153,6 +1175,10 @@ textarea::placeholder {
     .vertical-date {
         right: 15px;
     }
+
+    .social-line > span {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 720px) {
@@ -1181,6 +1207,10 @@ textarea::placeholder {
 }
 
 @media screen and (max-width: 480px) {
+    .theme-btn {
+        font-size: 1.75rem;
+    }
+
     .drop-down-item {
         height: 5.5rem;
     }

@@ -18,7 +18,6 @@ const updateButton = ({ button, isDark }) => {
 
 const updateThemeOnHtml = (theme) => {
   document.documentElement.setAttribute("data-theme", theme);
-  document.querySelector(".menu-container").style.mixBlendMode = "normal";
 };
 
 const initializeTheme = () => {

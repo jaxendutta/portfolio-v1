@@ -38,10 +38,10 @@
     --font-color: #001ECB;
     --nav-font-color: #FFE134;
     --accent-color: #28B7D0;
-    --scroll-color: #DEEFB7;
     --color-grey: #001ECB;
     --color-black: #FFFFFF;
     --color-white: #000000;
+    --highlight-font-color-secondary: #F4F1EA;
     --svg-theme-filter: brightness(0) saturate(100%) invert(11%) sepia(92%) saturate(4990%) hue-rotate(235deg) brightness(93%) contrast(119%);
     --title-shadow: none;
 }
@@ -622,6 +622,7 @@ html, body {
     justify-content: center;
     counter-reset: option-counter;
     margin-bottom: 3em;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .drop-down-item {
@@ -636,6 +637,7 @@ html, body {
     cursor: pointer;
     counter-increment: option-counter;
     transition: height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .drop-down-item:not(:last-child) {
@@ -643,36 +645,41 @@ html, body {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .drop-down-item.hover,
-    .drop-down-item.active.hover {
+    .drop-down-item:hover,
+    .drop-down-item.active:hover {
         background-color: var(--highlight-color);
         color: var(--highlight-font-color);
     }
 
-    .drop-down-item.hover .drop-down-icon::before,
-    .drop-down-item.hover .drop-down-icon::after,
-    .drop-down-item.hover .vertical-date .date-line,
-    .drop-down-item.active.hover .drop-down-icon::before,
-    .drop-down-item.active.hover .drop-down-icon::after,
-    .drop-down-item.active.hover .vertical-date .date-line {
+    .drop-down-item:hover .drop-down-icon::before,
+    .drop-down-item:hover .drop-down-icon::after,
+    .drop-down-item:hover .vertical-date .date-line,
+    .drop-down-item.active:hover .drop-down-icon::before,
+    .drop-down-item.active:hover .drop-down-icon::after,
+    .drop-down-item.active:hover .vertical-date .date-line {
         background-color: var(--highlight-font-color);
         transition: all 0.3s ease-in-out;
     }
 
-    .drop-down-item.hover .drop-down-content,
-    .drop-down-item.active.hover .drop-down-content {
+    .drop-down-item:hover .drop-down-content,
+    .drop-down-item.active:hover .drop-down-content,
+    .drop-down-item:hover .drop-down-content a,
+    .drop-down-item.active:hover .drop-down-content a {
         color: var(--highlight-font-color);
     }
 
-    .drop-down-item.hover .drop-down-content a,
-    .drop-down-item.active.hover .drop-down-content a {
-        color: var(--highlight-font-color);
+    .drop-down-item.active:hover .skill-tag {
+        border-color: var(--highlight-font-color-secondary);
+        color: var(--highlight-font-color-secondary);
     }
 }
 
+/* No highlight styles for touch devices */
 @media (hover: none) {
-    .drop-down-item:active {
-        background-color: var(--highlight-color);
+    .drop-down-item:active,
+    .drop-down-item.active {
+        background-color: transparent;
+        color: inherit;
     }
 }
 

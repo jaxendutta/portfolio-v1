@@ -1,10 +1,14 @@
-// Clock
+/********************
+  Clock and Timezone
+ ********************/
 setInterval(() => {
   const estTime = new Date().toLocaleString('nl-NL', {timeZone: 'America/Toronto'});
   document.getElementById('est').innerHTML = estTime;
 }, 1000);
 
-// Theme switcher
+/****************
+  Theme Switcher
+ ****************/
 function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
   if (localStorageTheme !== null) {
     return localStorageTheme;
@@ -12,9 +16,7 @@ function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark })
   return (systemSettingDark.matches) ? "dark" : "light";
 }
 
-/**
-* Utility function to update the button text and aria-label.
-*/
+// Utility function to update the button text and aria-label
 function updateButton({ button, isDark }) {
   button.setAttribute(
     "aria-label", 
@@ -24,40 +26,26 @@ function updateButton({ button, isDark }) {
   document.getElementById("dark-icon").style.display = isDark ? "none" : "block";
 }
 
-/**
-* Utility function to update the theme setting on the html tag
-*/
+// Utility function to update the theme setting on the html tag
 function updateThemeOnHtml({ theme }) {
   document.querySelector("html").setAttribute("data-theme", theme);
   document.getElementsByClassName("menu-container")[0].setAttribute("mix-blend-mode", "normal");
 }
 
-
-/**
-* On page load:
-*/
-
-/**
-* 1. Grab what we need from the DOM and system settings on page load
-*/
+//On page load:
+// 1. Grab what we need from the DOM and system settings on page load
 const button = document.querySelector("[data-theme-toggle]");
 const localStorageTheme = localStorage.getItem("theme");
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-/**
-* 2. Work out the current site settings
-*/
+// 2. Work out the current site settings
 let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
 
-/**
-* 3. Update the theme setting and button text according to current settings
-*/
+// 3. Update the theme setting and button text according to current settings
 updateButton({ button: button, isDark: currentThemeSetting === "dark" });
 updateThemeOnHtml({ theme: currentThemeSetting });
 
-/**
-* 4. Add an event listener to toggle the theme
-*/
+// 4. Add an event listener to toggle the theme
 button.addEventListener("click", (event) => {
   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
   localStorage.setItem("theme", newTheme);
@@ -66,11 +54,11 @@ button.addEventListener("click", (event) => {
   currentThemeSetting = newTheme;
 });
 
-// Timeline animation and progress
-const timelines = document.querySelectorAll(".timeline__right");
-const trackers = document.querySelectorAll(".timeline__tracker");
+/*******************
+  Divider Animation
+ *******************/
 
-// This is for keeping track of the scroll
+// Scroll tracking variables
 let scrollPosition = [];
 let lastScrollTop = 0;
 
@@ -89,24 +77,6 @@ function is_divider_visible(elem) {
 window.addEventListener(
   "scroll",
   (e) => {
-    // Timeline animation and progress
-    timelines.forEach((timeline, i) => {
-      // Animate on scroll
-      if (trackers[i].offsetTop > 0) {
-        timeline
-          .querySelector(".timeline__content")
-          .classList.add("animate-on-scroll");
-      } else {
-        timeline
-          .querySelector(".timeline__content")
-          .classList.remove("animate-on-scroll");
-      }
-      // Timeline progress
-      timeline.style.background = `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) ${trackers[i].offsetTop + 5
-        }px, var(--color-grey) ${trackers[i].offsetTop + 5
-        }px, var(--color-grey) 100%)`;
-    });
-
     // Detect scroll direction here
     const curScrollTop = window.scrollY || document.documentElement.scrollTop;
     const direction = curScrollTop < lastScrollTop ? 1 : -1;
@@ -141,7 +111,9 @@ window.addEventListener(
   { passive: true }
 );
 
-// Work Experience Items
+/********************************
+  Work Experience Drop Down List
+ ********************************/
 document.addEventListener('DOMContentLoaded', () => {
   const options = document.querySelectorAll('.drop-down-item');
   let activeOption = null;

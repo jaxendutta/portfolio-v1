@@ -638,6 +638,7 @@ html, body {
     counter-increment: option-counter;
     transition: height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
     -webkit-tap-highlight-color: transparent;
+    z-index: 1;
 }
 
 .drop-down-item:not(:last-child) {
@@ -681,6 +682,14 @@ html, body {
         background-color: transparent;
         color: inherit;
     }
+
+    .drop-down-sub a:active {
+        color: inherit;
+    }
+    
+    .drop-down-sub a:active .external-link-icon {
+        transform: none;
+    }
 }
 
 .drop-down-item.active {
@@ -703,7 +712,7 @@ html, body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .drop-down-label::before {
@@ -719,7 +728,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    padding-right: 30px;
 }
 
 .drop-down-main {
@@ -729,6 +738,35 @@ html, body {
 
 .drop-down-sub {
     font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.drop-down-sub a {
+    color: inherit;
+    text-decoration: none;
+    /* display: inline-flex; */
+    align-items: center;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.drop-down-sub a:hover {
+    color: var(--accent-color);
+}
+
+.external-link-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.drop-down-sub a:hover .external-link-icon {
+    transform: translateX(2px) translateY(-2px);
 }
 
 .drop-down-icon {
@@ -737,6 +775,7 @@ html, body {
     position: relative;
     transition: transform 0.3s ease;
     z-index: 2;
+    flex-shrink: 0;
 }
 
 .drop-down-icon::before,

@@ -97,9 +97,9 @@ const initializeDropDownList = () => {
 
   options.forEach(option => {
     const icon = option.querySelector('.drop-down-icon');
+    const companyLink = option.querySelector('.drop-down-sub a');
 
     if (!isTouchDevice) {
-      // Add hover effect only for non-touch devices
       option.addEventListener('mouseenter', () => {
         option.classList.add('hover');
       });
@@ -110,11 +110,23 @@ const initializeDropDownList = () => {
     }
 
     option.addEventListener('click', (e) => {
+      // Check if the click is on the company link
+      if (companyLink && companyLink.contains(e.target)) {
+        // Allow the default link behavior
+        return;
+      }
+
       e.preventDefault();
       if (option !== activeOption || e.target.closest('.drop-down-icon')) {
         toggleOption(option);
       }
     });
+
+    if (companyLink) {
+      companyLink.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent the click from bubbling up to the option
+      });
+    }
 
     if (isTouchDevice) {
       icon.addEventListener('click', (e) => {

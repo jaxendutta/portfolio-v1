@@ -11,6 +11,7 @@
     --color-white: #FFFFFF;
     --highlight-color: darkblue;
     --highlight-font-color: palegreen;
+    --highlight-font-color-secondary: #F4F1EA;
 
     /* Sizes and Positions */
     --sticky-top-pos: 30vh;
@@ -673,6 +674,10 @@ html, body {
         border-color: var(--highlight-font-color-secondary);
         color: var(--highlight-font-color-secondary);
     }
+
+    .drop-down-item:hover .team-info {
+        border-bottom: 1px solid var(--highlight-font-color-secondary);
+    }
 }
 
 /* No highlight styles for touch devices */
@@ -776,6 +781,7 @@ html, body {
     transition: transform 0.3s ease;
     z-index: 2;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .drop-down-icon::before,
@@ -834,6 +840,13 @@ html, body {
 
 .drop-down-item.active .drop-down-content {
     opacity: 1;
+}
+
+.team-info {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 100%;
+    border-bottom: 1px solid var(--font-color);
 }
 
 .vertical-date {

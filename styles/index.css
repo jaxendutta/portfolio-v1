@@ -47,7 +47,6 @@
     --svg-theme-filter: brightness(0) saturate(100%) invert(11%) sepia(92%) saturate(4990%) hue-rotate(235deg) brightness(93%) contrast(119%);
     --title-shadow: none;
     --font-background: url("https://media.giphy.com/media/YAxpwobytgjWgmIbP9/giphy.gif");
-    --title-shadow: 3px 3px 16px rgba(40, 102, 138, 0.5);
 }
 
 [data-theme='light'] .noise {
@@ -101,7 +100,6 @@ html, body {
         background-clip: text;
         color: transparent;
         padding-right: 0.1em;
-        text-shadow: var(--title-shadow);
     }
 }
 

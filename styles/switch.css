@@ -60,3 +60,14 @@
         transform: translate3d(0, -25%, 0);
     }
 }
+
+@media (max-width: 768px) {
+    .content__container {
+        height: 2.5rem;
+    }
+
+    .content__container__list__item {
+        line-height: 2.5rem;
+        font-size: 1rem;
+    }
+}

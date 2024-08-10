@@ -27,6 +27,7 @@
     --accent-color-filter: brightness(0) saturate(100%) invert(42%) sepia(22%) saturate(3345%) hue-rotate(334deg) brightness(84%) contrast(100%);
     --svg-theme-filter: invert(0%);
     --title-shadow: drop-shadow(0 1px 3px);
+    --font-background: url("https://i.gifer.com/ByRk.gif");
 
     /* Fonts */
     --heading-font: 'Major Mono Display', monospace;
@@ -45,6 +46,8 @@
     --highlight-font-color-secondary: #F4F1EA;
     --svg-theme-filter: brightness(0) saturate(100%) invert(11%) sepia(92%) saturate(4990%) hue-rotate(235deg) brightness(93%) contrast(119%);
     --title-shadow: none;
+    --font-background: url("https://media.giphy.com/media/YAxpwobytgjWgmIbP9/giphy.gif");
+    --title-shadow: 3px 3px 16px rgba(40, 102, 138, 0.5);
 }
 
 [data-theme='light'] .noise {
@@ -86,6 +89,20 @@ html, body {
     width: 100vw;
     min-height: 500px;
     height: 100vh;
+    h2 {
+        font-size: 5rem;
+        font-family: var(--heading-font);
+        font-weight: 800;
+        font-style: italic;
+        background-image: var(--font-background);
+        background-size: cover;
+        background-position: top left;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        padding-right: 0.1em;
+        text-shadow: var(--title-shadow);
+    }
 }
 
 #intro {
@@ -254,6 +271,7 @@ html, body {
     background-color: transparent;
     border: none;
     transition: all 0.25s ease-in-out;
+    padding: 0;
 }
 
 .theme-btn:hover {
@@ -827,8 +845,12 @@ html, body {
     z-index: 1;
 }
 
-.drop-down-content a {
-    color: var(--font-color);
+.drop-down-item .drop-down-content p a {
+    color: inherit;
+}
+
+.drop-down-item .drop-down-content p a:hover {
+    color: var(--accent-color-constant) !important;
 }
 
 .drop-down-content .skill-tags {
@@ -843,8 +865,8 @@ html, body {
 }
 
 .team-info {
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     width: 100%;
     border-bottom: 1px solid var(--font-color);
 }
@@ -1200,6 +1222,14 @@ textarea::placeholder {
 }
 
 @media screen and (max-width: 768px) {
+    .hero-container > h2 {
+        font-size: 4rem !important;
+    }
+
+    .iam-star {
+        font-size: 2rem;
+    }
+
     .theme-btn {
         font-size: 2rem;
     }

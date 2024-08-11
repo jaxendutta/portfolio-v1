@@ -180,23 +180,67 @@ html, body {
     font-size: 1.5rem;
 }
 
-.go-down-btn svg {
-    overflow: visible;
+.button-container {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
 }
 
-.go-down-btn text {
-    font-size: 0.75rem;
-    transform-origin: center;
+.rotating-button {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+}
+
+.rotating-button:hover {
+    .arrow-down {
+        border-top: 11px solid var(--accent-color-constant);
+    }
+
+    .rotating-text {
+        animation-play-state: paused;
+    }
+
+    .rotating-text text {
+        fill: var(--accent-color-constant);
+    } 
+}
+
+.rotating-text {
+    width: 100%;
+    height: 100%;
+    animation: spin 10s linear infinite;
+}
+
+.rotating-text text {
+    fill: var(--font-color);
     font-family: var(--code-font);
-    animation: rotate-btn 10s linear infinite;
 }
 
-.go-down-btn:hover {
-    filter: var(--accent-color-filter);
+.inner-circle {
+    position: absolute;
+    top: 17.5px;
+    left: 17.5px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes rotate-btn {
-    to { transform: rotate(360deg); }
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 11px solid var(--font-color);
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes hoverAnimation {
@@ -544,7 +588,7 @@ html, body {
     transform: rotate(45deg);
 }
 
-.rotating-btn {
+.rotating-overlay-btn {
     width: 100px;
     height: 100px;
     background-color: var(--background-color);
@@ -558,13 +602,13 @@ html, body {
     color: var(--font-color);
 }
 
-.rotating-btn:hover {
+.rotating-overlay-btn:hover {
     animation-play-state: paused;
     color: var(--scroll-color);
     background-color: blue;
 }
 
-.rotating-btn:hover i {
+.rotating-overlay-btn:hover i {
     color: var(--scroll-color);
 }
 
@@ -1269,6 +1313,14 @@ textarea::placeholder {
 }
 
 @media screen and (max-width: 480px) {
+    #intro {
+        gap: 4vh;
+    }
+
+    .hero-container > h2 {
+        margin-bottom: 0;
+    }
+
     .theme-btn {
         font-size: 1.75rem;
     }

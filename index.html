@@ -85,22 +85,23 @@
           </div>
           <span class="iam-star">✦</span>
         </div>
-        <a href="#projects" class="go-down-btn" title="Scroll Down">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-            <path id="textPath" fill="none" d="M89.322,50.197c0,22.09-17.91,40-40,40c-22.089,0-40-17.91-40-40 c0-22.089,17.911-40,40-40C71.412,10.197,89.322,28.108,89.322,50.197z"/>
-            <polygon fill="var(--font-color)" points="55.334,46 49.333,58 43.333,46 "/>
-            <text>
-              <textPath xlink:href="#textPath">
-                <tspan x="0" style="fill: var(--font-color)">PROJECTS</tspan>
-                <tspan x="75" style="fill: var(--font-color)">✦</tspan>
-                <tspan x="65" dx="30" style="fill: var(--font-color)">WORK</tspan>
-                <tspan x="145" style="fill: var(--font-color)">✦</tspan>
-                <tspan x="105" dx="60" style="fill: var(--font-color)">CONTACT</tspan>
-                <tspan x="230" style="fill: var(--font-color)">✦</tspan>
-                </textPath>
-            </text>
-          </svg>
-        </a>
+        <div class="button-container">
+          <a href="#projects" class="rotating-button">
+            <svg class="rotating-text" viewBox="0 0 100 100">
+                <defs>
+                    <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                </defs>
+                <text font-size="14">
+                    <textPath xlink:href="#circle" startOffset="0">
+                        ✦ PROJECTS ✦ WORK ✦ RÉSUMÉ
+                      </textPath>
+                </text>
+            </svg>
+            <div class="inner-circle">
+                <div class="arrow-down"></div>
+            </div>
+          </a>
+        </div>
       </section>
     </div>
     
@@ -142,7 +143,7 @@
                   <div class="project-image-inner" style="max-width:360px;">
                     <img src="assets/fabler.png" style="max-width:360px; border:none;" alt="Screenshot of the Fabler app">
                     <div class="overlay">
-                      <a class="rotating-btn" href="https://github.com/SE2-Fabler/" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+                      <a class="rotating-overlay-btn" href="https://github.com/SE2-Fabler/" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
                     </div>
                   </div>
                 </div>
@@ -169,7 +170,7 @@
               <div class="project-image-inner" style="max-width:360px;">
                 <img src="assets/fabler.png" style="max-width:360px; border:none;" alt="Screenshot of the Fabler app">
                 <div class="overlay">
-                  <a class="rotating-btn" href="https://github.com/SE2-Fabler/" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+                  <a class="rotating-overlay-btn" href="https://github.com/SE2-Fabler/" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
                 </div>
               </div>
             </div>
@@ -210,7 +211,7 @@
                   <div class="project-image-inner" style="max-width:360px;">
                     <img src="assets/hivemind.png" style="max-width:360px; border:none;" alt="Screenshot of the Hivemind app">
                     <div class="overlay">
-                      <a class="rotating-btn" href="https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down" target="_blank"><i class="fa-brands fa-figma fa-2xl"></i></a>
+                      <a class="rotating-overlay-btn" href="https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down" target="_blank"><i class="fa-brands fa-figma fa-2xl"></i></a>
                     </div>
                   </div>
                 </div>
@@ -238,7 +239,7 @@
               <div class="project-image-inner" style="max-width:360px;">
                 <img src="assets/hivemind.png" style="max-width:360px; border:none;" alt="Screenshot of the Hivemind app">
                 <div class="overlay">
-                  <a class="rotating-btn" href="https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down" target="_blank"><i class="fa-brands fa-figma fa-2xl"></i></a>
+                  <a class="rotating-overlay-btn" href="https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down" target="_blank"><i class="fa-brands fa-figma fa-2xl"></i></a>
                 </div>
               </div>
             </div>
@@ -279,7 +280,7 @@
                   <div class="project-image-inner">
                     <img src="assets/space-invaders.png" alt="Screenshot of a Space Invaders screen">
                     <div class="overlay">
-                      <a class="rotating-btn" href="https://github.com/jaxendutta/space-invaders" target="_blank">
+                      <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/space-invaders" target="_blank">
                         <i class="fa-brands fa-github fa-2xl"></i>
                       </a>
                     </div>
@@ -308,7 +309,7 @@
               <div class="project-image-inner">
                 <img src="assets/space-invaders.png" alt="Screenshot of a Space Invaders screen">
                 <div class="overlay">
-                  <a class="rotating-btn" href="https://github.com/jaxendutta/space-invaders/" target="_blank">
+                  <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/space-invaders/" target="_blank">
                     <i class="fa-brands fa-github fa-2xl"></i>
                   </a>
                 </div>
@@ -350,7 +351,7 @@
                   <div class="project-image-inner">
                     <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
                     <div class="overlay">
-                      <a class="rotating-btn" href="https://github.com/jaxendutta/file-explorer/" target="_blank">
+                      <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/file-explorer/" target="_blank">
                         <i class="fa-brands fa-github fa-2xl"></i>
                       </a>
                     </div>
@@ -380,7 +381,7 @@
               <div class="project-image-inner">
                 <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
                 <div class="overlay">
-                  <a class="rotating-btn" href="https://github.com/jaxendutta/file-explorer/" target="_blank">
+                  <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/file-explorer/" target="_blank">
                     <i class="fa-brands fa-github fa-2xl"></i>
                   </a>
                 </div>
@@ -422,7 +423,7 @@
                   <div class="project-image-inner">
                     <img src="assets/lightbox.png" alt="Screenshot of a Lightbox screen">
                     <div class="overlay">
-                      <a class="rotating-btn" href="https://github.com/jaxendutta/lightbox/" target="_blank">
+                      <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/lightbox/" target="_blank">
                         <i class="fa-brands fa-github fa-2xl"></i>
                       </a>
                     </div>
@@ -448,7 +449,7 @@
               <div class="project-image-inner">
                 <img src="assets/lightbox.png" alt="Screenshot of a Lightbox screen">
                 <div class="overlay">
-                  <a class="rotating-btn" href="https://github.com/jaxendutta/lightbox/" target="_blank">
+                  <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/lightbox/" target="_blank">
                     <i class="fa-brands fa-github fa-2xl"></i>
                   </a>
                 </div>
@@ -494,7 +495,7 @@
                   <div class="project-image-inner">
                     <img src="assets/straights.png" alt="Screenshot of a Straights screen">
                     <div class="overlay">
-                      <a class="rotating-btn" href="https://github.com/jaxendutta/straights/" target="_blank">
+                      <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/straights/" target="_blank">
                         <i class="fa-brands fa-github fa-2xl"></i>
                       </a>
                     </div>
@@ -520,7 +521,7 @@
               <div class="project-image-inner">
                 <img src="assets/straights.png" alt="Screenshot of a Straights screen">
                 <div class="overlay">
-                  <a class="rotating-btn" href="https://github.com/jaxendutta/straights/" target="_blank">
+                  <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/straights/" target="_blank">
                     <i class="fa-brands fa-github fa-2xl"></i>
                   </a>
                 </div>

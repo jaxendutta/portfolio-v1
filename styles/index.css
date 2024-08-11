@@ -137,8 +137,7 @@ html, body {
     width: 100vw;
     min-height: 500px;
     height: 100vh;
-    h2 {
-        font-size: 5rem;
+    h1 {
         font-family: var(--heading-font);
         font-weight: 800;
         font-style: italic;
@@ -1131,6 +1130,10 @@ textarea::placeholder {
         font-size: 1.5em;
     }
 
+    .hero-container > h1 {
+        font-size: 7rem !important;
+    }
+
     .projects {
         display: flex;
         flex-direction: column;
@@ -1242,11 +1245,7 @@ textarea::placeholder {
     }
 }
 
-@media screen and (max-width: 768px) {
-    .hero-container > h2 {
-        font-size: 3.75rem !important;
-    }
-
+@media screen and (max-width: 768px) {    
     .iam-star {
         font-size: 2rem;
     }
@@ -1307,8 +1306,8 @@ textarea::placeholder {
         display: none;
     }
 
-    .globe-location-time {
-        display: none;
+    .hero-container > h1 {
+        font-size: 5rem !important;
     }
 }
 
@@ -1317,8 +1316,13 @@ textarea::placeholder {
         gap: 4vh;
     }
 
-    .hero-container > h2 {
-        margin-bottom: 0;
+    .hero-container > h1 {
+        font-size: 4rem !important;
+        margin: 0;
+    }
+
+    .globe-location-time {
+        display: none;
     }
 
     .theme-btn {

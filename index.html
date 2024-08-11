@@ -42,26 +42,25 @@
     <div id="hero-container">
       <div class="menu-container">
         <menu class="top-navbar">
-          <li><a href="#main">ABOUT</a></li>
+          <li><a href="#main">HOME</a></li>
           <li><a href="#projects">PROJECTS</a></li>
           <li style="flex: 1;"></li>
           <li><a href="#work">WORK</a></li>
           <li><a href="#contact">CONTACT</a></li>
         </menu>
       </div>
-      <div class="bottom-navbar">
-        <img src="assets/globe.svg" class="svg-theme-filter globe-location-time" alt="Globe Icon">
-        <div class="location-time globe-location-time">
+      <div class="location-time-globe">
+        <img class="globe svg-theme-filter" src="assets/globe.svg" alt="Globe Icon">
+        <div class="location-time">
           <p id="time-para">WATERLOO, CA<br>
             <span id="est"></span>
           </p>
         </div>
-        <div style="flex: 1;"></div>
-        <button class="theme-btn" data-theme-toggle aria-label="Toggle dark mode" onClick="toggleDarkMode()">
-          <i class="fa-solid fa-sun" id="light-icon"></i>
-          <i class="fa-solid fa-moon" id="dark-icon"></i>
-        </button>
       </div>
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle dark mode" onClick="toggleDarkMode()">
+        <i class="fa-solid fa-sun" id="light-icon"></i>
+        <i class="fa-solid fa-moon" id="dark-icon"></i>
+      </button>
       <section class="moon-container">
         <div class="noise" id="noiseId"></div>
         <div class="center">
@@ -75,12 +74,12 @@
         </div>
         <div class="iam">
           <span class="iam-star">✦</span>
-          <div class="content__container">
-            <ul class="content__container__list">
-              <li class="content__container__list__item">UX/UI Engineer</li>
-              <li class="content__container__list__item">HCI Researcher</li>
-              <li class="content__container__list__item">Web Designer</li>
-              <li class="content__container__list__item">App Developer</li>
+          <div class="roles-container">
+            <ul class="roles-list">
+              <li class="roles">UX/UI Engineer</li>
+              <li class="roles">HCI Researcher</li>
+              <li class="roles">Web Designer</li>
+              <li class="roles">App Developer</li>
             </ul>
           </div>
           <span class="iam-star">✦</span>

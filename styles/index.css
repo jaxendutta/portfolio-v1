@@ -125,21 +125,26 @@ html, body {
     border-radius: 50%;
     position: absolute;
     top: -50px;
-    animation: hoverAnimation 3s infinite ease-in-out;
+    animation: soft-bounce 3s infinite ease-in-out;
     place-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
 }
- 
+
+@keyframes soft-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
 #hero-container {
     width: 100vw;
     min-height: 500px;
     height: 100vh;
     h1 {
         font-family: var(--heading-font);
-        font-weight: 800;
+        font-size: 6.5rem;
         font-style: italic;
         background-image: var(--font-background);
         background-size: cover;
@@ -193,20 +198,6 @@ html, body {
     cursor: pointer;
 }
 
-.rotating-button:hover {
-    .arrow-down {
-        border-top: 11px solid var(--accent-color-constant);
-    }
-
-    .rotating-text {
-        animation-play-state: paused;
-    }
-
-    .rotating-text text {
-        fill: var(--accent-color-constant);
-    } 
-}
-
 .rotating-text {
     width: 100%;
     height: 100%;
@@ -242,9 +233,12 @@ html, body {
     100% { transform: rotate(360deg); }
 }
 
-@keyframes hoverAnimation {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.rotating-button:hover .arrow-down {
+    border-top: 11px solid var(--accent-color-constant);
+}
+
+.rotating-button:hover .rotating-text text {
+    fill: var(--accent-color-constant);
 }
 
 .menu-container {
@@ -257,20 +251,16 @@ html, body {
     mix-blend-mode: difference;
 }
 
-.bottom-navbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.location-time-globe {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    z-index: 10000;
+    justify-content: center;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
 }
 
-.bottom-navbar img {
+.globe {
     width: 1.5em;
     height: 1.5em;
     opacity: 0.5;
@@ -295,18 +285,19 @@ html, body {
 }
 
 .theme-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     font-family: var(--code-font);
     font-size: 2rem;
     color: var(--font-color);
-    text-decoration: none;
     background-color: transparent;
     border: none;
     transition: all 0.25s ease-in-out;
     padding: 0;
+    z-index: 10;
 }
 
 .theme-btn:hover {
@@ -1321,7 +1312,7 @@ textarea::placeholder {
         margin: 0;
     }
 
-    .globe-location-time {
+    .location-time-globe {
         display: none;
     }
 

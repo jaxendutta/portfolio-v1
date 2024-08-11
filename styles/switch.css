@@ -1,11 +1,11 @@
-.content__container {
+.roles-container {
     overflow: hidden;
     height: 2.5rem;
     border: var(--font-color) solid 1px;
     border-radius: 30px;
 }
 
-.content__container__list {
+.roles-list {
     margin-top: 0;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -17,7 +17,7 @@
     animation-iteration-count: infinite;
 }
 
-.content__container__list__item {
+.roles {
     line-height: 2.5rem;
     font-size: 1.5rem;
     color: var(--font-color);
@@ -62,11 +62,11 @@
 }
 
 @media (max-width: 768px) {
-    .content__container {
+    .roles-container {
         height: 2.5rem;
     }
 
-    .content__container__list__item {
+    .roles {
         line-height: 2.5rem;
         font-size: 1rem;
     }

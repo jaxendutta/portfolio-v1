@@ -33,7 +33,14 @@
         box-shadow: none;
     }
 
-    .color-item,
+    .color-item.very-dark {
+        border: none;
+    }
+    
+    .color-item.very-light {
+        border: 1px dashed rgba(0, 0, 0, 0.3); /* Slightly transparent black */
+    }
+
     .color-description {
         border: 1px dashed var(--font-color);
     }
@@ -360,24 +367,38 @@ main {
     overflow-y: auto;
 }
 
-.font-header {
-    display: flex;
+.typography-card .font-header {
+    margin-bottom: 1rem;
+}
+
+.typography-card .font-name-link {
     align-items: center;
+    text-decoration: none;
+    color: var(--font-color);
+    transition: color 0.3s ease;
+    font-size: 3rem;
 }
 
-.font-header span {
-    font-size: 5rem;
-    margin-right: 1rem;
+.typography-card .external-link-icon {
+    transition: transform 0.3s ease;
+    width: 0.7em;
+    height: 0.7em;
 }
 
-.font-header a {
-    font-size: 5rem;
-    transition: var(--threesec-transition);
-}
-
-.font-header a:hover {
+.typography-card .font-name-link:hover {
     color: var(--accent-color);
-    transform: translateX(5px) translateY(-5px);
+}
+
+.typography-card .font-name-link:hover .external-link-icon {
+    transform: translate(5%, -5%);
+}
+
+.typography-card .external-link-icon {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .decorative-line {
@@ -391,12 +412,6 @@ main {
     width: 95%;
     margin: 2rem 0;
     font-family: var(--code-font);
-}
-
-.external-link {
-    font-size: 1.5rem;
-    color: var(--font-color);
-    text-decoration: none;
 }
 
 .weights-container {
@@ -461,6 +476,14 @@ main {
     position: relative;
     overflow: hidden;
     transition: var(--threesec-transition);
+}
+
+.color-item.very-dark {
+    border: 1px dashed rgba(255, 255, 255, 0.3); /* Slightly transparent white */
+}
+
+.color-item.very-light {
+    border: none;
 }
 
 .color-item:hover {
@@ -755,13 +778,10 @@ main {
 
     .font-header {
         margin-bottom: 0.5rem;
+        align-self: center;
     }
 
-    .font-header span {
-        font-size: 2rem;
-    }
-
-    .font-header a {
+    .typography-card .font-name-link {
         font-size: 2rem;
     }
 
@@ -769,6 +789,7 @@ main {
         width: 100%;
         font-size: 1rem;
         margin: 1rem 0;
+        text-align:center;
     }
 
     .italic-weights {
@@ -806,6 +827,7 @@ main {
         max-height: none;
         margin-right: 0;
         width: 70vw;
+        gap: 1rem;
     }
 
     .tech-category {

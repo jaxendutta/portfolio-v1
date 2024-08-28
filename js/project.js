@@ -252,18 +252,20 @@ function createFontCard(font) {
     const headerContainer = document.createElement('div');
     headerContainer.className = 'font-header';
 
-    const fontName = document.createElement('span');
-    fontName.textContent = font.name;
-    fontName.className = 'font-name';
-    headerContainer.appendChild(fontName);
+    const fontNameLink = document.createElement('a');
+    fontNameLink.href = `https://fonts.google.com/specimen/${font.name.replace(' ', '+')}`;
+    fontNameLink.target = '_blank';
+    fontNameLink.rel = 'noopener noreferrer';
+    fontNameLink.className = 'font-name-link';
+    
+    fontNameLink.innerHTML = `
+        ${font.name}&#8201;
+        <svg class="external-link-icon">
+            <use xlink:href="#external-link-icon"></use>
+        </svg>
+    `;
 
-    const externalLink = document.createElement('a');
-    externalLink.href = `https://fonts.google.com/specimen/${font.name.replace(' ', '+')}`;
-    externalLink.target = '_blank';
-    externalLink.innerHTML = '&#8599;'; // Unicode for top-right arrow
-    externalLink.className = 'external-link';
-    headerContainer.appendChild(externalLink);
-
+    headerContainer.appendChild(fontNameLink);
     headerContainer.style.fontFamily = font.fontFamily;
     card.appendChild(headerContainer);
 
@@ -334,6 +336,14 @@ function createColorSection(colorSets) {
             const colorItem = document.createElement('div');
             colorItem.className = 'color-item';
             colorItem.style.backgroundColor = color;
+
+            // Determine if the color is very dark or very light
+            const brightness = getBrightness(color);
+            if (brightness < 0.1) {  // Adjusted threshold for very dark
+                colorItem.classList.add('very-dark');
+            } else if (brightness > 0.9) {  // Adjusted threshold for very light
+                colorItem.classList.add('very-light');
+            }
 
             const colorLink = document.createElement('a');
             colorLink.href = `https://www.google.com/search?q=${encodeURIComponent(color)}`;
@@ -411,6 +421,21 @@ function createTechStackSection(techStack) {
 
     section.appendChild(content);
     return section;
+}
+
+function getBrightness(color) {
+    // Remove any leading #
+    color = color.replace('#', '');
+    
+    // Parse the color
+    const r = parseInt(color.substr(0, 2), 16) / 255;
+    const g = parseInt(color.substr(2, 2), 16) / 255;
+    const b = parseInt(color.substr(4, 2), 16) / 255;
+    
+    // Calculate relative luminance
+    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    
+    return luminance;
 }
 
 // FOOTER---------------------------------------------------

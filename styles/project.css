@@ -12,7 +12,7 @@
     --font-priority: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     /* Effects */
-    --header-transition: all 0.5s ease-in-out;
+    --threesec-transition: all 0.3s ease-in-out;
     --font-background: url("https://i.gifer.com/ByRk.gif");
     --svg-invert: invert(100%);
 }
@@ -50,6 +50,7 @@ body {
     overflow: hidden;
     scroll-behavior: smooth;
     height: 100%;
+    transition: var(--threesec-transition);
 }
 
 body {
@@ -58,6 +59,7 @@ body {
     font-family: var(--serif-font);
     background-color: var(--background-color);
     color: var(--font-color);
+    transition: var(--threesec-transition);
 }
 
 header {
@@ -68,7 +70,6 @@ header {
     padding: 1rem;
     display: flex;
     align-items: center;
-    background-color: var(--background-color);
     font-style: italic;
     transition: var(--header-transition);
 }
@@ -288,7 +289,7 @@ main {
     font-size: 1.75rem;
     position: relative;
     padding-left: 3rem;
-    transition: color 0.3s ease;
+    transition: var(--threesec-transition);
 }
 
 .project-link::before {
@@ -299,9 +300,9 @@ main {
     transform: translateY(-50%);
     width: 2rem;
     height: 2rem;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-constant);
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: var(--threesec-transition);
     z-index: -1;
 }
 
@@ -327,7 +328,7 @@ main {
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: var(--threesec-transition);
     z-index: 1;
     pointer-events: none;
 }
@@ -371,7 +372,7 @@ main {
 
 .font-header a {
     font-size: 5rem;
-    transition: all 0.3s ease-in-out;
+    transition: var(--threesec-transition);
 }
 
 .font-header a:hover {
@@ -459,7 +460,7 @@ main {
     border-radius: 15px;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: var(--threesec-transition);
 }
 
 .color-item:hover {
@@ -486,7 +487,7 @@ main {
     font-family: var(--code-font);
     font-size: 1rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: var(--threesec-transition);
     display: flex;
     align-items: center;
 }
@@ -497,7 +498,7 @@ main {
 
 .color-arrow {
     margin-left: 3px;
-    transition: transform 0.3s ease;
+    transition: var(--threesec-transition);
     display: inline-block;
 }
 
@@ -567,7 +568,6 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--background-color);
     color: var(--font-color);
     font-family: var(--font-priority);
     font-size: 1rem;
@@ -607,7 +607,6 @@ main {
 
     header {
         padding: 0.5rem;
-        background: transparent;
         right: 0 !important;
         mix-blend-mode: difference;
         filter: invert(100%);

@@ -30,15 +30,31 @@ const initializeTheme = () => {
 
   let currentTheme = calculateTheme({ localStorageTheme, systemSettingDark });
 
-  updateButton({ button, isDark: currentTheme === "dark" });
-  updateThemeOnHtml(currentTheme);
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    updateButton({ button, isDark: theme === "dark" });
+    
+    // Force a repaint to ensure immediate application of styles
+    document.body.style.display = 'none';
+    document.body.offsetHeight; // Trigger a reflow
+    document.body.style.display = '';
+  }
+
+  applyTheme(currentTheme);
 
   button.addEventListener("click", () => {
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     localStorage.setItem("theme", newTheme);
-    updateButton({ button, isDark: newTheme === "dark" });
-    updateThemeOnHtml(newTheme);
+    applyTheme(newTheme);
     currentTheme = newTheme;
+  });
+
+  // Listen for system theme changes
+  systemSettingDark.addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      currentTheme = e.matches ? "dark" : "light";
+      applyTheme(currentTheme);
+    }
   });
 };
 

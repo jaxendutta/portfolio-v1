@@ -78,7 +78,7 @@ header {
     display: flex;
     align-items: center;
     font-style: italic;
-    transition: var(--header-transition);
+    transition: var(--threesec-transition);
 }
 
 header.scrolled {
@@ -216,6 +216,7 @@ main {
     h1 {
         margin: 0;
         line-height: 70vh;
+        padding-right: 1rem;
     }
 }
 
@@ -450,7 +451,6 @@ main {
 .color-palette-content {
     display: flex;
     gap: 5rem;
-    overflow-x: auto;
     align-items: center;
     overflow: visible;
     margin-right: 100px;
@@ -553,6 +553,8 @@ main {
     gap: 2.25rem;
     max-height: 80vh;
     margin-right: 100px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .tech-category {
@@ -777,8 +779,7 @@ main {
     }
 
     .font-header {
-        margin-bottom: 0.5rem;
-        align-self: center;
+        text-align: center;
     }
 
     .typography-card .font-name-link {
@@ -789,7 +790,7 @@ main {
         width: 100%;
         font-size: 1rem;
         margin: 1rem 0;
-        text-align:center;
+        text-align: center;
     }
 
     .italic-weights {

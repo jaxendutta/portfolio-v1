@@ -1,0 +1,241 @@
+{
+  "fabler": {
+    "name": "Fabler",
+    "overview": [
+      "<div class=\"cardish\">Tired of Generic Visual Novels?</div> Imagine crafting your own story, a world where every narrative unfolds based on your desires. Fabler empowers you to be the author. ✍️",
+      "<div class=\"cardish\">But how does it work?</div> Fabler leverages the magic of AI! Simply provide a prompt - a spark of inspiration - and our intelligent system weaves a captivating visual novel tailored to your vision. ✨"
+    ],
+    "links": [
+      { "name": "GitHub", "url": "https://github.com/SE2-Fabler/" },
+      { "name": "Figma", "url": "https://www.figma.com/proto/kjrv7xO5wJAFPIJFyd4uy4/Fabler?scaling=scale-down" }
+    ],
+    "typography": [
+      {
+        "name": "Roboto Flex",
+        "fontFamily": "\"Roboto Flex\", sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100...900&display=swap",
+        "description": "Roboto Flex was chosen for its clean and modern aesthetic, which aligns with the app's focus on user-generated content. Its versatility allows for adaptation to various screen sizes and contexts. The consistent use of Roboto Flex throughout the app creates a cohesive and recognizable visual identity."
+      },
+      {
+        "name": "Italiana",
+        "fontFamily": "\"Italiana\", sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Italiana&display=swap",
+        "description": "The Italiana font, with its elegant serifs and subtle contrast, evokes a sense of timeless storytelling perfect for visual novels. Its graceful letterforms harken back to classic literature and fairy tales, creating a fable-like atmosphere."
+      }
+    ],
+    "colors": [
+      {
+        "palette": ["#A35E1E", "#EAD8D0", "#F8E6D0"],
+        "description": "Fabler's visual identity is characterized by a clean and minimalist aesthetic. The color palette of A35E1E, F8E6D0, and EAD8D0 creates a warm and inviting atmosphere."
+      },
+      {
+        "palette": ["#8B4513", "#4682B4", "#228B22", "#B8860B", "#CD5C5C"],
+        "description": "Secondary color palette: These colors complement the primary palette and are used in the visual novel elements while generation for accents, backgrounds, and other supporting elements."
+      }
+    ],
+    "techStack": {
+      "Frontend": ["Kotlin", "Jetpack Compose", "Android SDK"],
+      "Backend": ["Python", "Ren'Py"],
+      "AI/ML": ["OpenAI", "Stable Diffusion"],
+      "Design": ["Figma", "Sketch", "Material Design", "Miro"],
+      "Project Management": ["Trello", "GitHub Projects"]
+    },
+    "footer": "In a large-scale Android visual novel app project, I led development using Jetpack Compose (Kotlin) for the frontend and a Python backend. I spearheaded design and prototyping through Figma and user interviews, ensuring a user-friendly experience. The app features a responsive UI with custom components adhering to Material Design and leverages the OpenAI API with an FFI to generate storylines and character profiles directly within the visual novels."
+  },
+
+
+  "hivemind": {
+    "name": "Hivemind",
+    "overview": [
+      "<div class=\"cardish\">Collaborative Learning, Reimagined.</div> Hivemind connects students worldwide, fostering a vibrant ecosystem of shared knowledge and collaborative study groups.",
+      "<div class=\"cardish\">How does it work?</div> Our innovative platform uses smart matching algorithms to connect you with like-minded learners, creating the perfect study environment tailored to your needs and learning style."
+    ],
+    "links": [
+      { "name": "Figma", "url": "https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down" },
+      { "name": "Case Study", "url": "https://docs.google.com/document/d/1mqnpwIP3gOAwz9jm2UrgXZnNPSO40aCmM-wA7pEuu2Q/view"}
+    ],
+    "typography": [
+      {
+        "name": "M PLUS Rounded 1c",
+        "fontFamily": "\"M PLUS Rounded 1c\", sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap",
+        "description": "Rounded Mplus 1c Bold is used for larger text elements, embodying the app's friendly nature. Its rounded edges and bold weight create a welcoming atmosphere, reinforcing the app's collaborative spirit and adding a touch of playfulness to the interface."
+      },
+      {
+        "name": "Noto Sans",
+        "fontFamily": "\"Noto Sans\", sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap",
+        "description": "Noto Sans was selected for its clean, modern look and excellent readability across devices. Its neutral yet friendly appearance aligns with Hivemind's inclusive learning environment, ensuring users can easily engage with content and reducing cognitive load during study sessions."
+      }      
+    ],
+    "colors": [
+      {
+        "palette": ["#151413", "#FFA800", "#EEDBB7", "#F0F0F0"],
+        "description": "The primary color palette of Hivemind is inspired by the natural world of bees and hives. The vibrant #FFA800 represents the energy and vitality of honey, while #EEDBB7 provides a softer, complementary tone reminiscent of beeswax. Dark #151413 offers strong contrast for text, while #F0F0F0 ensures readability."
+      },
+      {
+        "palette": ["#FF6633", "#00B383", "#0071C1", "#6D29F6"],
+        "description": "The secondary color palette introduces additional vibrancy and functionality to the app. These colors work together to create a diverse yet harmonious visual experience that supports various UI elements and user interactions."
+      }
+    ],
+    "techStack": {
+      "Design": ["Figma", "Sketch", "Miro"],
+      "UXR": ["User Interviews", "User Testing", "Persona Creation"],
+      "Project Management": ["Trello"]
+    },
+    "footer": "As the lead of Hivemind, a collaborative study app project, I directed the design and iOS prototype development efforts. Working with a diverse team, I facilitated Figma prototyping and conducted user interviews, refining the user experience. The app promotes seamless online connections for students worldwide, fostering collaborative study groups. Through iterative design and development, I ensured the app's functionality and visual elements aligned with user needs, resulting in an innovative platform for academic collaboration."
+  },
+
+
+  "space-invaders": {
+    "name": "Space Invaders",
+    "overview": [
+      "<div class=\"cardish\">Retro Gaming Reimagined</div> Dive into nostalgia with a modern twist! This Space Invaders remake brings the classic arcade experience to your desktop, powered by cutting-edge Kotlin and JavaFX technologies. 🚀👾",
+      "<div class=\"cardish\">Challenge the Alien Invasion</div> Test your reflexes and strategy as you defend Earth from waves of descending aliens. With each level, the challenge intensifies, keeping you on the edge of your seat! 🎮🛸"
+    ],
+    "links": [
+      { "name": "GitHub", "url": "https://github.com/jaxendutta/space-invaders/" },
+      { "name": "Download", "url": "https://github.com/jaxendutta/space-invaders/releases" }
+    ],
+    "typography": [
+      {
+        "name": "Press Start 2P",
+        "fontFamily": "\"Press Start 2P\", cursive",
+        "url": "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap",
+        "description": "Press Start 2P is a bitmap font based on the font design from 1980s Namco arcade games. It perfectly captures the retro feel of classic space shooter games, enhancing the authentic arcade experience."
+      }
+    ],
+    "colors": [
+      {
+        "palette": ["#00FF00", "#FF00FF", "#FFFFFF", "#000000"],
+        "description": "The color scheme pays homage to classic arcade games. Bright green (#00FF00) and magenta (#FF00FF) create a vibrant, retro feel against the stark contrast of white (#FFFFFF) and black (#000000), mimicking early CRT displays."
+      }
+    ],
+    "techStack": {
+      "Frontend": ["Kotlin", "JavaFX"],
+      "Build Tools": ["Gradle"],
+      "Game Development": ["Game Loop", "Sprite Animation", "Collision Detection"]
+    },
+    "footer": "Created with Kotlin and JavaFX, this game features a visually engaging interface with a title screen, player-controlled ship, and dynamically moving alien fleet. Multiple levels were implemented, each intensifying the challenge as the player progresses. The use of smooth animations and audio feedback enhances the overall gaming atmosphere, showcasing elements of game development and animation techniques."
+  },
+
+
+  "file-explorer": {
+    "name": "File Explorer",
+    "overview": [
+      "<div class=\"cardish\">Streamlined File Management</div> Experience a modern, intuitive file management solution built with Kotlin and JavaFX. Navigate your digital world with ease and efficiency. 📁🔍",
+      "<div class=\"cardish\">Feature-Rich Interface</div> From creating folders to previewing files, our File Explorer puts powerful tools at your fingertips. Enjoy a seamless, user-friendly experience for all your file organization needs. 🖥️📊"
+    ],
+    "links": [
+      { "name": "GitHub", "url": "https://github.com/jaxendutta/file-explorer/" },
+      { "name": "Download", "url": "https://github.com/jaxendutta/file-explorer/releases" }
+    ],
+    "typography": [
+      {
+        "name": "Roboto",
+        "fontFamily": "\"Roboto\", sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap",
+        "description": "Roboto offers a clean, modern look that enhances readability in a file management interface. Its geometric forms and friendly curves create a balanced, professional appearance."
+      },
+      {
+        "name": "JetBrains Mono",
+        "fontFamily": "\"JetBrains Mono\", monospace",
+        "url": "https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap",
+        "description": "JetBrains Mono, a monospaced font, is perfect for displaying file paths and system information. Its clear letterforms ensure accurate reading of technical details."
+      }
+    ],
+    "colors": [
+      {
+        "palette": ["#2196F3", "#BBDEFB", "#FFFFFF", "#757575", "#212121"],
+        "description": "The color scheme is designed for clarity and ease of use. The primary blue (#2196F3) highlights interactive elements, while lighter blue (#BBDEFB) subtly marks selections. White (#FFFFFF) backgrounds ensure readability, with dark gray (#212121) for text and medium gray (#757575) for secondary information."
+      }
+    ],
+    "techStack": {
+      "Frontend": ["Kotlin", "JavaFX"],
+      "Build Tools": ["Gradle"],
+      "File System Operations": ["Java NIO"]
+    },
+    "footer": "File Explorer features a comprehensive Menu Bar with options for creating folders, opening directories, and exiting the program. The Actions menu empowers users to rename, move, and delete selected files effortlessly. A versatile Tool Bar provides quick access to navigation and file manipulation options. The main File View displays a clear hierarchy of files and directories, complemented by a preview panel for supported file types. Stay informed with the Status Bar, which displays real-time information about the current directory and selected file."
+  },
+  
+
+  "lightbox": {
+    "name": "Lightbox",
+    "overview": [
+      "<div class=\"cardish\">Illuminate Your Images</div> Discover Lightbox, a powerful image manipulation tool crafted with Kotlin and JavaFX. Transform your visual content with ease and precision. 🖼️✨",
+      "<div class=\"cardish\">Intuitive Image Management</div> From basic edits to advanced manipulations, Lightbox puts a suite of tools at your fingertips. Experience smooth, responsive image handling in a user-friendly interface. 🖱️🎨"
+    ],
+    "links": [
+      { "name": "GitHub", "url": "https://github.com/jaxendutta/lightbox/" },
+      { "name": "Download", "url": "https://github.com/jaxendutta/lightbox/releases" }
+    ],
+    "typography": [
+      {
+        "name": "Open Sans",
+        "fontFamily": "\"Open Sans\", sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap",
+        "description": "Open Sans provides excellent readability for the interface elements. Its clean, humanist sans-serif design ensures clarity even at small sizes, perfect for tool labels and image information."
+      },
+      {
+        "name": "Montserrat",
+        "fontFamily": "\"Montserrat\", sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap",
+        "description": "Montserrat, used for headings and important UI elements, adds a touch of modernity and boldness. Its geometric sans-serif design complements the sleek nature of an image editing tool."
+      }
+    ],
+    "colors": [
+      {
+        "palette": ["#3498db", "#ecf0f1", "#34495e", "#2c3e50", "#bdc3c7"],
+        "description": "The color scheme is designed for a clean, professional look. The primary blue (#3498db) highlights interactive elements, while light gray (#ecf0f1) provides a neutral background that doesn't interfere with image viewing. Dark blues (#34495e, #2c3e50) are used for text and UI accents, with medium gray (#bdc3c7) for secondary elements, creating a balanced and visually appealing interface."
+      }
+    ],
+    "techStack": {
+      "Frontend": ["Kotlin", "JavaFX"],
+      "Build Tools": ["Gradle"],
+      "Image Processing": ["JavaFX Image API"]
+    },
+    "footer": "Lightbox showcases a feature-rich Tool Bar equipped with various buttons for comprehensive image manipulation. Users can effortlessly add, delete, rotate, and zoom images, among other operations. The heart of the application, the Preview Pane, offers intuitive image selection, dragging, and stacking capabilities, providing a seamless workflow for managing multiple images. Stay informed with the Status Bar, which displays real-time information on the image count and currently selected image, enhancing user awareness and control throughout the editing process."
+  },
+
+  "straights": {
+    "name": "Straights",
+    "overview": [
+      "<div class=\"cardish\">From Terminal to Web: A Card Game Transformation</div> Experience Straights, a classic card game reimagined for the modern web. Originally a C++ terminal game, now playable in your browser thanks to the power of WebAssembly. 🃏💻",
+      "<div class=\"cardish\">Strategic 4-Player Action</div> Dive into this engaging 4-player card game where strategy is key. Aim for the lowest score as you navigate through each round, making calculated moves to outplay your opponents. 🏆♠️♥️♣️♦️"
+    ],
+    "links": [
+      { "name": "GitHub", "url": "https://github.com/jaxendutta/straights/" },
+      { "name": "Play", "url": "https://dutta.itch.io/straights/" }
+    ],
+    "typography": [
+      {
+        "name": "Roboto Slab",
+        "fontFamily": "\"Roboto Slab\", serif",
+        "url": "https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap",
+        "description": "Roboto Slab combines the geometric precision of Roboto with the readability of a slab serif, perfect for displaying card values and game information clearly."
+      },
+      {
+        "name": "Poppins",
+        "fontFamily": "\"Poppins\", sans-serif",
+        "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap",
+        "description": "Poppins, a geometric sans-serif font, is used for UI elements and instructions. Its clean lines and friendly character enhance the overall user experience."
+      }
+    ],
+    "colors": [
+      {
+        "palette": ["#1B5E20", "#4CAF50", "#81C784", "#C8E6C9", "#FFFFFF"],
+        "description": "The color scheme evokes the feeling of a classic card table. Deep green (#1B5E20) serves as the primary color, reminiscent of felt. Lighter greens (#4CAF50, #81C784) are used for UI elements, while pale green (#C8E6C9) and white (#FFFFFF) ensure readability of card values and game information."
+      },
+      {
+        "palette": ["#D32F2F", "#1976D2", "#FBC02D", "#388E3C"],
+        "description": "This secondary palette represents the four card suits. Red (#D32F2F) for hearts, blue (#1976D2) for spades, yellow (#FBC02D) for diamonds, and green (#388E3C) for clubs. These colors are used to clearly differentiate suits in the game interface."
+      }
+    ],
+    "techStack": {
+      "Backend": ["C++", "WebAssembly", "Emscripten"],
+      "Frontend": ["HTML", "CSS", "JavaScript"],
+      "Game Logic": ["Object-Oriented Programming", "Game State Management"]
+    },
+    "footer": "Straights showcases the seamless integration of C++ and web technologies. The core game logic, originally written in C++, has been recompiled to WebAssembly using Emscripten. This WebAssembly module is then integrated into a modern web application, with HTML, CSS, and JavaScript working in harmony to render the game state and provide an interactive user interface. The result is a fast, efficient game engine with a sleek, accessible front-end, playable directly in the browser without any installations."
+  }
+}

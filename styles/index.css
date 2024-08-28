@@ -469,6 +469,27 @@ html, body {
 .info p a:hover {
     color: var(--accent-color-constant);
 }
+
+.project-title-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--font-color);
+    transition: color 0.3s ease;
+}
+
+.project-title-link:hover {
+    color: var(--accent-color-constant);
+}
+
+.project-title-link .external-arrow {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-title-link:hover .external-arrow {
+    transform: translate(5%, -5%);
+}
   
 .in-pic {
     display: none;
@@ -1080,7 +1101,7 @@ textarea::placeholder {
     color: var(--accent-color-constant);
 }
 
-.footnote {
+footer {
     font-family: var(--font-priority);
     width: 100vw;
     height: 2.5em;

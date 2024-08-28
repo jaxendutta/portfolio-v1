@@ -19,7 +19,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Red+Rose&family=Fira+Code&family=Xanh+Mono:ital@0;1&family=Ojuju:wght@200..800&family=Kalnia:wght@100..700&family=Codystar:wght@300;400&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Fira+Code&family=Xanh+Mono:ital@0;1&family=Orbitron:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+    rel="stylesheet">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.png" type="image/png">
@@ -31,12 +33,13 @@
 <body>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
       <polyline points="15 3 21 3 21 9"></polyline>
       <line x1="10" y1="14" x2="21" y2="3"></line>
     </symbol>
-  </svg>  
+  </svg>
 
   <div id="main">
     <div id="hero-container">
@@ -87,23 +90,23 @@
         <div class="button-container">
           <a href="#projects" class="rotating-button">
             <svg class="rotating-text" viewBox="0 0 100 100">
-                <defs>
-                    <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
-                </defs>
-                <text font-size="14">
-                    <textPath xlink:href="#circle" startOffset="0">
-                        ✦ PROJECTS ✦ WORK ✦ RÉSUMÉ
-                      </textPath>
-                </text>
+              <defs>
+                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+              </defs>
+              <text font-size="14">
+                <textPath xlink:href="#circle" startOffset="0">
+                  ✦ PROJECTS ✦ WORK ✦ RÉSUMÉ
+                </textPath>
+              </text>
             </svg>
             <div class="inner-circle">
-                <div class="arrow-down"></div>
+              <div class="arrow-down"></div>
             </div>
           </a>
         </div>
       </section>
     </div>
-    
+
     <div id="content-container">
       <div class="section-header-common section-header" id="projects">
         <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
@@ -125,7 +128,14 @@
           <div class="project-row">
             <div class="project-info">
               <div class="info">
-                <h1>FABLER</h1>
+                <h1>
+                  <a href="/fabler" class="project-title-link">
+                    FABLER
+                    <svg class="external-arrow" width="28" height="28">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </h1>
                 <h2>Native Android App</h2>
                 <div class="skill-tags">
                   <span class="skill-tag">Kotlin</span>
@@ -140,23 +150,27 @@
                 </div>
                 <div class="project-image-container in-pic">
                   <div class="project-image-inner" style="max-width:360px;">
-                    <img src="assets/fabler.png" style="max-width:360px; border:none;" alt="Screenshot of the Fabler app">
+                    <img src="assets/fabler.png" style="max-width:360px; border:none;"
+                      alt="Screenshot of the Fabler app">
                     <div class="overlay">
-                      <a class="rotating-overlay-btn" href="https://github.com/SE2-Fabler/" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+                      <a class="rotating-overlay-btn" href="https://github.com/SE2-Fabler/" target="_blank"><i
+                          class="fa-brands fa-github fa-2xl"></i></a>
                     </div>
                   </div>
                 </div>
                 <p>
-                  In a large-scale Android visual novel app project, I led development using Jetpack Compose (Kotlin) for the 
-                  frontend and a Python backend. I spearheaded design and prototyping through Figma and user interviews, 
-                  ensuring a user-friendly experience. The app features a responsive UI with custom components adhering to 
-                  Material Design and leverages the OpenAI API with an FFI to generate storylines and character profiles directly 
-                  within the visual novels. 
+                  In a large-scale Android visual novel app project, I led development using Jetpack Compose (Kotlin)
+                  for the
+                  frontend and a Python backend. I spearheaded design and prototyping through Figma and user interviews,
+                  ensuring a user-friendly experience. The app features a responsive UI with custom components adhering
+                  to
+                  Material Design and leverages the OpenAI API with an FFI to generate storylines and character profiles
+                  directly
+                  within the visual novels.
                 </p>
                 <div class="buttons">
                   <div class="btn btn-cross">
-                    <span><a href="https://github.com/SE2-Fabler/"
-                        target="_blank">GITHUB</a></span>
+                    <span><a href="https://github.com/SE2-Fabler/" target="_blank">GITHUB</a></span>
                   </div>
                   <div class="btn btn-cross">
                     <span><a href="https://www.figma.com/proto/kjrv7xO5wJAFPIJFyd4uy4/Fabler?scaling=scale-down"
@@ -169,7 +183,8 @@
               <div class="project-image-inner" style="max-width:360px;">
                 <img src="assets/fabler.png" style="max-width:360px; border:none;" alt="Screenshot of the Fabler app">
                 <div class="overlay">
-                  <a class="rotating-overlay-btn" href="https://github.com/SE2-Fabler/" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+                  <a class="rotating-overlay-btn" href="https://github.com/SE2-Fabler/" target="_blank"><i
+                      class="fa-brands fa-github fa-2xl"></i></a>
                 </div>
               </div>
             </div>
@@ -198,7 +213,14 @@
           <div class="project-row">
             <div class="project-info">
               <div class="info">
-                <h1>HIVEMIND</h1>
+                <h1>
+                  <a href="/hivemind" class="project-title-link">
+                    HIVEMIND
+                    <svg class="external-arrow" width="28" height="28">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </h1>
                 <h2>UX/UI Case Study</h2>
                 <div class="skill-tags">
                   <span class="skill-tag">Figma</span>
@@ -208,9 +230,12 @@
                 </div>
                 <div class="project-image-container in-pic">
                   <div class="project-image-inner" style="max-width:360px;">
-                    <img src="assets/hivemind.png" style="max-width:360px; border:none;" alt="Screenshot of the Hivemind app">
+                    <img src="assets/hivemind.png" style="max-width:360px; border:none;"
+                      alt="Screenshot of the Hivemind app">
                     <div class="overlay">
-                      <a class="rotating-overlay-btn" href="https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down" target="_blank"><i class="fa-brands fa-figma fa-2xl"></i></a>
+                      <a class="rotating-overlay-btn"
+                        href="https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down"
+                        target="_blank"><i class="fa-brands fa-figma fa-2xl"></i></a>
                     </div>
                   </div>
                 </div>
@@ -219,7 +244,8 @@
                   development efforts. Working with a diverse team, I facilitated Figma prototyping and conducted user
                   interviews, refining the user experience. The app promotes seamless online connections for students
                   worldwide, fostering collaborative study groups. Through iterative design and development, I ensured
-                  the app's functionality and visual elements aligned with user needs, resulting in an innovative platform
+                  the app's functionality and visual elements aligned with user needs, resulting in an innovative
+                  platform
                   for academic collaboration.
                 </p>
                 <div class="buttons">
@@ -236,9 +262,12 @@
             </div>
             <div class="project-image-container out-pic">
               <div class="project-image-inner" style="max-width:360px;">
-                <img src="assets/hivemind.png" style="max-width:360px; border:none;" alt="Screenshot of the Hivemind app">
+                <img src="assets/hivemind.png" style="max-width:360px; border:none;"
+                  alt="Screenshot of the Hivemind app">
                 <div class="overlay">
-                  <a class="rotating-overlay-btn" href="https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down" target="_blank"><i class="fa-brands fa-figma fa-2xl"></i></a>
+                  <a class="rotating-overlay-btn"
+                    href="https://www.figma.com/proto/OgAWcQHH2BAl2djJTCnHII/Hivemind?scaling=scale-down"
+                    target="_blank"><i class="fa-brands fa-figma fa-2xl"></i></a>
                 </div>
               </div>
             </div>
@@ -267,7 +296,14 @@
           <div class="project-row">
             <div class="project-info">
               <div class="info">
-                <h1>SPACE INVADERS</h1>
+                <h1>
+                  <a href="/space-invaders" class="project-title-link">
+                    SPACE INVADERS
+                    <svg class="external-arrow" width="28" height="28">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </h1>
                 <h2>Fixed Shooter Game</h2>
                 <div class="skill-tags">
                   <span class="skill-tag">Kotlin</span>
@@ -279,7 +315,8 @@
                   <div class="project-image-inner">
                     <img src="assets/space-invaders.png" alt="Screenshot of a Space Invaders screen">
                     <div class="overlay">
-                      <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/space-invaders" target="_blank">
+                      <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/space-invaders"
+                        target="_blank">
                         <i class="fa-brands fa-github fa-2xl"></i>
                       </a>
                     </div>
@@ -339,7 +376,14 @@
           <div class="project-row">
             <div class="project-info">
               <div class="info">
-                <h1>FILE EXPLORER</h1>
+                <h1>
+                  <a href="/file-explorer" class="project-title-link">
+                    FILE EXPLORER
+                    <svg class="external-arrow" width="28" height="28">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </h1>
                 <h2>File Management Tool</h2>
                 <div class="skill-tags">
                   <span class="skill-tag">Kotlin</span>
@@ -350,7 +394,8 @@
                   <div class="project-image-inner">
                     <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
                     <div class="overlay">
-                      <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/file-explorer/" target="_blank">
+                      <a class="rotating-overlay-btn" href="https://github.com/jaxendutta/file-explorer/"
+                        target="_blank">
                         <i class="fa-brands fa-github fa-2xl"></i>
                       </a>
                     </div>
@@ -369,10 +414,9 @@
                   <div class="btn btn-cross">
                     <span><a href="https://github.com/jaxendutta/file-explorer/" target="_blank">GITHUB</a></span>
                   </div>
-                  <!--<div class="btn btn-cross">
-                  <span><a href="https://docs.google.com/document/d/1mqnpwIP3gOAwz9jm2UrgXZnNPSO40aCmM-wA7pEuu2Q/view"
-                      target="_blank">DOWNLOAD</a></span>
-                </div>-->
+                  <div class="btn btn-cross">
+                    <span><a href="https://github.com/jaxendutta/file-explorer/releases" target="_blank">DOWNLOAD</a></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -411,7 +455,14 @@
           <div class="project-row">
             <div class="project-info">
               <div class="info">
-                <h1>LIGHTBOX</h1>
+                <h1>
+                  <a href="/lightbox" class="project-title-link">
+                    LIGHTBOX
+                    <svg class="external-arrow" width="28" height="28">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </h1>
                 <h2>Image Manipulation Tool</h2>
                 <div class="skill-tags">
                   <span class="skill-tag">Kotlin</span>
@@ -437,10 +488,9 @@
                   <div class="btn btn-cross">
                     <span><a href="https://github.com/jaxendutta/lightbox/" target="_blank">GITHUB</a></span>
                   </div>
-                  <!--<div class="btn btn-cross">
-                  <span><a href=""
-                      target="_blank">DOWNLOAD</a></span>
-                </div>-->
+                  <div class="btn btn-cross">
+                  <span><a href="https://github.com/jaxendutta/lightbox/releases/" target="_blank">DOWNLOAD</a></span>
+                </div>
                 </div>
               </div>
             </div>
@@ -479,7 +529,14 @@
           <div class="project-row">
             <div class="project-info">
               <div class="info">
-                <h1>STRAIGHTS</h1>
+                <h1>
+                  <a href="/straights" class="project-title-link">
+                    STRAIGHTS
+                    <svg class="external-arrow" width="28" height="28">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </h1>
                 <h2>CLI Card Game</h2>
                 <div class="skill-tags">
                   <span class="skill-tag">C++</span>
@@ -501,9 +558,11 @@
                   </div>
                 </div>
                 <p>
-                  Straights is a C++ terminal game re-compiled to WebAssembly using <a href="https://emscripten.org/" target="_blank">Emscripten</a>. 
+                  Straights is a C++ terminal game re-compiled to WebAssembly using <a href="https://emscripten.org/"
+                    target="_blank">Emscripten</a>.
                   This version of the game features a HTML/CSS/JS front-end that renders the WebAssembly program's state
-                  onto the client browser. The game itself is a 4-player card game where the player with the fewest points wins.
+                  onto the client browser. The game itself is a 4-player card game where the player with the fewest
+                  points wins.
                   You can try out the game below!
                 </p>
                 <div class="buttons">
@@ -552,16 +611,18 @@
         <div class="drop-down-item">
           <div class="drop-down-label">
             <div class="drop-down-info">
-                <div class="drop-down-main">SYSTEMS SOFTWARE ENGINEER</div>
-                <div class="drop-down-sub">
-                  <span>
-                     <a href="https://www.ontario.ca/page/ministry-attorney-general" target="_blank" rel="noopener noreferrer">
-                      GOVERNMENT OF ONTARIO&#8201;<svg class="external-link-icon" width="16" height="16">
-                        <use xlink:href="#external-link-icon"></use>
-                      </svg>
-                    </a>
-                  </span>
-                </div>
+              <div class="drop-down-main">SYSTEMS SOFTWARE ENGINEER</div>
+              <div class="drop-down-sub">
+                <span>
+                  <a href="https://www.ontario.ca/page/ministry-attorney-general" target="_blank"
+                    rel="noopener noreferrer">
+                    GOVERNMENT OF ONTARIO&#8201;
+                    <svg class="external-link-icon" width="16" height="16">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </span>
+              </div>
             </div>
             <div class="drop-down-icon"></div>
           </div>
@@ -587,16 +648,17 @@
         <div class="drop-down-item">
           <div class="drop-down-label">
             <div class="drop-down-info">
-                <div class="drop-down-main">HCI + UX/UI RESEARCH ASSISTANT</div>
-                <div class="drop-down-sub">
-                  <span>
-                    <a href="https://edithlaw.ca" target="_blank" rel="noopener noreferrer">
-                      AUGMENTED INTELLIGENCE LAB&#8201;<svg class="external-link-icon" width="16" height="16">
-                        <use xlink:href="#external-link-icon"></use>
-                      </svg>
-                    </a>
-                  </span> 
-                </div>
+              <div class="drop-down-main">HCI + UX/UI RESEARCH ASSISTANT</div>
+              <div class="drop-down-sub">
+                <span>
+                  <a href="https://edithlaw.ca" target="_blank" rel="noopener noreferrer">
+                    AUGMENTED INTELLIGENCE LAB&#8201;
+                    <svg class="external-link-icon" width="16" height="16">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </span>
+              </div>
             </div>
             <div class="drop-down-icon"></div>
           </div>
@@ -611,18 +673,20 @@
               <span class="skill-tag">Data Analysis</span>
               <span class="skill-tag">Qualitative Analysis</span>
             </div>
-            <p>Researched integration of native, cultural, and indigenous values, 
-              into computing interfaces and educational curricula, 
+            <p>Researched integration of native, cultural, and indigenous values,
+              into computing interfaces and educational curricula,
               supervised by <a href="https://edithlaw.ca">Dr. Edith Law</a>.
             </p>
-            <p>Collaborated in the design process, data collection, and thematic qualitative analysis 
+            <p>Collaborated in the design process, data collection, and thematic qualitative analysis
               for the <a href="https://www.kw4oht.com/newcomerapp">KW4-OHT Newcomer App</a>.
             </p>
-            <p>Co-authored manuscripts on AI Decision-Making, Integration of Culturally Value-Driven Storytelling 
-              into Mathematics and Computing, and the establishement of a Newcomer App through the lens of 
-              <a href="https://link.springer.com/article/10.1007/s11948-020-00275-5">Dr. Naomi Jacob's Capability Sensitive Design</a>.
-              Submitted to <a href="https://iui.acm.org/2024/call_for_papers.html">ACM's IUI 2024</a> and <a href="https://cscw.acm.org/">CSCW 2024</a>.
-            </p> 
+            <p>Co-authored manuscripts on AI Decision-Making, Integration of Culturally Value-Driven Storytelling
+              into Mathematics and Computing, and the establishement of a Newcomer App through the lens of
+              <a href="https://link.springer.com/article/10.1007/s11948-020-00275-5">Dr. Naomi Jacob's Capability
+                Sensitive Design</a>.
+              Submitted to <a href="https://iui.acm.org/2024/call_for_papers.html">ACM's IUI 2024</a> and <a
+                href="https://cscw.acm.org/">CSCW 2024</a>.
+            </p>
           </div>
           <div class="vertical-date">
             <span class="start-date">SEP&nbsp;2023</span>
@@ -633,16 +697,17 @@
         <div class="drop-down-item">
           <div class="drop-down-label">
             <div class="drop-down-info">
-                <div class="drop-down-main">TECHNICAL WRITER</div>
-                <div class="drop-down-sub">
-                  <span>
-                    <a href="https://cloud.google.com/healthcare-api" target="_blank" rel="noopener noreferrer">
-                      GOOGLE&#8201;<svg class="external-link-icon" width="16" height="16">
-                        <use xlink:href="#external-link-icon"></use>
-                      </svg>
-                    </a>
-                  </span> 
-                </div>
+              <div class="drop-down-main">TECHNICAL WRITER</div>
+              <div class="drop-down-sub">
+                <span>
+                  <a href="https://cloud.google.com/healthcare-api" target="_blank" rel="noopener noreferrer">
+                    GOOGLE&#8201;
+                    <svg class="external-link-icon" width="16" height="16">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </span>
+              </div>
             </div>
             <div class="drop-down-icon"></div>
           </div>
@@ -660,14 +725,18 @@
               <span class="skill-tag">Technical Writing</span>
             </div>
             <div class="team-info">Cloud Healthcare and Life Sciences Team</div>
-            <p>Investigated leveraging an undisclosed LLM to refactor documentation, integrating code samples for clarity.
+            <p>Investigated leveraging an undisclosed LLM to refactor documentation, integrating code samples for
+              clarity.
             </p>
-            <p>Improved reliability of internal tools through extensive testing, identifying feature gaps during early adoption,
-              and filing over 100 bug reports; resulting in release-quality tools with company-wide adoption (12+ teams).
+            <p>Improved reliability of internal tools through extensive testing, identifying feature gaps during early
+              adoption,
+              and filing over 100 bug reports; resulting in release-quality tools with company-wide adoption (12+
+              teams).
             </p>
-            <p>Composed REST API documentation embedded with platform-specific code samples (gcloud, Go, Java, NodeJS, and Python),
-              contributing to the <a href="https://cloud.google.com/healthcare-api/docs/how-tos#dicom-guide">DICOM</a>, 
-              <a href="https://cloud.google.com/healthcare-api/docs/how-tos#fhir-guide">FHIR</a>, and 
+            <p>Composed REST API documentation embedded with platform-specific code samples (gcloud, Go, Java, NodeJS,
+              and Python),
+              contributing to the <a href="https://cloud.google.com/healthcare-api/docs/how-tos#dicom-guide">DICOM</a>,
+              <a href="https://cloud.google.com/healthcare-api/docs/how-tos#fhir-guide">FHIR</a>, and
               <a href="https://cloud.google.com/healthcare-api/docs/how-tos#hl7v2-guide">HL7v2</a> guides.
             </p>
           </div>
@@ -680,16 +749,17 @@
         <div class="drop-down-item">
           <div class="drop-down-label">
             <div class="drop-down-info">
-                <div class="drop-down-main">DEVELOPER + TECHNICAL WRITER</div>
-                <div class="drop-down-sub">
-                  <span>
-                    <a href="https://opentext.com" target="_blank" rel="noopener noreferrer">
-                      OPENTEXT&#8201;<svg class="external-link-icon" width="16" height="16">
-                        <use xlink:href="#external-link-icon"></use>
-                      </svg>
-                    </a> 
-                  </span>
-                </div>
+              <div class="drop-down-main">DEVELOPER + TECHNICAL WRITER</div>
+              <div class="drop-down-sub">
+                <span>
+                  <a href="https://opentext.com" target="_blank" rel="noopener noreferrer">
+                    OPENTEXT&#8201;
+                    <svg class="external-link-icon" width="16" height="16">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </span>
+              </div>
             </div>
             <div class="drop-down-icon"></div>
           </div>
@@ -712,7 +782,8 @@
             </p>
             <p>Automated the retrieval of translation clauses over 23+ localized languages.
             </p>
-            <p>Identified and resolved inefficiencies in clause reuse, saving over $12,000 in translation costs by mediating contracts between product managers and vendors.
+            <p>Identified and resolved inefficiencies in clause reuse, saving over $12,000 in translation costs by
+              mediating contracts between product managers and vendors.
             </p>
           </div>
           <div class="vertical-date">
@@ -724,16 +795,17 @@
         <div class="drop-down-item">
           <div class="drop-down-label">
             <div class="drop-down-info">
-                <div class="drop-down-main">QA ANALYST</div>
-                <div class="drop-down-sub">
-                  <span>
-                    <a href="https://opentext.com" target="_blank" rel="noopener noreferrer">
-                      OPENTEXT&#8201;<svg class="external-link-icon" width="16" height="16">
-                        <use xlink:href="#external-link-icon"></use>
-                      </svg>
-                    </a>
-                  </span>
-                </div>
+              <div class="drop-down-main">QA ANALYST</div>
+              <div class="drop-down-sub">
+                <span>
+                  <a href="https://opentext.com" target="_blank" rel="noopener noreferrer">
+                    OPENTEXT&#8201;
+                    <svg class="external-link-icon" width="16" height="16">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </span>
+              </div>
             </div>
             <div class="drop-down-icon"></div>
           </div>
@@ -750,7 +822,8 @@
               <span class="skill-tag">Confluence</span>
             </div>
             <div class="team-info">Localization Engineering Team</div>
-            <p>Innovated testing infrastructure across multiple teams, by proposing using Kubernetes to orchestrate Docker containers as a lightweight and rapid testing framework.
+            <p>Innovated testing infrastructure across multiple teams, by proposing using Kubernetes to orchestrate
+              Docker containers as a lightweight and rapid testing framework.
             </p>
             <p>Resolved 75+ accessibility issues and inconsistencies in localized documentation for 23+ languages.
             </p>
@@ -764,16 +837,17 @@
         <div class="drop-down-item">
           <div class="drop-down-label">
             <div class="drop-down-info">
-                <div class="drop-down-main">NETWORK DEVELOPER</div>
-                <div class="drop-down-sub">
-                  <span>
-                    <a href="https://kolkata.apollohospitals.com" target="_blank" rel="noopener noreferrer">
-                      APOLLO MULTISPECIALITY HOSPITAL&#8201;<svg class="external-link-icon" width="16" height="16">
-                        <use xlink:href="#external-link-icon"></use>
-                      </svg>
-                    </a> 
-                  </span>                 
-                </div>
+              <div class="drop-down-main">NETWORK DEVELOPER</div>
+              <div class="drop-down-sub">
+                <span>
+                  <a href="https://kolkata.apollohospitals.com" target="_blank" rel="noopener noreferrer">
+                    APOLLO MULTISPECIALITY HOSPITAL&#8201;
+                    <svg class="external-link-icon" width="16" height="16">
+                      <use xlink:href="#external-link-icon"></use>
+                    </svg>
+                  </a>
+                </span>
+              </div>
             </div>
             <div class="drop-down-icon"></div>
           </div>
@@ -889,7 +963,7 @@
         </form>
       </div>
 
-      <footer class="footnote">
+      <footer>
         Jaxen Anirban Dutta // 2019-2024
       </footer>
     </div>

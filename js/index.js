@@ -1,7 +1,10 @@
 // Clock and Timezone
 const updateClock = () => {
-  const estTime = new Date().toLocaleString('nl-NL', { timeZone: 'America/Toronto' });
-  document.getElementById('est').textContent = estTime;
+  const estElement = document.getElementById('est');
+  if (estElement) {
+      const estTime = new Date().toLocaleString('nl-NL', { timeZone: 'America/Toronto' });
+      estElement.textContent = estTime;
+  }
 };
 
 setInterval(updateClock, 1000);
@@ -21,7 +24,7 @@ const updateThemeOnHtml = (theme) => {
 };
 
 const initializeTheme = () => {
-  const button = document.querySelector("[data-theme-toggle]");
+  const button = document.querySelector("[data-theme-toggle]") || document.getElementById("theme-toggle");
   const localStorageTheme = localStorage.getItem("theme");
   const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -31,10 +34,11 @@ const initializeTheme = () => {
   updateThemeOnHtml(currentTheme);
 
   button.addEventListener("click", () => {
-    currentTheme = currentTheme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", currentTheme);
-    updateButton({ button, isDark: currentTheme === "dark" });
-    updateThemeOnHtml(currentTheme);
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", newTheme);
+    updateButton({ button, isDark: newTheme === "dark" });
+    updateThemeOnHtml(newTheme);
+    currentTheme = newTheme;
   });
 };
 

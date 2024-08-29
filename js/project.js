@@ -72,6 +72,7 @@ async function initializePage() {
         console.error('One or more required elements not found in the DOM');
     }
 
+    document.getElementById('back-to-main').href = `../#${projectId}`;
     console.log('Page initialization complete');
 }
 
@@ -210,7 +211,9 @@ function setupHeaderControl() {
     updateHeaderPosition();
 }
 
-document.addEventListener('DOMContentLoaded', initializePage);
+document.addEventListener('DOMContentLoaded', () => {
+    initializePage();
+});
 
 // TYPOGRAPHY----------------------------------------------------
 function createTypographySection(projectData) {

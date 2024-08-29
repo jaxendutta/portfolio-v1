@@ -56,6 +56,9 @@ const initializeTheme = () => {
       applyTheme(currentTheme);
     }
   });
+
+  // Update the theme when the page is loaded
+  updateThemeOnHtml(currentTheme);
 };
 
 // Divider Animation

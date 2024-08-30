@@ -33,11 +33,6 @@ const initializeTheme = () => {
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     updateButton({ button, isDark: theme === "dark" });
-    
-    // Force a repaint to ensure immediate application of styles
-    document.body.style.display = 'none';
-    document.body.offsetHeight; // Trigger a reflow
-    document.body.style.display = '';
   }
 
   applyTheme(currentTheme);

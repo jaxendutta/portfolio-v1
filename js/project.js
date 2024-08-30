@@ -51,26 +51,22 @@ async function initializePage() {
     const backToTopButton = document.getElementById('back-to-top');
     const horizontalScroll = document.querySelector('.horizontal-scroll');
 
-    if (scrollRightButton && backToTopButton && horizontalScroll) {
-        scrollRightButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            horizontalScroll.scrollBy({
-                left: window.innerWidth,
-                behavior: 'smooth'
-            });
+    scrollRightButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        horizontalScroll.scrollBy({
+            left: window.innerWidth,
+            behavior: 'smooth'
         });
+    });
 
-        backToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
+    backToTopButton.addEventListener('click', function(e) {
+        if (window.innerWidth > 768) {
             horizontalScroll.scrollTo({
-                top: 0,
                 left: 0,
                 behavior: 'smooth'
             });
-        });
-    } else {
-        console.error('One or more required elements not found in the DOM');
-    }
+        }
+    });
 
     document.getElementById('back-to-main').href = `../#${projectId}`;
     console.log('Page initialization complete');
@@ -86,6 +82,7 @@ function loadProjectData(projectId, projectData) {
     // Add project name section in enormous font
     const projectNameElement = document.createElement('div');
     projectNameElement.className = 'section name';
+    projectNameElement.id = 'project-name-top';
     projectNameElement.innerHTML = `<h1>${projectData.name.toUpperCase()}</h1>`;
     content.appendChild(projectNameElement);
 

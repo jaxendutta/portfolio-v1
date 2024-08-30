@@ -666,7 +666,6 @@ main {
         overflow-y: auto;
         height: auto;
         width: 100%;
-        padding-top: 80px;
     }
 
     .section {
@@ -685,8 +684,8 @@ main {
         hyphens: auto;
         text-align: center;
         justify-content: center;
-        padding: 0.5rem;
-        margin: 0;
+        padding-bottom: 0.5rem;
+        padding-top: 80px;
         width: 100%;
         box-sizing: border-box;
 
@@ -701,7 +700,6 @@ main {
             background-clip: text;
             color: transparent;
             padding-right: 0.1em;
-            margin: 0;
             line-height: normal;
         }
     }

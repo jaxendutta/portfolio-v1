@@ -441,6 +441,8 @@ html, body {
     padding: 50px;
     width: 40vw;
     max-width: 750px;
+    display: flex;
+    flex-direction: column;
 }
 
 .info h1, .info h2 {
@@ -457,6 +459,22 @@ html, body {
     font-size: 2em;
 }
   
+  
+.info p {
+    font-size: var(--paragraph-font-size);
+    text-align: justify;
+}
+
+.info p a,
+.info p a:visited {
+    color: var(--font-color);
+}
+  
+.info p a:hover {
+    color: var(--accent-color-constant);
+}
+
+
 .info p {
     font-size: var(--paragraph-font-size);
     text-align: justify;
@@ -480,10 +498,27 @@ html, body {
     justify-content: flex-end;
 }
 
+.project-title-link h1 {
+    margin: 1rem 0;
+}
+
 .project-title-link:hover {
     color: var(--accent-color-constant);
 }
 
+
+.project-title-link .external-arrow {
+    margin-left: 0.3em;
+    height: 0.7em;
+    width: 0.7em;
+    transition: transform 0.3s ease;
+}
+
+.project-title-link:hover .external-arrow {
+    transform: translate(5%, -5%);
+}
+  
+  
 .project-title-link .external-arrow {
     margin-left: 0.3em;
     height: 0.7em;
@@ -499,13 +534,17 @@ html, body {
     display: none;
     width: inherit;
 }
-  
+
+.out-pic.mobile-screen {
+    transform: rotate(5deg);
+}
+
 .project-image-container {
     width: 50vw;
 }
-  
+
 .project-image-inner {
-    width: 40vw;
+    width: 35vw;
     max-width: 800px;
     position: relative;
 }
@@ -539,22 +578,22 @@ html, body {
     opacity: 1;
 }
 
-.buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 50px;
+.mobile-screen .project-image-inner {
+    width: 20vw;
+    max-width: 280px;
 }
 
-.btn {
+.mobile-screen img {
+    border: none;
+}
+
+.btn-cross {
     line-height: 50px;
     height: 50px;
     text-align: center;
     width: 250px;
     cursor: pointer;
-}
-
-.btn-cross {
+    align-self: end;
     color: var(--font-color);
     transition: all 0.5s;
     position: relative;
@@ -596,11 +635,11 @@ html, body {
 }
 
 .btn-cross:hover::before {
-    transform: rotate(-45deg);
+    transform: rotate(-22deg);
 }
 
 .btn-cross:hover::after {
-    transform: rotate(45deg);
+    transform: rotate(22deg);
 }
 
 .rotating-overlay-btn {
@@ -1197,22 +1236,15 @@ footer {
     .info h2 {
         font-size: 1.5em;
     }
+    
+    .project-title-link {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
 
     .skill-tags {
         justify-content: center;
-        margin-bottom: 2rem;
-    }
-
-    .info p {
-        font-size: calc(var(--paragraph-font-size) * 0.75);
-    }
-
-    .buttons {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
     }
 
     .out-pic {
@@ -1235,8 +1267,17 @@ footer {
         position: relative;
     }
 
+    .mobile-screen .project-image-inner {
+        width: 60vw;
+        max-width: 800px;
+    }
+
     .project-image-inner:hover {
         pointer-events: none;
+    }
+
+    .btn-cross {
+        align-self: center;
     }
 
     .overlay {

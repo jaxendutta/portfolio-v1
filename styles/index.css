@@ -1271,6 +1271,10 @@ footer {
         pointer-events: none;
     }
 
+    .project-image-inner:after {
+        content: none;
+    }
+
     .btn-cross {
         align-self: center;
     }

@@ -61,7 +61,9 @@ async function initializePage() {
 
     backToTopButton.addEventListener('click', function(e) {
         if (window.innerWidth > 768) {
+            e.preventDefault();
             horizontalScroll.scrollTo({
+                top: 0,
                 left: 0,
                 behavior: 'smooth'
             });
@@ -259,8 +261,7 @@ function createFontCard(font) {
     fontNameLink.className = 'font-name-link';
     
     fontNameLink.innerHTML = `
-        ${font.name}&#8201;
-        <svg class="external-link-icon">
+        ${font.name}<svg class="external-link-icon">
             <use xlink:href="#external-link-icon"></use>
         </svg>
     `;
@@ -379,6 +380,21 @@ function createColorSection(colorSets) {
     return section;
 }
 
+function getBrightness(color) {
+    // Remove any leading #
+    color = color.replace('#', '');
+    
+    // Parse the color
+    const r = parseInt(color.substr(0, 2), 16) / 255;
+    const g = parseInt(color.substr(2, 2), 16) / 255;
+    const b = parseInt(color.substr(4, 2), 16) / 255;
+    
+    // Calculate relative luminance
+    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    
+    return luminance;
+}
+
 // TECH STACK---------------------------------------------------
 function createTechStackSection(techStack) {
     const section = document.createElement('div');
@@ -421,21 +437,6 @@ function createTechStackSection(techStack) {
 
     section.appendChild(content);
     return section;
-}
-
-function getBrightness(color) {
-    // Remove any leading #
-    color = color.replace('#', '');
-    
-    // Parse the color
-    const r = parseInt(color.substr(0, 2), 16) / 255;
-    const g = parseInt(color.substr(2, 2), 16) / 255;
-    const b = parseInt(color.substr(4, 2), 16) / 255;
-    
-    // Calculate relative luminance
-    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    
-    return luminance;
 }
 
 // FOOTER---------------------------------------------------

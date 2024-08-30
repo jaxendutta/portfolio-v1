@@ -18,8 +18,8 @@
 }
 
 [data-theme='light'] {
-    --background-color: #F8EDDB;
-    --font-color: #001aa8;
+    --background-color: #F4F1EA;
+    --font-color: #001AA8;
     --accent-color: #28B7D0;
     --font-background: url("https://media.giphy.com/media/YAxpwobytgjWgmIbP9/giphy.gif");
     --svg-invert: none;
@@ -91,6 +91,8 @@ header.scrolled {
     font-size: 3rem;
     transition: var(--header-transition);
     text-transform: capitalize !important;
+    margin-right: 2rem;
+    text-align: right;
 }
 
 .rotating-button {
@@ -373,7 +375,8 @@ main {
 }
 
 .typography-card .font-name-link {
-    align-items: center;
+    display: inline;
+    vertical-align: middle;
     text-decoration: none;
     color: var(--font-color);
     transition: color 0.3s ease;
@@ -381,30 +384,24 @@ main {
 }
 
 .typography-card .external-link-icon {
-    transition: transform 0.3s ease;
+    display: inline-block;
     width: 0.7em;
     height: 0.7em;
+    margin-left: 0.2em;
+    transition: transform 0.3s ease;
 }
 
 .typography-card .font-name-link:hover {
-    color: var(--accent-color);
+    color: var(--accent-color-constant);
 }
 
 .typography-card .font-name-link:hover .external-link-icon {
     transform: translate(5%, -5%);
 }
 
-.typography-card .external-link-icon {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
 .decorative-line {
     height: 2px;
-    background: linear-gradient(to right, var(--accent-color), transparent);
+    background: linear-gradient(to right, var(--accent-color-constant), transparent);
     position: relative;
 }
 
@@ -661,11 +658,13 @@ main {
     }    
 
     .horizontal-scroll {
-        display: block;
+        display: flex;
+        flex-direction: column;
         overflow-x: hidden;
         overflow-y: auto;
         height: auto;
         width: 100%;
+        align-items: center;
     }
 
     .section {
@@ -674,42 +673,43 @@ main {
         height: auto;
         width: 100%;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
     }
 
     .name {
-        min-height: calc(100vh - 100px) !important;
+        min-height: 100vh !important;
         width: 90vw !important;
-        line-height: 0.9;
+        line-height: 1;
         word-break: break-all;
         hyphens: auto;
         text-align: center;
         justify-content: center;
-        padding-bottom: 0.5rem;
         padding-top: 80px;
         width: 100%;
         box-sizing: border-box;
+    }
 
-        h1 {
-            font-family: var(--heading-font);
-            font-size: 15rem;
-            font-style: italic;
-            background-image: var(--font-background);
-            background-size: cover;
-            background-position: top left;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            padding-right: 0.1em;
-            line-height: normal;
-        }
+    .name h1 {
+        writing-mode: vertical-lr;
+        font-size: 15rem !important;
+        background-image: var(--font-background);
+        background-size: cover;
+        background-position: top left;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        padding-right: 0;
+        padding-bottom: 0.2em;
+        line-height: inherit;
     }
 
     .vertical-header {
         writing-mode: horizontal-tb;
         transform: none;
         font-size: 4rem;
-        padding: 3rem 0;
-        padding-right: 1rem;
+        padding: 3rem 1rem 3rem 0;  /* Added padding-right */
+        padding-right: 1rem; 
         margin-top: 100px;
         width: 100%;
         height: auto;
@@ -734,6 +734,10 @@ main {
         font-size: 1rem;
         max-width: 90%;
         margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .overview-paragraph:not(:last-child) .project-links {
@@ -743,6 +747,7 @@ main {
     .cardish {
         margin-bottom: 1rem;
         width: 100%;
+        text-align: center;
     }
 
     .project-links {
@@ -751,6 +756,7 @@ main {
 
     .project-link {
         font-size: 1.2rem;
+        padding-left: 2rem;
     }
 
     .project-link::before {
@@ -767,7 +773,7 @@ main {
         flex-direction: column;
         align-items: center;
         gap: 2rem;
-        padding-right: 1rem;
+        padding-right: 0;
     }
 
     .typography-card {
@@ -832,16 +838,6 @@ main {
     .tech-category {
         width: 100%;
         margin-right: 0;
-    }
-
-    .tech-category:nth-child(even) {
-        .category-header, .tech-items-list {
-            text-align: right;
-        }
-
-        .decorative-line {
-            transform: rotate(180deg);
-        }
     }
 
     .category-header {

@@ -859,9 +859,6 @@ html, body {
 }
 
 .external-link-icon {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
     transition: transform 0.3s ease;
 }
 
@@ -1069,7 +1066,7 @@ html, body {
     font-size: 3rem;
     color: var(--accent-color-constant);
     text-align: center;
-    margin-top: 40px;
+    margin: 40px 0;
     animation: caseglitch 6s infinite steps(50);
     display: inline-block;
 }
@@ -1196,7 +1193,7 @@ footer {
     }
 
     .project {
-        width: 92.5vw;
+        width: 90vw;
         height: auto;
         margin-top: 2.5vh;
         margin-bottom: 2.5vh;

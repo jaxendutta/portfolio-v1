@@ -1203,6 +1203,7 @@ footer {
     .project {
         width: 90vw;
         height: auto;
+        min-height: 70vh;
         margin-top: 2.5vh;
         margin-bottom: 2.5vh;
         border-radius: 20px;
@@ -1311,6 +1312,8 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    /* Hero Section */
+
     .iam-star {
         font-size: 2rem;
     }
@@ -1318,6 +1321,8 @@ footer {
     .theme-btn {
         font-size: 2rem;
     }
+
+    /* Work Experience */
 
     .drop-down-list {
         width: 92.5vw;
@@ -1350,9 +1355,23 @@ footer {
         right: 15px;
     }
 
+    /* Contact Section */
+
     .social-line>span {
         display: none;
     }
+
+    .social-media>a,
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1.5em;
+    }
+
+    .social-line img {
+        width: 1em;
+        height: 1em;
+    }
+
 }
 
 @media screen and (max-width: 720px) {

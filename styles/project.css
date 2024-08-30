@@ -147,7 +147,7 @@ header.scrolled {
     margin-left: 1.5rem;
 }
 
-.horizontal-scroll {
+main {
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -155,12 +155,6 @@ header.scrolled {
     -webkit-overflow-scrolling: touch;
     height: 100%;
     width: 100vw;
-}
-
-html,
-body,
-.horizontal-scroll {
-    scroll-snap-type: none;
 }
 
 .theme-btn {
@@ -193,12 +187,6 @@ body,
     }
 }
 
-main {
-    position: relative;
-    z-index: 0;
-    height: 100vh;
-}
-
 .section {
     flex: 0 0 auto;
     height: 100%;
@@ -206,20 +194,26 @@ main {
     flex-direction: row;
     padding: 2rem;
     box-sizing: border-box;
+    align-items: center;
 }
 
 .name {
     font-family: var(--heading-font);
-    font-size: 50vh;
+    font-size: 47vh;
     font-style: italic;
     color: var(--font-color);
-    padding: 1rem;
     margin: 0;
-    h1 {
-        margin: 0;
-        line-height: 70vh;
-        padding-right: 1rem;
-    }
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.name h1 {
+    margin: 0;
+    line-height: inherit;
+    padding-right: 1rem;
+    vertical-align: middle;
 }
 
 .vertical-header {
@@ -655,9 +649,11 @@ main {
 
     #scroll-right {
         display: none;
-    }    
+    }
 
-    .horizontal-scroll {
+    /* Main Section */
+
+    main {
         display: flex;
         flex-direction: column;
         overflow-x: hidden;
@@ -715,7 +711,7 @@ main {
         height: auto;
     }
 
-    /* Overview section */
+    /* Overview Section */
 
     .overview-container {
         flex-direction: column;
@@ -768,7 +764,8 @@ main {
         width: 110%;
     }
 
-    /* Typography section */
+    /* Typography Section */
+
     .typography-content {
         flex-direction: column;
         align-items: center;
@@ -806,7 +803,8 @@ main {
         gap: 1rem;
     }
 
-    /* Color palette section */
+    /* Color Palette Section */
+
     .color-palette-content {
         flex-direction: column;
         gap: 4rem;
@@ -826,7 +824,8 @@ main {
         font-size: 1rem;
     }
 
-    /* Tech stack section */
+    /* Tech Stack Section */
+
     .tech-stack-content {
         flex-direction: column;
         max-height: none;
@@ -849,6 +848,7 @@ main {
     }
 
     /* Footer */
+
     .footer-section {
         height: 100vh;
         width: 100%;
@@ -897,32 +897,32 @@ main {
 
 /* Keep this media query for Firefox scrollbar hiding */
 @media all and (max-width: 768px) {
-    .horizontal-scroll {
+    main {
         scrollbar-width: none;
     }
 }
 
 /* Custom scrollbar styles */
-.horizontal-scroll::-webkit-scrollbar {
+main::-webkit-scrollbar {
     height: 10px;
 }
 
-.horizontal-scroll::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
     background: var(--background-color);
 }
 
-.horizontal-scroll::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb {
     background: var(--accent-color);
     border-radius: 5px;
 }
 
 /* Hide scrollbar for Firefox */
-.horizontal-scroll {
+main {
     scrollbar-width: none;
 }
 
 /* Hide scrollbar for IE, Edge, and Firefox */
-.horizontal-scroll {
+main {
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
@@ -930,6 +930,6 @@ main {
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.horizontal-scroll::-webkit-scrollbar {
+main::-webkit-scrollbar {
     display: none;
 }

@@ -3,8 +3,8 @@ let projectsData = {};
 async function loadProjectsData() {
     try {
         console.log('Attempting to fetch project data...');
-        const scriptTag = document.querySelector('script[data-project-data]');
-        const jsonPath = scriptTag.getAttribute('data-project-data');
+        const scriptTag = document.querySelector('script[data]');
+        const jsonPath = scriptTag.getAttribute('data');
         const response = await fetch(jsonPath);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -49,11 +49,11 @@ async function initializePage() {
 
     const scrollRightButton = document.getElementById('scroll-right');
     const backToTopButton = document.getElementById('back-to-top');
-    const horizontalScroll = document.querySelector('.horizontal-scroll');
+    const main = document.querySelector('main');
 
     scrollRightButton.addEventListener('click', function(e) {
         e.preventDefault();
-        horizontalScroll.scrollBy({
+        main.scrollBy({
             left: window.innerWidth,
             behavior: 'smooth'
         });
@@ -62,7 +62,7 @@ async function initializePage() {
     backToTopButton.addEventListener('click', function(e) {
         if (window.innerWidth > 768) {
             e.preventDefault();
-            horizontalScroll.scrollTo({
+            main.scrollTo({
                 top: 0,
                 left: 0,
                 behavior: 'smooth'
@@ -78,20 +78,20 @@ function loadProjectData(projectId, projectData) {
     document.title = `${projectData.name} - Jaxen Dutta`;
     document.getElementById('project-name').textContent = projectData.name.toUpperCase();
 
-    const content = document.querySelector('.horizontal-scroll');
-    content.innerHTML = ''; // Clear existing content
+    const mainContent = document.querySelector('main');
+    mainContent.innerHTML = ''; // Clear existing mainContent
 
     // Add project name section in enormous font
     const projectNameElement = document.createElement('div');
     projectNameElement.className = 'section name';
     projectNameElement.id = 'project-name-top';
     projectNameElement.innerHTML = `<h1>${projectData.name.toUpperCase()}</h1>`;
-    content.appendChild(projectNameElement);
+    mainContent.appendChild(projectNameElement);
 
     // Create a container for overview paragraphs
     const overviewContainer = document.createElement('div');
     overviewContainer.className = 'overview-container';
-    content.appendChild(overviewContainer);
+    mainContent.appendChild(overviewContainer);
 
     // Add overview paragraphs with links
     if (projectData.overview && projectData.overview.length > 0) {
@@ -138,46 +138,50 @@ function loadProjectData(projectId, projectData) {
     if (projectData.typography && projectData.typography.length > 0) {
         const typographySection = createTypographySection(projectData);
         typographySection.id = 'typography';
-        content.appendChild(typographySection);
+        mainContent.appendChild(typographySection);
     }
 
     // Colors
     if (projectData.colors && projectData.colors.length > 0) {
         const colorSection = createColorSection(projectData.colors);
-        content.appendChild(colorSection);
+        colorSection.id = 'colour-palette';
+        mainContent.appendChild(colorSection);
     }
 
     // Tech Stack section
     if (projectData.techStack && Object.keys(projectData.techStack).length > 0) {
         const techStackSection = createTechStackSection(projectData.techStack);
-        content.appendChild(techStackSection);
+        techStackSection.id = 'tech-stack';
+        mainContent.appendChild(techStackSection);
     }
 
     // Footer
     if (projectData.footer) {
         const footerSection = createFooterSection(projectData.footer);
-        content.appendChild(footerSection);
+        footerSection.id = 'footer';
+        mainContent.appendChild(footerSection);
     }
 }
 
 function setupHeaderControl() {
     const header = document.querySelector('header');
-    const content = document.querySelector('.horizontal-scroll');
+    const mainContent = document.querySelector('main');
     let isDesktop = window.innerWidth > 768; // Assuming 768px as the breakpoint
 
     function updateHeaderPosition() {
-        const scrollLeft = content.scrollLeft;
+        const scrollLeft = mainContent.scrollLeft;
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         
         header.style.right = (scrollLeft > 0 || scrollTop > 0) ? '0' : '-120px';
     }
 
-    function handleScroll(event) {
-        if (isDesktop && event.target === document) {
-            //if (event.deltaY === 0) return; // Skip if no vertical scroll
+    function handleScroll(e) {
+        if (isDesktop) {
+            if (e.deltaY === 0) return; // Skip if no vertical scroll
             // Redirect vertical scroll to horizontal on desktop
-            event.preventDefault();
-            content.scrollLeft += event.deltaY * 1000;
+            e.preventDefault();
+            const delta = e.deltaY || e.detail || e.wheelDelta;
+            mainContent.scrollLeft += delta * 500;
         }
         updateHeaderPosition();
     }
@@ -202,7 +206,7 @@ function setupHeaderControl() {
 
     // Event listeners
     window.addEventListener('scroll', throttle(updateHeaderPosition, 100), { passive: true });
-    content.addEventListener('scroll', throttle(updateHeaderPosition, 100), { passive: true });
+    mainContent.addEventListener('scroll', throttle(updateHeaderPosition, 100), { passive: true });
     window.addEventListener('wheel', handleScroll, { passive: false });
     window.addEventListener('resize', throttle(handleResize, 100), { passive: true });
 

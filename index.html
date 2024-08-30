@@ -7,7 +7,6 @@
   <title>Jaxen Dutta</title>
   <!-- Keep index.css at the top! -->
   <link rel="stylesheet" href="styles/index.css">
-  <link rel="stylesheet" href="styles/glitch.css">
   <link rel="stylesheet" href="styles/caseglitch.css">
   <link rel="stylesheet" href="styles/switch.css">
 
@@ -27,11 +26,9 @@
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="icon.png">
 
+  <script src="js/index.js"></script>
   <script src="https://kit.fontawesome.com/d50d9d5a27.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-
+  
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
@@ -40,9 +37,11 @@
       <line x1="10" y1="14" x2="21" y2="3"></line>
     </symbol>
   </svg>
+</head>
 
-  <div id="main">
-    <div id="hero-container">
+<body>
+  <main>
+    <section id="hero-container">
       <div class="menu-container">
         <menu class="top-navbar">
           <li><a href="#main">HOME</a></li>
@@ -64,14 +63,14 @@
         <i class="fa-solid fa-sun" id="light-icon"></i>
         <i class="fa-solid fa-moon" id="dark-icon"></i>
       </button>
-      <section class="moon-container">
+      <div class="moon-container">
         <div class="noise" id="noiseId"></div>
         <div class="center">
           <div class="circle">
           </div>
         </div>
-      </section>
-      <section id="intro">
+      </div>
+      <div id="intro">
         <div class="hero-container">
           <h1>¿&nbsp;JAXEN DUTTA&nbsp;?</h1>
         </div>
@@ -104,11 +103,11 @@
             </div>
           </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <div id="content-container">
-      <div class="section-header-common section-header" id="projects">
+    <section id="projects">
+      <div class="section-header-common section-header">
         <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
         <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
         <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
@@ -121,10 +120,8 @@
         <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
       </div>
 
-      <div class="post-header-space"></div>
-
-      <div class="projects" id="fabler">
-        <div class="project">
+      <div class="section-content">
+        <div class="project" id="fabler">
           <div class="project-row">
             <div class="project-info">
               <div class="info">
@@ -287,561 +284,578 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="dividers">
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-      </div>
+        <div class="dividers">
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+        </div>
 
-      <div class="project" id="file-explorer">
-        <div class="project-row">
-          <div class="project-info">
-            <div class="info">
-              <a href="/file-explorer" class="project-title-link">
-                <h1>FILE EXPLORER</h1>
-              </a>
-              <div class="skill-tags">
-                <span class="skill-tag">Kotlin</span>
-                <span class="skill-tag">JavaFX</span>
-                <span class="skill-tag">UX/UI Design</span>
-              </div>
-              <div class="project-image-container in-pic">
-                <div class="project-image-inner">
-                  <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
-                  <div class="overlay">
-                    <a class="rotating-overlay-btn" href="/file-explorer">
-                      <i class="fa-solid fa-circle-info fa-2xl"></i>
-                    </a>
+        <div class="project" id="file-explorer">
+          <div class="project-row">
+            <div class="project-info">
+              <div class="info">
+                <a href="/file-explorer" class="project-title-link">
+                  <h1>FILE EXPLORER</h1>
+                </a>
+                <div class="skill-tags">
+                  <span class="skill-tag">Kotlin</span>
+                  <span class="skill-tag">JavaFX</span>
+                  <span class="skill-tag">UX/UI Design</span>
+                </div>
+                <div class="project-image-container in-pic">
+                  <div class="project-image-inner">
+                    <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
+                    <div class="overlay">
+                      <a class="rotating-overlay-btn" href="/file-explorer">
+                        <i class="fa-solid fa-circle-info fa-2xl"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="btn-cross">
-                <span><a href="/file-explorer/">EXPLORE >></a></span>
+                <div class="btn-cross">
+                  <span><a href="/file-explorer/">EXPLORE >></a></span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="project-image-container out-pic">
-            <div class="project-image-inner">
-              <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
-              <div class="overlay">
-                <a class="rotating-overlay-btn" href="/file-explorer">
-                  <i class="fa-solid fa-circle-info fa-2xl"></i>
-                </a>
+            <div class="project-image-container out-pic">
+              <div class="project-image-inner">
+                <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
+                <div class="overlay">
+                  <a class="rotating-overlay-btn" href="/file-explorer">
+                    <i class="fa-solid fa-circle-info fa-2xl"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="dividers">
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-      </div>
+        <div class="dividers">
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+        </div>
 
-      <div class="project" id="lightbox">
-        <div class="project-row">
-          <div class="project-info">
-            <div class="info">
-              <a href="/lightbox" class="project-title-link">
-                <h1>LIGHTBOX</h1>
-              </a>
-              <div class="skill-tags">
-                <span class="skill-tag">Kotlin</span>
-                <span class="skill-tag">JavaFX</span>
-                <span class="skill-tag">UX/UI Design</span>
-              </div>
-              <div class="project-image-container in-pic">
-                <div class="project-image-inner">
-                  <img src="assets/lightbox.png" alt="Screenshot of a Lightbox screen">
-                  <div class="overlay">
-                    <a class="rotating-overlay-btn" href="/lightbox">
-                      <i class="fa-solid fa-circle-info fa-2xl"></i>
-                    </a>
+        <div class="project" id="lightbox">
+          <div class="project-row">
+            <div class="project-info">
+              <div class="info">
+                <a href="/lightbox" class="project-title-link">
+                  <h1>LIGHTBOX</h1>
+                </a>
+                <div class="skill-tags">
+                  <span class="skill-tag">Kotlin</span>
+                  <span class="skill-tag">JavaFX</span>
+                  <span class="skill-tag">UX/UI Design</span>
+                </div>
+                <div class="project-image-container in-pic">
+                  <div class="project-image-inner">
+                    <img src="assets/lightbox.png" alt="Screenshot of a Lightbox screen">
+                    <div class="overlay">
+                      <a class="rotating-overlay-btn" href="/lightbox">
+                        <i class="fa-solid fa-circle-info fa-2xl"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="btn-cross">
-                <span><a href="/lightbox/">EXPLORE >></a></span>
+                <div class="btn-cross">
+                  <span><a href="/lightbox/">EXPLORE >></a></span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="project-image-container out-pic">
-            <div class="project-image-inner">
-              <img src="assets/lightbox.png" alt="Screenshot of a Lightbox screen">
-              <div class="overlay">
-                <a class="rotating-overlay-btn" href="/lightbox">
-                  <i class="fa-solid fa-circle-info fa-2xl"></i>
-                </a>
+            <div class="project-image-container out-pic">
+              <div class="project-image-inner">
+                <img src="assets/lightbox.png" alt="Screenshot of a Lightbox screen">
+                <div class="overlay">
+                  <a class="rotating-overlay-btn" href="/lightbox">
+                    <i class="fa-solid fa-circle-info fa-2xl"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="dividers">
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+        </div>
+
+        <div class="project" id="straights">
+          <div class="project-row">
+            <div class="project-info">
+              <div class="info">
+                <a href="/straights" class="project-title-link">
+                  <h1>STRAIGHTS</h1>
+                </a>
+                <div class="skill-tags">
+                  <span class="skill-tag">C++</span>
+                  <span class="skill-tag">WebAssembly</span>
+                  <span class="skill-tag">Emscripten</span>
+                  <span class="skill-tag">HTML</span>
+                  <span class="skill-tag">CSS</span>
+                  <span class="skill-tag">JS</span>
+                  <span class="skill-tag">Game Development</span>
+                </div>
+                <div class="project-image-container in-pic">
+                  <div class="project-image-inner">
+                    <img src="assets/straights.png" alt="Screenshot of a Straights screen">
+                    <div class="overlay">
+                      <a class="rotating-overlay-btn" href="/straights">
+                        <i class="fa-solid fa-circle-info fa-2xl"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-cross">
+                  <span><a href="/straights/">EXPLORE >></a></span>
+                </div>
+              </div>
+            </div>
+            <div class="project-image-container out-pic">
+              <div class="project-image-inner">
+                <img src="assets/straights.png" alt="Screenshot of a Straights screen">
+                <div class="overlay">
+                  <a class="rotating-overlay-btn" href="/straights">
+                    <i class="fa-solid fa-circle-info fa-2xl"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dividers">
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+          <p class="divider">
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-header-common section-header">
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+      </div>
+      <div class="section-header-common section-header-backward">
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
       </div>
 
-      <div class="dividers">
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-        <p class="divider">
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-        </p>
-      </div>
-
-      <div class="project" id="straights">
-        <div class="project-row">
-          <div class="project-info">
-            <div class="info">
-              <a href="/straights" class="project-title-link">
-                <h1>STRAIGHTS</h1>
-              </a>
+      <div class="section-content">
+        <div class="drop-down-list">
+          <div class="drop-down-item">
+            <div class="drop-down-label">
+              <div class="drop-down-info">
+                <div class="drop-down-main">SYSTEMS SOFTWARE ENGINEER</div>
+                <div class="drop-down-sub">
+                  <span>
+                    <a href="https://www.ontario.ca/page/ministry-attorney-general" target="_blank"
+                      rel="noopener noreferrer">
+                      GOVERNMENT OF ONTARIO&#8239;<svg class="external-link-icon" width="16" height="16">
+                        <use xlink:href="#external-link-icon"></use>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="drop-down-icon"></div>
+            </div>
+            <div class="drop-down-content">
               <div class="skill-tags">
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">WebAssembly</span>
-                <span class="skill-tag">Emscripten</span>
+                <span class="skill-tag">Azure Cloud</span>
+                <span class="skill-tag">Dynamics 365</span>
+                <span class="skill-tag">ERP</span>
+                <span class="skill-tag">CRM</span>
+                <span class="skill-tag">System Integration Testing</span>
+                <span class="skill-tag">IT Security</span>
+                <span class="skill-tag">Power Platform</span>
+                <span class="skill-tag">Documentation</span>
+              </div>
+              <p>Incoming Fall 2024! ✨✨✨</p>
+            </div>
+            <div class="vertical-date">
+              <span class="start-date">SEP&nbsp;2024</span>
+              <span class="date-line"></span>
+              <span class="end-date">DEC&nbsp;2024</span>
+            </div>
+          </div>
+          <div class="drop-down-item">
+            <div class="drop-down-label">
+              <div class="drop-down-info">
+                <div class="drop-down-main">HCI + UX/UI RESEARCH ASSISTANT</div>
+                <div class="drop-down-sub">
+                  <span>
+                    <a href="https://edithlaw.ca" target="_blank" rel="noopener noreferrer">
+                      AUGMENTED INTELLIGENCE LAB&#8239;<svg class="external-link-icon" width="16" height="16">
+                        <use xlink:href="#external-link-icon"></use>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="drop-down-icon"></div>
+            </div>
+            <div class="drop-down-content">
+              <div class="skill-tags">
+                <span class="skill-tag">HCI</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Miro</span>
+                <span class="skill-tag">UXR</span>
+                <span class="skill-tag">UI Design</span>
+                <span class="skill-tag">Literature Review</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Qualitative Analysis</span>
+              </div>
+              <p>Researched integration of native, cultural, and indigenous values,
+                into computing interfaces and educational curricula,
+                supervised by <a href="https://edithlaw.ca">Dr. Edith Law</a>.
+              </p>
+              <p>Collaborated in the design process, data collection, and thematic qualitative analysis
+                for the <a href="https://www.kw4oht.com/newcomerapp">KW4-OHT Newcomer App</a>.
+              </p>
+              <p>Co-authored manuscripts on AI Decision-Making, Integration of Culturally Value-Driven Storytelling
+                into Mathematics and Computing, and the establishement of a Newcomer App through the lens of
+                <a href="https://link.springer.com/article/10.1007/s11948-020-00275-5">Dr. Naomi Jacob's Capability
+                  Sensitive Design</a>.
+                Submitted to <a href="https://iui.acm.org/2024/call_for_papers.html">ACM's IUI 2024</a> and <a
+                  href="https://cscw.acm.org/">CSCW 2024</a>.
+              </p>
+            </div>
+            <div class="vertical-date">
+              <span class="start-date">SEP&nbsp;2023</span>
+              <span class="date-line"></span>
+              <span class="end-date">DEC&nbsp;2023</span>
+            </div>
+          </div>
+          <div class="drop-down-item">
+            <div class="drop-down-label">
+              <div class="drop-down-info">
+                <div class="drop-down-main">TECHNICAL WRITER</div>
+                <div class="drop-down-sub">
+                  <span>
+                    <a href="https://cloud.google.com/healthcare-api" target="_blank" rel="noopener noreferrer">
+                      GOOGLE&#8239;<svg class="external-link-icon" width="16" height="16">
+                        <use xlink:href="#external-link-icon"></use>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="drop-down-icon"></div>
+            </div>
+            <div class="drop-down-content">
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Go</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">GCP</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">gcloud</span>
                 <span class="skill-tag">HTML</span>
-                <span class="skill-tag">CSS</span>
-                <span class="skill-tag">JS</span>
-                <span class="skill-tag">Game Development</span>
+                <span class="skill-tag">Markdown</span>
+                <span class="skill-tag">Technical Writing</span>
               </div>
-              <div class="project-image-container in-pic">
-                <div class="project-image-inner">
-                  <img src="assets/straights.png" alt="Screenshot of a Straights screen">
-                  <div class="overlay">
-                    <a class="rotating-overlay-btn" href="/straights">
-                      <i class="fa-solid fa-circle-info fa-2xl"></i>
+              <div class="team-info">Cloud Healthcare and Life Sciences Team</div>
+              <p>Investigated leveraging an undisclosed LLM to refactor documentation, integrating code samples for
+                clarity.
+              </p>
+              <p>Improved reliability of internal tools through extensive testing, identifying feature gaps during early
+                adoption,
+                and filing over 100 bug reports; resulting in release-quality tools with company-wide adoption (12+
+                teams).
+              </p>
+              <p>Composed REST API documentation embedded with platform-specific code samples (gcloud, Go, Java, NodeJS,
+                and Python),
+                contributing to the <a
+                  href="https://cloud.google.com/healthcare-api/docs/how-tos#dicom-guide">DICOM</a>,
+                <a href="https://cloud.google.com/healthcare-api/docs/how-tos#fhir-guide">FHIR</a>, and
+                <a href="https://cloud.google.com/healthcare-api/docs/how-tos#hl7v2-guide">HL7v2</a> guides.
+              </p>
+            </div>
+            <div class="vertical-date">
+              <span class="start-date">MAY&nbsp;2022</span>
+              <span class="date-line"></span>
+              <span class="end-date">AUG&nbsp;2022</span>
+            </div>
+          </div>
+          <div class="drop-down-item">
+            <div class="drop-down-label">
+              <div class="drop-down-info">
+                <div class="drop-down-main">DEVELOPER + TECHNICAL WRITER</div>
+                <div class="drop-down-sub">
+                  <span>
+                    <a href="https://opentext.com" target="_blank" rel="noopener noreferrer">
+                      OPENTEXT&#8239;<svg class="external-link-icon" width="16" height="16">
+                        <use xlink:href="#external-link-icon"></use>
+                      </svg>
                     </a>
-                  </div>
+                  </span>
                 </div>
               </div>
-              <div class="btn-cross">
-                <span><a href="/straights/">EXPLORE >></a></span>
+              <div class="drop-down-icon"></div>
+            </div>
+            <div class="drop-down-content">
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Perl</span>
+                <span class="skill-tag">DITA</span>
+                <span class="skill-tag">Trados Studio</span>
+                <span class="skill-tag">Passolo</span>
+                <span class="skill-tag">Arbortext</span>
+                <span class="skill-tag">FrameMaker</span>
+                <span class="skill-tag">Perforce</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">JIRA</span>
+                <span class="skill-tag">Confluence</span>
               </div>
+              <div class="team-info">Product Information Engineering Team</div>
+              <p>Deployed Python and Perl scripts to automate documentation migration, achieving team-wide adoption.
+              </p>
+              <p>Automated the retrieval of translation clauses over 23+ localized languages.
+              </p>
+              <p>Identified and resolved inefficiencies in clause reuse, saving over $12,000 in translation costs by
+                mediating contracts between product managers and vendors.
+              </p>
+            </div>
+            <div class="vertical-date">
+              <span class="start-date">SEP&nbsp;2021</span>
+              <span class="date-line"></span>
+              <span class="end-date">DEC&nbsp;2021</span>
             </div>
           </div>
-          <div class="project-image-container out-pic">
-            <div class="project-image-inner">
-              <img src="assets/straights.png" alt="Screenshot of a Straights screen">
-              <div class="overlay">
-                <a class="rotating-overlay-btn" href="/straights">
-                  <i class="fa-solid fa-circle-info fa-2xl"></i>
-                </a>
+          <div class="drop-down-item">
+            <div class="drop-down-label">
+              <div class="drop-down-info">
+                <div class="drop-down-main">QA ANALYST</div>
+                <div class="drop-down-sub">
+                  <span>
+                    <a href="https://opentext.com" target="_blank" rel="noopener noreferrer">
+                      OPENTEXT&#8239;<svg class="external-link-icon" width="16" height="16">
+                        <use xlink:href="#external-link-icon"></use>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
               </div>
+              <div class="drop-down-icon"></div>
+            </div>
+            <div class="drop-down-content">
+              <div class="skill-tags">
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Trados Studio</span>
+                <span class="skill-tag">Passolo</span>
+                <span class="skill-tag">Documentation</span>
+                <span class="skill-tag">Perforce</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">JIRA</span>
+                <span class="skill-tag">Confluence</span>
+              </div>
+              <div class="team-info">Localization Engineering Team</div>
+              <p>Innovated testing infrastructure across multiple teams, by proposing using Kubernetes to orchestrate
+                Docker containers as a lightweight and rapid testing framework.
+              </p>
+              <p>Resolved 75+ accessibility issues and inconsistencies in localized documentation for 23+ languages.
+              </p>
+            </div>
+            <div class="vertical-date">
+              <span class="start-date">JAN&nbsp;2021</span>
+              <span class="date-line"></span>
+              <span class="end-date">APR&nbsp;2021</span>
+            </div>
+          </div>
+          <div class="drop-down-item">
+            <div class="drop-down-label">
+              <div class="drop-down-info">
+                <div class="drop-down-main">NETWORK DEVELOPER</div>
+                <div class="drop-down-sub">
+                  <span>
+                    <a href="https://kolkata.apollohospitals.com" target="_blank" rel="noopener noreferrer">
+                      APOLLO MULTISPECIALITY HOSPITAL&#8239;<svg class="external-link-icon" width="16" height="16">
+                        <use xlink:href="#external-link-icon"></use>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="drop-down-icon"></div>
+            </div>
+            <div class="drop-down-content">
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">TCP</span>
+                <span class="skill-tag">UDP</span>
+                <span class="skill-tag">DNS</span>
+                <span class="skill-tag">HTTP</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">Documentation</span>
+              </div>
+              <div class="team-info">Data and IT Engineering Team</div>
+              <p>Implemented TCP, UDP sockets, persistent HTTP connections, and executed network diagnostics.
+              </p>
+              <p>Conducted packet switching analysis using Wireshark and updated protocol documentation.
+              </p>
+            </div>
+            <div class="vertical-date">
+              <span class="start-date">MAR&nbsp;2019</span>
+              <span class="date-line"></span>
+              <span class="end-date">AUG&nbsp;2019</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="section-header-common section-header" id="work">
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-    </div>
-    <div class="section-header-common section-header-backward">
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-    </div>
+    </section>
 
-    <div class="post-header-space"></div>
+    <section id="contact">
+      <div class="section-header-common section-header">
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+      </div>
+      <div class="section-header-common section-header-backward">
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
+      </div>
 
-    <div class="drop-down-list">
-      <div class="drop-down-item">
-        <div class="drop-down-label">
-          <div class="drop-down-info">
-            <div class="drop-down-main">SYSTEMS SOFTWARE ENGINEER</div>
-            <div class="drop-down-sub">
-              <span>
-                <a href="https://www.ontario.ca/page/ministry-attorney-general" target="_blank"
-                  rel="noopener noreferrer">
-                  GOVERNMENT OF ONTARIO&#8239;<svg class="external-link-icon" width="16" height="16">
-                    <use xlink:href="#external-link-icon"></use>
-                  </svg>
-                </a>
-              </span>
-            </div>
+      <div class="section-content">
+        <div class="socials">
+          <div class="social-media">
+            <a href="mailto:jaxendutta@gmail.com" class="medium" target="_blank" rel="noopener">
+              <div class="social-content">
+                <div class="social-number"></div>
+                <div class="social-text">E-MAIL</div>
+              </div>
+              <div class="social-line">
+                <span>jaxendutta[at]gmail.com</span>
+                <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
+              </div>
+            </a>
           </div>
-          <div class="drop-down-icon"></div>
-        </div>
-        <div class="drop-down-content">
-          <div class="skill-tags">
-            <span class="skill-tag">Azure Cloud</span>
-            <span class="skill-tag">Dynamics 365</span>
-            <span class="skill-tag">ERP</span>
-            <span class="skill-tag">CRM</span>
-            <span class="skill-tag">System Integration Testing</span>
-            <span class="skill-tag">IT Security</span>
-            <span class="skill-tag">Power Platform</span>
-            <span class="skill-tag">Documentation</span>
+          <div class="social-media">
+            <a href="https://github.com/jaxendutta" class="medium" target="_blank" rel="noopener">
+              <div class="social-content">
+                <div class="social-number"></div>
+                <div class="social-text">GITHUB</div>
+              </div>
+              <div class="social-line">
+                <span>/jaxendutta</span>
+                <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
+              </div>
+            </a>
           </div>
-          <p>Incoming Fall 2024! ✨✨✨</p>
-        </div>
-        <div class="vertical-date">
-          <span class="start-date">SEP&nbsp;2024</span>
-          <span class="date-line"></span>
-          <span class="end-date">DEC&nbsp;2024</span>
-        </div>
-      </div>
-      <div class="drop-down-item">
-        <div class="drop-down-label">
-          <div class="drop-down-info">
-            <div class="drop-down-main">HCI + UX/UI RESEARCH ASSISTANT</div>
-            <div class="drop-down-sub">
-              <span>
-                <a href="https://edithlaw.ca" target="_blank" rel="noopener noreferrer">
-                  AUGMENTED INTELLIGENCE LAB&#8239;<svg class="external-link-icon" width="16" height="16">
-                    <use xlink:href="#external-link-icon"></use>
-                  </svg>
-                </a>
-              </span>
-            </div>
+          <div class="social-media">
+            <a href="https://www.linkedin.com/in/jaxen/" class="medium" target="_blank" rel="noopener">
+              <div class="social-content">
+                <div class="social-number"></div>
+                <div class="social-text">LINKEDIN</div>
+              </div>
+              <div class="social-line">
+                <span>/jaxen</span>
+                <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
+              </div>
+            </a>
           </div>
-          <div class="drop-down-icon"></div>
-        </div>
-        <div class="drop-down-content">
-          <div class="skill-tags">
-            <span class="skill-tag">HCI</span>
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">Miro</span>
-            <span class="skill-tag">UXR</span>
-            <span class="skill-tag">UI Design</span>
-            <span class="skill-tag">Literature Review</span>
-            <span class="skill-tag">Data Analysis</span>
-            <span class="skill-tag">Qualitative Analysis</span>
+          <div class="social-media">
+            <a href="https://docs.google.com/document/d/11mhUfmYKXO7jPN1rP6znr2B5zCl0hlrE0pKqAU2lKtU/view"
+              class="medium" target="_blank" rel="noopener">
+              <div class="social-content">
+                <div class="social-number"></div>
+                <div class="social-text">RÉSUMÉ</div>
+              </div>
+              <div class="social-line">
+                <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="External link">
+              </div>
+            </a>
           </div>
-          <p>Researched integration of native, cultural, and indigenous values,
-            into computing interfaces and educational curricula,
-            supervised by <a href="https://edithlaw.ca">Dr. Edith Law</a>.
-          </p>
-          <p>Collaborated in the design process, data collection, and thematic qualitative analysis
-            for the <a href="https://www.kw4oht.com/newcomerapp">KW4-OHT Newcomer App</a>.
-          </p>
-          <p>Co-authored manuscripts on AI Decision-Making, Integration of Culturally Value-Driven Storytelling
-            into Mathematics and Computing, and the establishement of a Newcomer App through the lens of
-            <a href="https://link.springer.com/article/10.1007/s11948-020-00275-5">Dr. Naomi Jacob's Capability
-              Sensitive Design</a>.
-            Submitted to <a href="https://iui.acm.org/2024/call_for_papers.html">ACM's IUI 2024</a> and <a
-              href="https://cscw.acm.org/">CSCW 2024</a>.
-          </p>
         </div>
-        <div class="vertical-date">
-          <span class="start-date">SEP&nbsp;2023</span>
-          <span class="date-line"></span>
-          <span class="end-date">DEC&nbsp;2023</span>
-        </div>
-      </div>
-      <div class="drop-down-item">
-        <div class="drop-down-label">
-          <div class="drop-down-info">
-            <div class="drop-down-main">TECHNICAL WRITER</div>
-            <div class="drop-down-sub">
-              <span>
-                <a href="https://cloud.google.com/healthcare-api" target="_blank" rel="noopener noreferrer">
-                  GOOGLE&#8239;<svg class="external-link-icon" width="16" height="16">
-                    <use xlink:href="#external-link-icon"></use>
-                  </svg>
-                </a>
-              </span>
-            </div>
-          </div>
-          <div class="drop-down-icon"></div>
-        </div>
-        <div class="drop-down-content">
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Go</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">GCP</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">gcloud</span>
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">Markdown</span>
-            <span class="skill-tag">Technical Writing</span>
-          </div>
-          <div class="team-info">Cloud Healthcare and Life Sciences Team</div>
-          <p>Investigated leveraging an undisclosed LLM to refactor documentation, integrating code samples for
-            clarity.
-          </p>
-          <p>Improved reliability of internal tools through extensive testing, identifying feature gaps during early
-            adoption,
-            and filing over 100 bug reports; resulting in release-quality tools with company-wide adoption (12+
-            teams).
-          </p>
-          <p>Composed REST API documentation embedded with platform-specific code samples (gcloud, Go, Java, NodeJS,
-            and Python),
-            contributing to the <a href="https://cloud.google.com/healthcare-api/docs/how-tos#dicom-guide">DICOM</a>,
-            <a href="https://cloud.google.com/healthcare-api/docs/how-tos#fhir-guide">FHIR</a>, and
-            <a href="https://cloud.google.com/healthcare-api/docs/how-tos#hl7v2-guide">HL7v2</a> guides.
-          </p>
-        </div>
-        <div class="vertical-date">
-          <span class="start-date">MAY&nbsp;2022</span>
-          <span class="date-line"></span>
-          <span class="end-date">AUG&nbsp;2022</span>
-        </div>
-      </div>
-      <div class="drop-down-item">
-        <div class="drop-down-label">
-          <div class="drop-down-info">
-            <div class="drop-down-main">DEVELOPER + TECHNICAL WRITER</div>
-            <div class="drop-down-sub">
-              <span>
-                <a href="https://opentext.com" target="_blank" rel="noopener noreferrer">
-                  OPENTEXT&#8239;<svg class="external-link-icon" width="16" height="16">
-                    <use xlink:href="#external-link-icon"></use>
-                  </svg>
-                </a>
-              </span>
-            </div>
-          </div>
-          <div class="drop-down-icon"></div>
-        </div>
-        <div class="drop-down-content">
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Perl</span>
-            <span class="skill-tag">DITA</span>
-            <span class="skill-tag">Trados Studio</span>
-            <span class="skill-tag">Passolo</span>
-            <span class="skill-tag">Arbortext</span>
-            <span class="skill-tag">FrameMaker</span>
-            <span class="skill-tag">Perforce</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">JIRA</span>
-            <span class="skill-tag">Confluence</span>
-          </div>
-          <div class="team-info">Product Information Engineering Team</div>
-          <p>Deployed Python and Perl scripts to automate documentation migration, achieving team-wide adoption.
-          </p>
-          <p>Automated the retrieval of translation clauses over 23+ localized languages.
-          </p>
-          <p>Identified and resolved inefficiencies in clause reuse, saving over $12,000 in translation costs by
-            mediating contracts between product managers and vendors.
-          </p>
-        </div>
-        <div class="vertical-date">
-          <span class="start-date">SEP&nbsp;2021</span>
-          <span class="date-line"></span>
-          <span class="end-date">DEC&nbsp;2021</span>
-        </div>
-      </div>
-      <div class="drop-down-item">
-        <div class="drop-down-label">
-          <div class="drop-down-info">
-            <div class="drop-down-main">QA ANALYST</div>
-            <div class="drop-down-sub">
-              <span>
-                <a href="https://opentext.com" target="_blank" rel="noopener noreferrer">
-                  OPENTEXT&#8239;<svg class="external-link-icon" width="16" height="16">
-                    <use xlink:href="#external-link-icon"></use>
-                  </svg>
-                </a>
-              </span>
-            </div>
-          </div>
-          <div class="drop-down-icon"></div>
-        </div>
-        <div class="drop-down-content">
-          <div class="skill-tags">
-            <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Trados Studio</span>
-            <span class="skill-tag">Passolo</span>
-            <span class="skill-tag">Documentation</span>
-            <span class="skill-tag">Perforce</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">JIRA</span>
-            <span class="skill-tag">Confluence</span>
-          </div>
-          <div class="team-info">Localization Engineering Team</div>
-          <p>Innovated testing infrastructure across multiple teams, by proposing using Kubernetes to orchestrate
-            Docker containers as a lightweight and rapid testing framework.
-          </p>
-          <p>Resolved 75+ accessibility issues and inconsistencies in localized documentation for 23+ languages.
-          </p>
-        </div>
-        <div class="vertical-date">
-          <span class="start-date">JAN&nbsp;2021</span>
-          <span class="date-line"></span>
-          <span class="end-date">APR&nbsp;2021</span>
-        </div>
-      </div>
-      <div class="drop-down-item">
-        <div class="drop-down-label">
-          <div class="drop-down-info">
-            <div class="drop-down-main">NETWORK DEVELOPER</div>
-            <div class="drop-down-sub">
-              <span>
-                <a href="https://kolkata.apollohospitals.com" target="_blank" rel="noopener noreferrer">
-                  APOLLO MULTISPECIALITY HOSPITAL&#8239;<svg class="external-link-icon" width="16" height="16">
-                    <use xlink:href="#external-link-icon"></use>
-                  </svg>
-                </a>
-              </span>
-            </div>
-          </div>
-          <div class="drop-down-icon"></div>
-        </div>
-        <div class="drop-down-content">
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">TCP</span>
-            <span class="skill-tag">UDP</span>
-            <span class="skill-tag">DNS</span>
-            <span class="skill-tag">HTTP</span>
-            <span class="skill-tag">Wireshark</span>
-            <span class="skill-tag">Documentation</span>
-          </div>
-          <div class="team-info">Data and IT Engineering Team</div>
-          <p>Implemented TCP, UDP sockets, persistent HTTP connections, and executed network diagnostics.
-          </p>
-          <p>Conducted packet switching analysis using Wireshark and updated protocol documentation.
-          </p>
-        </div>
-        <div class="vertical-date">
-          <span class="start-date">MAR&nbsp;2019</span>
-          <span class="date-line"></span>
-          <span class="end-date">AUG&nbsp;2019</span>
-        </div>
-      </div>
-    </div>
 
-    <div style="height: 10vh"></div>
+        <div class="contact-or">Or ping me below.</div>
 
-    <div class="section-header-common section-header" id="contact">
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-    </div>
-    <div class="section-header-common section-header-backward">
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-    </div>
-
-    <div class="post-header-space"></div>
-
-    <div class="socials">
-      <div class="social-media">
-        <a href="mailto:jaxendutta@gmail.com" class="medium" target="_blank" rel="noopener">
-          <div class="social-content">
-            <div class="social-number"></div>
-            <div class="social-text">E-MAIL</div>
-          </div>
-          <div class="social-line">
-            <span>jaxendutta[at]gmail.com</span>
-            <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
-          </div>
-        </a>
+        <div class="contact-form">
+          <form name="contact-form" method="POST" data-netlify="true" onsubmit="return validateForm()">
+            <input id="name" name="name" type="text" required placeholder="01. NAME" />
+            <input id="email" name="email" type="email" required placeholder="02. E-MAIL"
+              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" />
+            <input id="linkedin" name="linkedin" type="url" placeholder="03. LINKEDIN" />
+            <textarea id="message" name="message" type="text" required placeholder="04. MESSAGE"></textarea>
+            <input id="submit" type="submit" value="SEND" />
+          </form>
+        </div>
       </div>
-      <div class="social-media">
-        <a href="https://github.com/jaxendutta" class="medium" target="_blank" rel="noopener">
-          <div class="social-content">
-            <div class="social-number"></div>
-            <div class="social-text">GITHUB</div>
-          </div>
-          <div class="social-line">
-            <span>/jaxendutta</span>
-            <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
-          </div>
-        </a>
-      </div>
-      <div class="social-media">
-        <a href="https://www.linkedin.com/in/jaxen/" class="medium" target="_blank" rel="noopener">
-          <div class="social-content">
-            <div class="social-number"></div>
-            <div class="social-text">LINKEDIN</div>
-          </div>
-          <div class="social-line">
-            <span>/jaxen</span>
-            <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
-          </div>
-        </a>
-      </div>
-      <div class="social-media">
-        <a href="https://docs.google.com/document/d/11mhUfmYKXO7jPN1rP6znr2B5zCl0hlrE0pKqAU2lKtU/view" class="medium"
-          target="_blank" rel="noopener">
-          <div class="social-content">
-            <div class="social-number"></div>
-            <div class="social-text">RÉSUMÉ</div>
-          </div>
-          <div class="social-line">
-            <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="External link">
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="post-header-space"></div>
-    <div class="contact-or">Or ping me below.</div>
-    <div class="post-header-space"></div>
-
-    <div class="contact-form">
-      <form name="contact-form" method="POST" data-netlify="true" onsubmit="return validateForm()">
-        <input id="name" name="name" type="text" required placeholder="01. NAME" />
-        <input id="email" name="email" type="email" required placeholder="02. E-MAIL"
-          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" />
-        <input id="linkedin" name="linkedin" type="url" placeholder="03. LINKEDIN" />
-        <textarea id="message" name="message" type="text" required placeholder="04. MESSAGE"></textarea>
-        <input id="submit" type="submit" value="SEND" />
-      </form>
-    </div>
-
+    </section>
     <footer>
       Jaxen Anirban Dutta //
     </footer>
-  </div>
-  </div>
-  <script src="js/index.js"></script>
+  </main>
 </body>
 
 </html>

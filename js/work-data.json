@@ -79,7 +79,7 @@
             "Technical Writing"
         ],
         "description": [
-            "Investigated pre-release <a href='https://ai.google.dev/palm_docs' alt='PaLM Documentation'>PaLM</a> (now <a href='https://sites.research.google/med-palm/' alt='Med-PaLM Documentation'>Med-PaLM</a>) integration for interactive docs enhancement with executable code.",
+            "Investigated pre-release <a href='https://ai.google.dev/palm_docs' alt='PaLM Documentation'>PaLM</a> (now <a href='https://sites.research.google/med-palm/' alt='Med-PaLM Documentation'>Med-PaLM</a>) integration for interactive documentation enhancement with executable code snippets.",
             "Improved reliability of internal tools through extensive testing, identifying feature gaps during early adoption, and filing 100+ bug reports; resulting in release-quality tools with company-wide adoption (12+ teams).",
             "Authored comprehensive <a href='https://cloud.google.com/healthcare-api' alt='Cloud Healthcare API Documentation'>Cloud Healthcare API</a> documentation embedded with platform-specific code samples (gcloud, Go, Java, NodeJS, and Python), contributing to the <a href='https://cloud.google.com/healthcare-api/docs/how-tos#dicom-guide' alt='DICOM Guide'>DICOM</a>, <a href='https://cloud.google.com/healthcare-api/docs/how-tos#fhir-guide' alt='FHIR Guide'>FHIR</a>, and <a href='https://cloud.google.com/healthcare-api/docs/how-tos#hl7v2-guide' alt='HL7v2 Guide'>HL7v2</a> guides."
         ]
@@ -176,7 +176,8 @@
         "description": [
             "Supported full-stack Android app development with database testing, prototype feedback and UX/UI element design.",
             "Assessed GCP operations and proposed a possible future plan to Google Cloud Healthcare API integration for data standardization.",
-            "In 2024, Apollo launched <a href='https://cloud.google.com/blog/products/ai-machine-learning/how-apollo-247-leverages-medlm-with-rag-to-revolutionize-healthcare' alt='Apollo Healthcare App leveraging MedLM'>a new large-scale healthcare app which ended up leveraging Google Cloud Healthcare's MedLM</a>, which I got to work with at a very preliminary stage during my 2022 Internship at Google Cloud's Life Sciences and Healthcare Team.",
+            "In 2022, Apollo launched a new large-scale healthcare app, <a href='https://www.apollo247.com/' alt='Apollo 24|7'>Apollo 24|7</a>. Also in 2022, I got to work with a very preliminary model of MedLM (PaLM, and later Med-PaLM) during my 2022 Internship at Google Cloud's Life Sciences and Healthcare Team.",
+            "In 2024, <a href='https://cloud.google.com/blog/products/ai-machine-learning/how-apollo-247-leverages-medlm-with-rag-to-revolutionize-healthcare' alt='Apollo Healthcare App leveraging MedLM'>Google Cloud and Apollo announced their partnership to make Apollo 24|7 leverage Google Cloud's MedLM</a> with RAG to revolutionalize their healthcare services.",
             "Also implemented TCP, UDP sockets, persistent HTTP connections, and executed network diagnostics."
         ]
     }

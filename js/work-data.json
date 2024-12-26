@@ -1,0 +1,183 @@
+{
+    "ontario": {
+        "title": "SYSTEMS SOFTWARE ENGINEER",
+        "company": "GOVERNMENT OF ONTARIO",
+        "url": "https://www.ontario.ca/page/ministry-attorney-general",
+        "duration": {
+            "start": "SEP 2024",
+            "end": "DEC 2024"
+        },
+        "team": {
+            "name": "OPGT Financial Technology Team",
+            "url": "https://www.ontario.ca/page/office-public-guardian-and-trustee"
+        },
+        "skills": [
+            "Azure Cloud",
+            "Azure Data Factory",
+            "Azure Data Lake",
+            "Azure Synapse",
+            "Azure DevOps",
+            "Dynamics 365",
+            "System Integration Testing",
+            "Power Platform",
+            "Documentation",
+            "Quality Assurance"
+        ],
+        "description": [
+            "Implemented Azure Data Factory pipelines for automated data transformations for subsequent QA testing workflows.",
+            "Supported CRM/ERP modernization to Microsoft Dynamics, implementing systems integration testing protocols.",
+            "Collaborated with the OPGT Financial Technology Team to enhance data processing and quality assurance procedures."
+        ]
+    },
+    "ailab": {
+        "title": "HCI + UX/UI RESEARCH ASSISTANT",
+        "company": "AUGMENTED INTELLIGENCE LAB",
+        "url": "https://edithlaw.ca",
+        "duration": {
+            "start": "SEP 2023",
+            "end": "DEC 2023"
+        },
+        "team": null,
+        "skills": [
+            "HCI",
+            "Figma",
+            "Miro",
+            "UXR",
+            "UI Design",
+            "Literature Review",
+            "Data Analysis",
+            "Qualitative Analysis"
+        ],
+        "description": [
+            "Researched integration of native, cultural, and indigenous values, into computing interfaces and educational curricula, supervised by <a href='https://edithlaw.ca'>Dr. Edith Law</a>.",
+            "Collaborated in the design process, data collection, and thematic qualitative analysis for the <a href='https://www.kw4oht.com/newcomerapp'>KW4-OHT Newcomer App</a>.",
+            "Co-authored manuscripts on AI Decision-Making, Integration of Culturally Value-Driven Storytelling into Mathematics and Computing, and the establishement of a Newcomer App through the lens of <a href='https://link.springer.com/article/10.1007/s11948-020-00275-5'>Dr. Naomi Jacob's Capability Sensitive Design</a>. Submitted to <a href='https://iui.acm.org/2024/call_for_papers.html'>ACM's IUI 2024</a> and <a href='https://cscw.acm.org/'>CSCW 2024</a>."
+        ]
+    },
+    "google": {
+        "title": "TECHNICAL WRITER",
+        "company": "GOOGLE",
+        "url": "https://cloud.google.com",
+        "duration": {
+            "start": "MAY 2022",
+            "end": "AUG 2022"
+        },
+        "team": {
+            "name": "Cloud Healthcare and Life Sciences Team",
+            "url": "https://cloud.google.com/solutions/healthcare-life-sciences"
+        },
+        "skills": [
+            "Python",
+            "Go",
+            "REST APIs",
+            "Java",
+            "GCP",
+            "Node.js",
+            "gcloud",
+            "HTML",
+            "Markdown",
+            "Technical Writing"
+        ],
+        "description": [
+            "Investigated pre-release <a href='https://ai.google.dev/palm_docs' alt='PaLM Documentation'>PaLM</a> (now <a href='https://sites.research.google/med-palm/' alt='Med-PaLM Documentation'>Med-PaLM</a>) integration for interactive docs enhancement with executable code.",
+            "Improved reliability of internal tools through extensive testing, identifying feature gaps during early adoption, and filing 100+ bug reports; resulting in release-quality tools with company-wide adoption (12+ teams).",
+            "Authored comprehensive <a href='https://cloud.google.com/healthcare-api' alt='Cloud Healthcare API Documentation'>Cloud Healthcare API</a> documentation embedded with platform-specific code samples (gcloud, Go, Java, NodeJS, and Python), contributing to the <a href='https://cloud.google.com/healthcare-api/docs/how-tos#dicom-guide' alt='DICOM Guide'>DICOM</a>, <a href='https://cloud.google.com/healthcare-api/docs/how-tos#fhir-guide' alt='FHIR Guide'>FHIR</a>, and <a href='https://cloud.google.com/healthcare-api/docs/how-tos#hl7v2-guide' alt='HL7v2 Guide'>HL7v2</a> guides."
+        ]
+    },
+    "opentext2": {
+        "title": "SOFTWARE DEVELOPER + TECHNICAL WRITER",
+        "company": "OPENTEXT",
+        "url": "https://opentext.com",
+        "duration": {
+            "start": "SEP 2021",
+            "end": "DEC 2021"
+        },
+        "team": {
+            "name": "Product Information Engineering Team",
+            "url": "https://blogs.opentext.com/what-is-product-information-management/"
+        },
+        "skills": [
+            "Python",
+            "Perl",
+            "DITA",
+            "Trados Studio",
+            "Passolo",
+            "Arbortext",
+            "FrameMaker",
+            "Perforce",
+            "Git",
+            "JIRA",
+            "Confluence"
+        ],
+        "description": [
+            "Automated clause translation retrieval of 23+ languages using Python and Perl for documentation modernization.",
+            "Identified and optimized inefficient clause reuse workflows resulting in translation vendor cost savings of $12K.",
+            "Deployed fine-tuned and adaptable Python and Perl scripts to automate documentation migration, achieving team-wide adoption."
+        ]
+    },
+    "opentext1": {
+        "title": "SOFTWARE QA DEVELOPER",
+        "company": "OPENTEXT",
+        "url": "https://opentext.com",
+        "duration": {
+            "start": "JAN 2021",
+            "end": "APR 2021"
+        },
+        "team": {
+            "name": "Localization Engineering Team",
+            "url": "https://cloud.google.com/healthcare"
+        },
+        "skills": [
+            "Kubernetes",
+            "Docker",
+            "Trados Studio",
+            "Passolo",
+            "Documentation",
+            "Perforce",
+            "Git",
+            "JIRA",
+            "Confluence"
+        ],
+        "description": [
+            "Innovated testing infrastructure across multiple teams, by proposing using Kubernetes to orchestrate Docker containers as a lightweight and rapid testing framework.",
+            "Resolved 75+ accessibility issues and inconsistencies in localized documentation for 23+ languages."
+        ]
+    },
+    "apollo": {
+        "title": "SOFTWARE DEVELOPER",
+        "company": "APOLLO DIAGNOSTICS",
+        "url": "https://apollodiagnostics.in/",
+        "duration": {
+            "start": "MAR 2018",
+            "end": "AUG 2019"
+        },
+        "team": {
+            "name": "Application Development & Engineering Team"
+        },
+        "skills": [
+            "Python",
+            "SQL",
+            "Android",
+            "Kotlin",
+            "Jetpack Compose",
+            "Figma",
+            "Miro",
+            "UX/UI Design",
+            "GCP",
+            "Database Testing",
+            "Prototype Testing",
+            "TCP",
+            "UDP",
+            "DNS",
+            "HTTP",
+            "Wireshark",
+            "Documentation"
+        ],
+        "description": [
+            "Supported full-stack Android app development with database testing, prototype feedback and UX/UI element design.",
+            "Assessed GCP operations and proposed a possible future plan to Google Cloud Healthcare API integration for data standardization.",
+            "In 2024, Apollo launched <a href='https://cloud.google.com/blog/products/ai-machine-learning/how-apollo-247-leverages-medlm-with-rag-to-revolutionize-healthcare' alt='Apollo Healthcare App leveraging MedLM'>a new large-scale healthcare app which ended up leveraging Google Cloud Healthcare's MedLM</a>, which I got to work with at a very preliminary stage during my 2022 Internship at Google Cloud's Life Sciences and Healthcare Team.",
+            "Also implemented TCP, UDP sockets, persistent HTTP connections, and executed network diagnostics."
+        ]
+    }
+}

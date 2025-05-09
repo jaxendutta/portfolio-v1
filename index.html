@@ -1,667 +1,1140 @@
 <!DOCTYPE html>
 <html lang="en-us" data-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jaxen Dutta</title>
+        <!-- Keep index.css at the top! -->
+        <link rel="stylesheet" href="styles/index.css" />
+        <link rel="stylesheet" href="styles/caseglitch.css" />
+        <link rel="stylesheet" href="styles/switch.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>Jaxen Dutta</title>
-  <!-- Keep index.css at the top! -->
-  <link rel="stylesheet" href="styles/index.css">
-  <link rel="stylesheet" href="styles/caseglitch.css">
-  <link rel="stylesheet" href="styles/switch.css">
+        <!-- TODO: og = open graph = preview for embed -->
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
 
-  <!-- TODO: og = open graph = preview for embed -->
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Fira+Code&family=Xanh+Mono:ital@0;1&family=Orbitron:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+            rel="stylesheet"
+        />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Fira+Code&family=Xanh+Mono:ital@0;1&family=Orbitron:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
-    rel="stylesheet">
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="icon.png" />
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="icon.png">
+        <script src="js/index.js"></script>
+        <script src="js/work.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script
+            src="https://kit.fontawesome.com/d50d9d5a27.js"
+            crossorigin="anonymous"
+        ></script>
 
-  <script src="js/index.js"></script>
-  <script src="js/work.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://kit.fontawesome.com/d50d9d5a27.js" crossorigin="anonymous"></script>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-      <polyline points="15 3 21 3 21 9"></polyline>
-      <line x1="10" y1="14" x2="21" y2="3"></line>
-    </symbol>
-  </svg>
-</head>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <symbol
+                id="external-link-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+            </symbol>
+        </svg>
+    </head>
 
-<body>
-  <main>
-    <section id="hero-container">
-      <div class="menu-container">
-        <menu class="top-navbar">
-          <li><a href="#main">HOME</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li style="flex: 1;"></li>
-          <li><a href="#work">WORK</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </menu>
-      </div>
-      <div class="location-time-globe">
-        <img class="globe svg-theme-filter" src="assets/globe.svg" alt="Globe Icon">
-        <div class="location-time">
-          <p id="time-para">WATERLOO, CA<br>
-            <span id="est"></span>
-          </p>
+    <body>
+        <div
+            id="deprecation-banner"
+            style="
+                position: relative;
+                top: 0;
+                background-color: #d7482f;
+                color: white;
+                text-align: center;
+                padding: 4px 16px;
+                z-index: 10000;
+                font-family: var(--code-font);
+                font-size: 12px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            "
+        >
+            <p>
+                ⚠️ This site is deprecated as of December 31, 2024. Please visit
+                <a
+                    href="https://anirban.ca"
+                    style="
+                        color: white;
+                        text-decoration: underline;
+                        font-weight: bold;
+                    "
+                    >anirban.ca</a
+                >
+                for the current site.
+            </p>
+            <button
+                onclick="document.getElementById('deprecation-banner').style.display='none';"
+                style="
+                    width: 20px;
+                    height: 20px;
+                    background: transparent;
+                    border: 1px solid white;
+                    color: white;
+                    cursor: pointer;
+                "
+            >
+                ×
+            </button>
         </div>
-      </div>
-      <button class="theme-btn" data-theme-toggle aria-label="Toggle dark mode" onClick="toggleDarkMode()">
-        <i class="fa-solid fa-sun" id="light-icon"></i>
-        <i class="fa-solid fa-moon" id="dark-icon"></i>
-      </button>
-      <div class="moon-container">
-        <div class="noise" id="noiseId"></div>
-        <div class="center">
-          <div class="circle">
-          </div>
-        </div>
-      </div>
-      <div id="intro">
-        <div class="hero-container">
-          <h1>¿&nbsp;JAXEN DUTTA&nbsp;?</h1>
-        </div>
-        <div class="iam">
-          <span class="iam-star">✦</span>
-          <div class="roles-container">
-            <ul class="roles-list">
-              <li class="roles">UX/UI Engineer</li>
-              <li class="roles">HCI Researcher</li>
-              <li class="roles">Web Designer</li>
-              <li class="roles">App Developer</li>
-            </ul>
-          </div>
-          <span class="iam-star">✦</span>
-        </div>
-        <div class="button-container">
-          <a href="#projects" class="rotating-button">
-            <svg class="rotating-text" viewBox="0 0 100 100">
-              <defs>
-                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
-              </defs>
-              <text font-size="14">
-                <textPath xlink:href="#circle" startOffset="0">
-                  ✦ PROJECTS ✦ WORK ✦ RÉSUMÉ
-                </textPath>
-              </text>
-            </svg>
-            <div class="inner-circle">
-              <div class="arrow-down"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="section-header-common section-header">
-        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      </div>
-      <div class="section-header-common section-header-backward">
-        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      </div>
-
-      <div class="section-content">
-        <div class="project" id="ev-charging">
-          <div class="project-row">
-            <div class="project-info">
-              <div class="info">
-                <a href="https://github.com/jaxendutta/kwc-ev-charging-network-opt" class="project-title-link">
-                  <h1>EV CHARGING NETWORK OPTIMIZATION</h1>
-                </a>
-                <div class="skill-tags">
-                  <span class="skill-tag">Python</span>
-                  <span class="skill-tag">Gurobi</span>
-                  <span class="skill-tag">GeoPandas</span>
-                  <span class="skill-tag">Folium</span>
-                  <span class="skill-tag">SciPy</span>
-                  <span class="skill-tag">Jupyter</span>
-                  <span class="skill-tag">GIS</span>
-                  <span class="skill-tag">MILP</span>
-                  <span class="skill-tag">Data Engineering</span>
-                  <span class="skill-tag">Optimization</span>
+        <main>
+            <section id="hero-container">
+                <div class="menu-container">
+                    <menu class="top-navbar">
+                        <li><a href="#main">HOME</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
+                        <li style="flex: 1"></li>
+                        <li><a href="#work">WORK</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </menu>
                 </div>
-                <div class="project-description">
-                  <p>Engineered a Gurobi MILP model processing 7750+ locations to enhance KWC-CMA's EV charging station coverage by +80% while minimizing costs through strategic Level 2 to Level 3 upgrades.</p>
-                </div>
-                <div class="viz-container in-pic">
-                  <iframe 
-                    src="assets/kwc-ev-opt/solution_map.html" 
-                    class="map-frame"
-                    loading="lazy"
-                    title="EV Charging Network Optimization Map">
-                  </iframe>
-                </div>
-                <div class="btn-cross">
-                  <span><a href="https://github.com/jaxendutta/kwc-ev-charging-network-opt">EXPLORE >></a></span>
-                </div>
-              </div>
-            </div>
-            <div class="viz-container out-pic">
-              <iframe 
-                src="assets/kwc-ev-opt/solution_map.html" 
-                class="map-frame"
-                loading="lazy"
-                title="EV Charging Network Optimization Map">
-              </iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="dividers">
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-        </div>
-
-        <div class="project" id="fabler">
-          <div class="project-row">
-            <div class="project-info">
-              <div class="info">
-                <a href="/fabler" class="project-title-link">
-                  <h1>FABLER</h1>
-                </a>
-                <div class="skill-tags">
-                  <span class="skill-tag">Kotlin</span>
-                  <span class="skill-tag">Jetpack Compose</span>
-                  <span class="skill-tag">Android SDK 34</span>
-                  <span class="skill-tag">Python</span>
-                  <span class="skill-tag">Ren'Py</span>
-                  <span class="skill-tag">OpenAI</span>
-                  <span class="skill-tag">Stable Diffusion</span>
-                  <span class="skill-tag">Figma</span>
-                  <span class="skill-tag">UX/UI Research</span>
-                </div>
-                <div class="project-image-container in-pic mobile-screen">
-                  <div class="project-image-inner">
-                    <img src="assets/fabler.png" alt="Screenshot of the Fabler app">
-                    <div class="overlay">
-                      <a class="rotating-overlay-btn" href="/fabler">
-                        <i class="fa-solid fa-circle-info fa-2xl"></i>
-                      </a>
+                <div class="location-time-globe">
+                    <img
+                        class="globe svg-theme-filter"
+                        src="assets/globe.svg"
+                        alt="Globe Icon"
+                    />
+                    <div class="location-time">
+                        <p id="time-para">
+                            WATERLOO, CA<br />
+                            <span id="est"></span>
+                        </p>
                     </div>
-                  </div>
                 </div>
-                <div class="btn-cross">
-                  <span><a href="/fabler/">EXPLORE >></a></span>
-                </div>
-              </div>
-            </div>
-            <div class="project-image-container out-pic mobile-screen">
-              <div class="project-image-inner">
-                <img src="assets/fabler.png" alt="Screenshot of the Fabler app">
-                <div class="overlay">
-                  <a class="rotating-overlay-btn" href="/fabler">
-                    <i class="fa-solid fa-circle-info fa-2xl"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dividers">
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-        </div>
-
-        <div class="project" id="hivemind">
-          <div class="project-row">
-            <div class="project-info">
-              <div class="info">
-                <a href="/hivemind" class="project-title-link">
-                  <h1>HIVEMIND</h1>
-                </a>
-                <div class="skill-tags">
-                  <span class="skill-tag">Figma</span>
-                  <span class="skill-tag">UX/UI Design</span>
-                  <span class="skill-tag">HCI Research</span>
-                  <span class="skill-tag">Miro</span>
-                </div>
-                <div class="project-image-container in-pic mobile-screen">
-                  <div class="project-image-inner">
-                    <img src="assets/hivemind.png" alt="Screenshot of the Hivemind app">
-                    <div class="overlay">
-                      <a class="rotating-overlay-btn" href="/hivemind">
-                        <i class="fa-solid fa-circle-info fa-2xl"></i>
-                      </a>
+                <button
+                    class="theme-btn"
+                    data-theme-toggle
+                    aria-label="Toggle dark mode"
+                    onClick="toggleDarkMode()"
+                >
+                    <i class="fa-solid fa-sun" id="light-icon"></i>
+                    <i class="fa-solid fa-moon" id="dark-icon"></i>
+                </button>
+                <div class="moon-container">
+                    <div class="noise" id="noiseId"></div>
+                    <div class="center">
+                        <div class="circle"></div>
                     </div>
-                  </div>
                 </div>
-                <div class="btn-cross">
-                  <span><a href="/hivemind/">EXPLORE >></a></span>
-                </div>
-              </div>
-            </div>
-            <div class="project-image-container out-pic mobile-screen">
-              <div class="project-image-inner">
-                <img src="assets/hivemind.png" alt="Screenshot of the Hivemind app">
-                <div class="overlay">
-                  <a class="rotating-overlay-btn" href="/hivemind">
-                    <i class="fa-solid fa-circle-info fa-2xl"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dividers">
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-        </div>
-
-        <div class="project" id="space-invaders">
-          <div class="project-row">
-            <div class="project-info">
-              <div class="info">
-                <a href="/space-invaders" class="project-title-link">
-                  <h1>SPACE INVADERS</h1>
-                </a>
-                <div class="skill-tags">
-                  <span class="skill-tag">Kotlin</span>
-                  <span class="skill-tag">JavaFX</span>
-                  <span class="skill-tag">UX/UI Design</span>
-                  <span class="skill-tag">Game Development</span>
-                </div>
-                <div class="project-image-container in-pic">
-                  <div class="project-image-inner">
-                    <img src="assets/space-invaders.png" alt="Screenshot of a Space Invaders screen">
-                    <div class="overlay">
-                      <a class="rotating-overlay-btn" href="/space-invaders">
-                        <i class="fa-solid fa-circle-info fa-2xl"></i>
-                      </a>
+                <div id="intro">
+                    <div class="hero-container">
+                        <h1>¿&nbsp;JAXEN DUTTA&nbsp;?</h1>
                     </div>
-                  </div>
-                </div>
-                <div class="btn-cross">
-                  <span><a href="/space-invaders/">EXPLORE >></a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-image-container out-pic">
-            <div class="project-image-inner">
-              <img src="assets/space-invaders.png" alt="Screenshot of a Space Invaders screen">
-              <div class="overlay">
-                <a class="rotating-overlay-btn" href="/space-invaders">
-                  <i class="fa-solid fa-circle-info fa-2xl"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dividers">
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-        </div>
-
-        <div class="project" id="file-explorer">
-          <div class="project-row">
-            <div class="project-info">
-              <div class="info">
-                <a href="/file-explorer" class="project-title-link">
-                  <h1>FILE EXPLORER</h1>
-                </a>
-                <div class="skill-tags">
-                  <span class="skill-tag">Kotlin</span>
-                  <span class="skill-tag">JavaFX</span>
-                  <span class="skill-tag">UX/UI Design</span>
-                </div>
-                <div class="project-image-container in-pic">
-                  <div class="project-image-inner">
-                    <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
-                    <div class="overlay">
-                      <a class="rotating-overlay-btn" href="/file-explorer">
-                        <i class="fa-solid fa-circle-info fa-2xl"></i>
-                      </a>
+                    <div class="iam">
+                        <span class="iam-star">✦</span>
+                        <div class="roles-container">
+                            <ul class="roles-list">
+                                <li class="roles">UX/UI Engineer</li>
+                                <li class="roles">HCI Researcher</li>
+                                <li class="roles">Web Designer</li>
+                                <li class="roles">App Developer</li>
+                            </ul>
+                        </div>
+                        <span class="iam-star">✦</span>
                     </div>
-                  </div>
-                </div>
-                <div class="btn-cross">
-                  <span><a href="/file-explorer/">EXPLORE >></a></span>
-                </div>
-              </div>
-            </div>
-            <div class="project-image-container out-pic">
-              <div class="project-image-inner">
-                <img src="assets/file_explorer.png" alt="Screenshot of a File Explorer screen">
-                <div class="overlay">
-                  <a class="rotating-overlay-btn" href="/file-explorer">
-                    <i class="fa-solid fa-circle-info fa-2xl"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dividers">
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-        </div>
-
-        <div class="project" id="lightbox">
-          <div class="project-row">
-            <div class="project-info">
-              <div class="info">
-                <a href="/lightbox" class="project-title-link">
-                  <h1>LIGHTBOX</h1>
-                </a>
-                <div class="skill-tags">
-                  <span class="skill-tag">Kotlin</span>
-                  <span class="skill-tag">JavaFX</span>
-                  <span class="skill-tag">UX/UI Design</span>
-                </div>
-                <div class="project-image-container in-pic">
-                  <div class="project-image-inner">
-                    <img src="assets/lightbox.png" alt="Screenshot of a Lightbox screen">
-                    <div class="overlay">
-                      <a class="rotating-overlay-btn" href="/lightbox">
-                        <i class="fa-solid fa-circle-info fa-2xl"></i>
-                      </a>
+                    <div class="button-container">
+                        <a href="#projects" class="rotating-button">
+                            <svg class="rotating-text" viewBox="0 0 100 100">
+                                <defs>
+                                    <path
+                                        id="circle"
+                                        d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                                    />
+                                </defs>
+                                <text font-size="14">
+                                    <textPath
+                                        xlink:href="#circle"
+                                        startOffset="0"
+                                    >
+                                        ✦ PROJECTS ✦ WORK ✦ RÉSUMÉ
+                                    </textPath>
+                                </text>
+                            </svg>
+                            <div class="inner-circle">
+                                <div class="arrow-down"></div>
+                            </div>
+                        </a>
                     </div>
-                  </div>
                 </div>
-                <div class="btn-cross">
-                  <span><a href="/lightbox/">EXPLORE >></a></span>
-                </div>
-              </div>
-            </div>
-            <div class="project-image-container out-pic">
-              <div class="project-image-inner">
-                <img src="assets/lightbox.png" alt="Screenshot of a Lightbox screen">
-                <div class="overlay">
-                  <a class="rotating-overlay-btn" href="/lightbox">
-                    <i class="fa-solid fa-circle-info fa-2xl"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            </section>
 
-        <div class="dividers">
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-        </div>
-
-        <div class="project" id="straights">
-          <div class="project-row">
-            <div class="project-info">
-              <div class="info">
-                <a href="/straights" class="project-title-link">
-                  <h1>STRAIGHTS</h1>
-                </a>
-                <div class="skill-tags">
-                  <span class="skill-tag">C++</span>
-                  <span class="skill-tag">WebAssembly</span>
-                  <span class="skill-tag">Emscripten</span>
-                  <span class="skill-tag">HTML</span>
-                  <span class="skill-tag">CSS</span>
-                  <span class="skill-tag">JS</span>
-                  <span class="skill-tag">Game Development</span>
-                </div>
-                <div class="project-image-container in-pic">
-                  <div class="project-image-inner">
-                    <img src="assets/straights.png" alt="Screenshot of a Straights screen">
-                    <div class="overlay">
-                      <a class="rotating-overlay-btn" href="/straights">
-                        <i class="fa-solid fa-circle-info fa-2xl"></i>
-                      </a>
+            <section id="projects">
+                <div class="section-header-common section-header">
+                    <div>
+                        PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
                     </div>
-                  </div>
+                    <div>
+                        PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
                 </div>
-                <div class="btn-cross">
-                  <span><a href="/straights/">EXPLORE >></a></span>
+                <div class="section-header-common section-header-backward">
+                    <div>
+                        PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        PROJECTS&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="project-image-container out-pic">
-              <div class="project-image-inner">
-                <img src="assets/straights.png" alt="Screenshot of a Straights screen">
-                <div class="overlay">
-                  <a class="rotating-overlay-btn" href="/straights">
-                    <i class="fa-solid fa-circle-info fa-2xl"></i>
-                  </a>
+
+                <div class="section-content">
+                    <div class="project" id="ev-charging">
+                        <div class="project-row">
+                            <div class="project-info">
+                                <div class="info">
+                                    <a
+                                        href="https://github.com/jaxendutta/kwc-ev-charging-network-opt"
+                                        class="project-title-link"
+                                    >
+                                        <h1>
+                                            EV CHARGING NETWORK OPTIMIZATION
+                                        </h1>
+                                    </a>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">Gurobi</span>
+                                        <span class="skill-tag">GeoPandas</span>
+                                        <span class="skill-tag">Folium</span>
+                                        <span class="skill-tag">SciPy</span>
+                                        <span class="skill-tag">Jupyter</span>
+                                        <span class="skill-tag">GIS</span>
+                                        <span class="skill-tag">MILP</span>
+                                        <span class="skill-tag"
+                                            >Data Engineering</span
+                                        >
+                                        <span class="skill-tag"
+                                            >Optimization</span
+                                        >
+                                    </div>
+                                    <div class="project-description">
+                                        <p>
+                                            Engineered a Gurobi MILP model
+                                            processing 7750+ locations to
+                                            enhance KWC-CMA's EV charging
+                                            station coverage by +80% while
+                                            minimizing costs through strategic
+                                            Level 2 to Level 3 upgrades.
+                                        </p>
+                                    </div>
+                                    <div class="viz-container in-pic">
+                                        <iframe
+                                            src="assets/kwc-ev-opt/solution_map.html"
+                                            class="map-frame"
+                                            loading="lazy"
+                                            title="EV Charging Network Optimization Map"
+                                        >
+                                        </iframe>
+                                    </div>
+                                    <div class="btn-cross">
+                                        <span
+                                            ><a
+                                                href="https://github.com/jaxendutta/kwc-ev-charging-network-opt"
+                                                >EXPLORE >></a
+                                            ></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="viz-container out-pic">
+                                <iframe
+                                    src="assets/kwc-ev-opt/solution_map.html"
+                                    class="map-frame"
+                                    loading="lazy"
+                                    title="EV Charging Network Optimization Map"
+                                >
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dividers">
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                    </div>
+
+                    <div class="project" id="fabler">
+                        <div class="project-row">
+                            <div class="project-info">
+                                <div class="info">
+                                    <a
+                                        href="/fabler"
+                                        class="project-title-link"
+                                    >
+                                        <h1>FABLER</h1>
+                                    </a>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Kotlin</span>
+                                        <span class="skill-tag"
+                                            >Jetpack Compose</span
+                                        >
+                                        <span class="skill-tag"
+                                            >Android SDK 34</span
+                                        >
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">Ren'Py</span>
+                                        <span class="skill-tag">OpenAI</span>
+                                        <span class="skill-tag"
+                                            >Stable Diffusion</span
+                                        >
+                                        <span class="skill-tag">Figma</span>
+                                        <span class="skill-tag"
+                                            >UX/UI Research</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="project-image-container in-pic mobile-screen"
+                                    >
+                                        <div class="project-image-inner">
+                                            <img
+                                                src="assets/fabler.png"
+                                                alt="Screenshot of the Fabler app"
+                                            />
+                                            <div class="overlay">
+                                                <a
+                                                    class="rotating-overlay-btn"
+                                                    href="/fabler"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-circle-info fa-2xl"
+                                                    ></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-cross">
+                                        <span
+                                            ><a href="/fabler/"
+                                                >EXPLORE >></a
+                                            ></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="project-image-container out-pic mobile-screen"
+                            >
+                                <div class="project-image-inner">
+                                    <img
+                                        src="assets/fabler.png"
+                                        alt="Screenshot of the Fabler app"
+                                    />
+                                    <div class="overlay">
+                                        <a
+                                            class="rotating-overlay-btn"
+                                            href="/fabler"
+                                        >
+                                            <i
+                                                class="fa-solid fa-circle-info fa-2xl"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dividers">
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                    </div>
+
+                    <div class="project" id="hivemind">
+                        <div class="project-row">
+                            <div class="project-info">
+                                <div class="info">
+                                    <a
+                                        href="/hivemind"
+                                        class="project-title-link"
+                                    >
+                                        <h1>HIVEMIND</h1>
+                                    </a>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Figma</span>
+                                        <span class="skill-tag"
+                                            >UX/UI Design</span
+                                        >
+                                        <span class="skill-tag"
+                                            >HCI Research</span
+                                        >
+                                        <span class="skill-tag">Miro</span>
+                                    </div>
+                                    <div
+                                        class="project-image-container in-pic mobile-screen"
+                                    >
+                                        <div class="project-image-inner">
+                                            <img
+                                                src="assets/hivemind.png"
+                                                alt="Screenshot of the Hivemind app"
+                                            />
+                                            <div class="overlay">
+                                                <a
+                                                    class="rotating-overlay-btn"
+                                                    href="/hivemind"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-circle-info fa-2xl"
+                                                    ></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-cross">
+                                        <span
+                                            ><a href="/hivemind/"
+                                                >EXPLORE >></a
+                                            ></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="project-image-container out-pic mobile-screen"
+                            >
+                                <div class="project-image-inner">
+                                    <img
+                                        src="assets/hivemind.png"
+                                        alt="Screenshot of the Hivemind app"
+                                    />
+                                    <div class="overlay">
+                                        <a
+                                            class="rotating-overlay-btn"
+                                            href="/hivemind"
+                                        >
+                                            <i
+                                                class="fa-solid fa-circle-info fa-2xl"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dividers">
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                    </div>
+
+                    <div class="project" id="space-invaders">
+                        <div class="project-row">
+                            <div class="project-info">
+                                <div class="info">
+                                    <a
+                                        href="/space-invaders"
+                                        class="project-title-link"
+                                    >
+                                        <h1>SPACE INVADERS</h1>
+                                    </a>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Kotlin</span>
+                                        <span class="skill-tag">JavaFX</span>
+                                        <span class="skill-tag"
+                                            >UX/UI Design</span
+                                        >
+                                        <span class="skill-tag"
+                                            >Game Development</span
+                                        >
+                                    </div>
+                                    <div class="project-image-container in-pic">
+                                        <div class="project-image-inner">
+                                            <img
+                                                src="assets/space-invaders.png"
+                                                alt="Screenshot of a Space Invaders screen"
+                                            />
+                                            <div class="overlay">
+                                                <a
+                                                    class="rotating-overlay-btn"
+                                                    href="/space-invaders"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-circle-info fa-2xl"
+                                                    ></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-cross">
+                                        <span
+                                            ><a href="/space-invaders/"
+                                                >EXPLORE >></a
+                                            ></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-image-container out-pic">
+                            <div class="project-image-inner">
+                                <img
+                                    src="assets/space-invaders.png"
+                                    alt="Screenshot of a Space Invaders screen"
+                                />
+                                <div class="overlay">
+                                    <a
+                                        class="rotating-overlay-btn"
+                                        href="/space-invaders"
+                                    >
+                                        <i
+                                            class="fa-solid fa-circle-info fa-2xl"
+                                        ></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dividers">
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                    </div>
+
+                    <div class="project" id="file-explorer">
+                        <div class="project-row">
+                            <div class="project-info">
+                                <div class="info">
+                                    <a
+                                        href="/file-explorer"
+                                        class="project-title-link"
+                                    >
+                                        <h1>FILE EXPLORER</h1>
+                                    </a>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Kotlin</span>
+                                        <span class="skill-tag">JavaFX</span>
+                                        <span class="skill-tag"
+                                            >UX/UI Design</span
+                                        >
+                                    </div>
+                                    <div class="project-image-container in-pic">
+                                        <div class="project-image-inner">
+                                            <img
+                                                src="assets/file_explorer.png"
+                                                alt="Screenshot of a File Explorer screen"
+                                            />
+                                            <div class="overlay">
+                                                <a
+                                                    class="rotating-overlay-btn"
+                                                    href="/file-explorer"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-circle-info fa-2xl"
+                                                    ></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-cross">
+                                        <span
+                                            ><a href="/file-explorer/"
+                                                >EXPLORE >></a
+                                            ></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-image-container out-pic">
+                                <div class="project-image-inner">
+                                    <img
+                                        src="assets/file_explorer.png"
+                                        alt="Screenshot of a File Explorer screen"
+                                    />
+                                    <div class="overlay">
+                                        <a
+                                            class="rotating-overlay-btn"
+                                            href="/file-explorer"
+                                        >
+                                            <i
+                                                class="fa-solid fa-circle-info fa-2xl"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dividers">
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                    </div>
+
+                    <div class="project" id="lightbox">
+                        <div class="project-row">
+                            <div class="project-info">
+                                <div class="info">
+                                    <a
+                                        href="/lightbox"
+                                        class="project-title-link"
+                                    >
+                                        <h1>LIGHTBOX</h1>
+                                    </a>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Kotlin</span>
+                                        <span class="skill-tag">JavaFX</span>
+                                        <span class="skill-tag"
+                                            >UX/UI Design</span
+                                        >
+                                    </div>
+                                    <div class="project-image-container in-pic">
+                                        <div class="project-image-inner">
+                                            <img
+                                                src="assets/lightbox.png"
+                                                alt="Screenshot of a Lightbox screen"
+                                            />
+                                            <div class="overlay">
+                                                <a
+                                                    class="rotating-overlay-btn"
+                                                    href="/lightbox"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-circle-info fa-2xl"
+                                                    ></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-cross">
+                                        <span
+                                            ><a href="/lightbox/"
+                                                >EXPLORE >></a
+                                            ></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-image-container out-pic">
+                                <div class="project-image-inner">
+                                    <img
+                                        src="assets/lightbox.png"
+                                        alt="Screenshot of a Lightbox screen"
+                                    />
+                                    <div class="overlay">
+                                        <a
+                                            class="rotating-overlay-btn"
+                                            href="/lightbox"
+                                        >
+                                            <i
+                                                class="fa-solid fa-circle-info fa-2xl"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dividers">
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                    </div>
+
+                    <div class="project" id="straights">
+                        <div class="project-row">
+                            <div class="project-info">
+                                <div class="info">
+                                    <a
+                                        href="/straights"
+                                        class="project-title-link"
+                                    >
+                                        <h1>STRAIGHTS</h1>
+                                    </a>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">C++</span>
+                                        <span class="skill-tag"
+                                            >WebAssembly</span
+                                        >
+                                        <span class="skill-tag"
+                                            >Emscripten</span
+                                        >
+                                        <span class="skill-tag">HTML</span>
+                                        <span class="skill-tag">CSS</span>
+                                        <span class="skill-tag">JS</span>
+                                        <span class="skill-tag"
+                                            >Game Development</span
+                                        >
+                                    </div>
+                                    <div class="project-image-container in-pic">
+                                        <div class="project-image-inner">
+                                            <img
+                                                src="assets/straights.png"
+                                                alt="Screenshot of a Straights screen"
+                                            />
+                                            <div class="overlay">
+                                                <a
+                                                    class="rotating-overlay-btn"
+                                                    href="/straights"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-circle-info fa-2xl"
+                                                    ></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-cross">
+                                        <span
+                                            ><a href="/straights/"
+                                                >EXPLORE >></a
+                                            ></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-image-container out-pic">
+                                <div class="project-image-inner">
+                                    <img
+                                        src="assets/straights.png"
+                                        alt="Screenshot of a Straights screen"
+                                    />
+                                    <div class="overlay">
+                                        <a
+                                            class="rotating-overlay-btn"
+                                            href="/straights"
+                                        >
+                                            <i
+                                                class="fa-solid fa-circle-info fa-2xl"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dividers">
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                        <p class="divider">
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN ==
+                            ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
+                        </p>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            </section>
 
-        <div class="dividers">
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-          <p class="divider">
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-            JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN == JAXEN == ANIRBAN ==
-          </p>
-        </div>
-      </div>
-    </section>
+            <section id="work">
+                <div class="section-header-common section-header">
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                </div>
+                <div class="section-header-common section-header-backward">
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                    <div>
+                        WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;
+                    </div>
+                </div>
 
-    <section id="work">
-      <div class="section-header-common section-header">
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      </div>
-      <div class="section-header-common section-header-backward">
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>WORK&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      </div>
+                <div class="section-content">
+                    <div class="drop-down-list">
+                        <!-- Work items will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
 
-      <div class="section-content">
-        <div class="drop-down-list">
-            <!-- Work items will be loaded here dynamically -->
-        </div>
-      </div>
-    </section>
+            <section id="contact">
+                <div class="section-header-common section-header">
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                </div>
+                <div class="section-header-common section-header-backward">
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                    <div>
+                        CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span
+                        >&nbsp;
+                    </div>
+                </div>
 
-    <section id="contact">
-      <div class="section-header-common section-header">
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      </div>
-      <div class="section-header-common section-header-backward">
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-        <div>CONTACT&nbsp;<span class="header-symbol">⚕♨✦❍</span>&nbsp;</div>
-      </div>
+                <div class="section-content">
+                    <div class="socials">
+                        <div class="social-media">
+                            <a
+                                href="mailto:jaxendutta@gmail.com"
+                                class="medium"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <div class="social-content">
+                                    <div class="social-number"></div>
+                                    <div class="social-text">E-MAIL</div>
+                                </div>
+                                <div class="social-line">
+                                    <span>jaxendutta[at]gmail.com</span>
+                                    <img
+                                        src="assets/arrow-out.svg"
+                                        class="svg-theme-filter"
+                                        alt="Arrow Out Icon"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                        <div class="social-media">
+                            <a
+                                href="https://github.com/jaxendutta"
+                                class="medium"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <div class="social-content">
+                                    <div class="social-number"></div>
+                                    <div class="social-text">GITHUB</div>
+                                </div>
+                                <div class="social-line">
+                                    <span>/jaxendutta</span>
+                                    <img
+                                        src="assets/arrow-out.svg"
+                                        class="svg-theme-filter"
+                                        alt="Arrow Out Icon"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                        <div class="social-media">
+                            <a
+                                href="https://www.linkedin.com/in/jaxen/"
+                                class="medium"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <div class="social-content">
+                                    <div class="social-number"></div>
+                                    <div class="social-text">LINKEDIN</div>
+                                </div>
+                                <div class="social-line">
+                                    <span>/jaxen</span>
+                                    <img
+                                        src="assets/arrow-out.svg"
+                                        class="svg-theme-filter"
+                                        alt="Arrow Out Icon"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                        <div class="social-media">
+                            <a
+                                href="https://docs.google.com/gview?url=https://docs.google.com/document/d/11mhUfmYKXO7jPN1rP6znr2B5zCl0hlrE0pKqAU2lKtU/export?format=pdf"
+                                class="medium"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <div class="social-content">
+                                    <div class="social-number"></div>
+                                    <div class="social-text">RÉSUMÉ</div>
+                                </div>
+                                <div class="social-line">
+                                    <img
+                                        src="assets/arrow-out.svg"
+                                        class="svg-theme-filter"
+                                        alt="External link"
+                                    />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-      <div class="section-content">
-        <div class="socials">
-          <div class="social-media">
-            <a href="mailto:jaxendutta@gmail.com" class="medium" target="_blank" rel="noopener">
-              <div class="social-content">
-                <div class="social-number"></div>
-                <div class="social-text">E-MAIL</div>
-              </div>
-              <div class="social-line">
-                <span>jaxendutta[at]gmail.com</span>
-                <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
-              </div>
-            </a>
-          </div>
-          <div class="social-media">
-            <a href="https://github.com/jaxendutta" class="medium" target="_blank" rel="noopener">
-              <div class="social-content">
-                <div class="social-number"></div>
-                <div class="social-text">GITHUB</div>
-              </div>
-              <div class="social-line">
-                <span>/jaxendutta</span>
-                <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
-              </div>
-            </a>
-          </div>
-          <div class="social-media">
-            <a href="https://www.linkedin.com/in/jaxen/" class="medium" target="_blank" rel="noopener">
-              <div class="social-content">
-                <div class="social-number"></div>
-                <div class="social-text">LINKEDIN</div>
-              </div>
-              <div class="social-line">
-                <span>/jaxen</span>
-                <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="Arrow Out Icon">
-              </div>
-            </a>
-          </div>
-          <div class="social-media">
-            <a href="https://docs.google.com/gview?url=https://docs.google.com/document/d/11mhUfmYKXO7jPN1rP6znr2B5zCl0hlrE0pKqAU2lKtU/export?format=pdf"
-              class="medium" target="_blank" rel="noopener">
-              <div class="social-content">
-                <div class="social-number"></div>
-                <div class="social-text">RÉSUMÉ</div>
-              </div>
-              <div class="social-line">
-                <img src="assets/arrow-out.svg" class="svg-theme-filter" alt="External link">
-              </div>
-            </a>
-          </div>
-        </div>
+                    <div class="contact-or">or buzz me right here.</div>
 
-        <div class="contact-or">or buzz me right here.</div>
-
-        <div class="contact-form">
-          <form name="contact-form" method="POST" data-netlify="true" onsubmit="return validateForm()">
-            <input id="name" name="name" type="text" required placeholder="01. NAME" />
-            <input id="email" name="email" type="email" required placeholder="02. E-MAIL"
-              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" />
-            <input id="linkedin" name="linkedin" type="url" placeholder="03. LINKEDIN" />
-            <textarea id="message" name="message" type="text" required placeholder="04. MESSAGE"></textarea>
-            <input id="submit" type="submit" value="SEND" />
-          </form>
-        </div>
-      </div>
-    </section>
-    <footer>
-      Jaxen Anirban Dutta //
-    </footer>
-  </main>
-</body>
-
+                    <div class="contact-form">
+                        <form
+                            name="contact-form"
+                            method="POST"
+                            data-netlify="true"
+                            onsubmit="return validateForm()"
+                        >
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                required
+                                placeholder="01. NAME"
+                            />
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                placeholder="02. E-MAIL"
+                                pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                            />
+                            <input
+                                id="linkedin"
+                                name="linkedin"
+                                type="url"
+                                placeholder="03. LINKEDIN"
+                            />
+                            <textarea
+                                id="message"
+                                name="message"
+                                type="text"
+                                required
+                                placeholder="04. MESSAGE"
+                            ></textarea>
+                            <input id="submit" type="submit" value="SEND" />
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <footer>Jaxen Anirban Dutta //</footer>
+        </main>
+    </body>
 </html>
